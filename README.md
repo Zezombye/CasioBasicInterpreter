@@ -14,7 +14,7 @@ The parser is generated from the grammar and then concatened with other javascri
 
 Then, just open `public/index.html` in your browser to test it locally.
 
-If you just want to use the interpreter, go to http://basic.crevola.org/
+If you just want to use the interpreter, go to https://zezombye.github.io/CasioBasicInterpreter/public/index.html
 
 ### Unit tests
 
