@@ -167,9 +167,6 @@ button {
         <div id="statusbar" style="display: none"><span id="status" style="color: red"></span></div>
         <div style="text-align:center; margin: 0px; display: inline-block; width: 75%;">
           <div id="editorTabs">
-            <span class="tab">Tab1</span>
-            <span class="tab active">Tab2</span>
-            <span class="tab">Tab3</span>
           </div>
           <br>
           <div id="srcCode" style="text-align: left; display: inline-block; width: 100%; height:300px;"><!-- Monaco editor --></div>
@@ -304,6 +301,10 @@ button {
 
     <script type="text/javascript">
 
+      var tabToModelMap = {};
+      var tabEditorStates = {};
+      var currentSelectedTab = null;
+
       function loadFromUrl() {
         var urlToLoad = document.getElementById("urlLoader").value;
 
@@ -333,12 +334,55 @@ button {
         //TODO
       }
 
+      function addTab(tabName, content) {
+        tabToModelMap[tabName] = monaco.editor.createModel(content, "basic-casio");
+        tab = document.createElement("span");
+        tab.className = "tab";
+        tab.innerText = tabName;
+        tab.onclick = function() {
+          selectTab(tabName);
+        }
+        document.getElementById("editorTabs").appendChild(tab);
+      }
+
+      function selectTab(tabName) {
+        if (currentSelectedTab !== null) {
+          tabEditorStates[currentSelectedTab] = editor.saveViewState();
+        }
+        currentSelectedTab = tabName;
+        for (var tab of document.getElementsByClassName("tab")) {
+          if (tab.innerText === tabName) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        }
+
+        editor.setModel(tabToModelMap[tabName]);
+        if (tabName in tabEditorStates) {
+          editor.restoreViewState(tabEditorStates[tabName]);
+        }
+        editor.focus();
+      }
+
       async function loadProg(sourceName) {
         stopCodeExecution();
+        monaco.editor.getModels().forEach(model => model.dispose());
+        document.querySelectorAll('.tab').forEach(e => e.remove());
+        tabEditorStates = {};
+        tabToModelMap = {};
+        currentSelectedTab = null;
         var srcCode = programExamples[sourceName];
+        for (var part of srcCode) {
+          if (part.type === "program") {
+            part.content = "#Program name: "+part.name+"\n#Password: <no password>\n\n"+part.content;
+            addTab(part.name, part.content);
+          }
+        }
+        selectTab(srcCode[0].name);
         // document.getElementById("srcCode").value = srcCode;
-        window.editor.setValue(JSON.stringify(srcCode));
-        window.editor.setScrollPosition({scrollTop: 0})
+        //window.editor.setValue(JSON.stringify(srcCode));
+        //window.editor.setScrollPosition({scrollTop: 0})
         executeCode();
       }
 
@@ -366,7 +410,14 @@ button {
 
       function executeCode() {
         removeErrorLines();
-        var srcCode = JSON.parse(window.editor.getValue());
+        var srcCode = []
+        for (var model of monaco.editor.getModels()) {
+          tabContent = model.getValue().trim();
+          if (tabContent.startsWith("#Program name: ")) {
+            programName = tabContent.substring(0, tabContent.indexOf("\n")).substring("#Program name: ".length);
+            srcCode.push({"type": "program", "name": programName, "content": tabContent});
+          }
+        }
         $("#code").val(srcCode);
         $("#codesize").text(srcCode.length);
         document.getElementById("canvas1").focus();
@@ -400,10 +451,6 @@ button {
         finish(EXIT_STOPPED, "Stopped on user request.");
       }
 
-      function logFirstAccess() {
-        $.get("log.php");
-      };
-
       function jumpToLine(i) {
         /*var t = myCodeMirror.charCoords({line: i, ch: 0}, "local").top;
         var middleHeight = myCodeMirror.getScrollerElement().offsetHeight / 2;
@@ -419,9 +466,8 @@ button {
             var decompressedSrcCode = LZString.decompressFromEncodedURIComponent(compressedSrcCode);
             loadProgFromSrc(decompressedSrcCode);
           } else {
-            loadProg(0);
+            loadProg("screenSaver");
           }
-          logFirstAccess();
       }
 
 $("#share").on("click" , function(event){
