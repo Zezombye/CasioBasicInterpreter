@@ -69,7 +69,8 @@ button {
     <div style="text-align: center">
       <div>
         <i><script type="text/javascript">document.write(cbiGetVersion(true));</script></i>
-        by <a href="https://www.planet-casio.com/Fr/compte/voir_profil.php?membre=krevo_">Krevo_ </a><br><br>
+        by <a href="https://www.planet-casio.com/Fr/compte/voir_profil.php?membre=krevo_">Krevo_ </a>
+        and <a href="https://www.planet-casio.com/Fr/compte/voir_profil.php?membre=Zezombye">Zezombye </a><br><br>
 
         <div>
           <canvas id="canvas1" width="508" height="252" style="position: absolute"></canvas>
@@ -131,7 +132,7 @@ button {
           <button id="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</button>
         </span>
         <div id="statusbar" style="display: none"><span id="status" style="color: red"></span></div>
-         <div style="text-align:center; margin: 0px;"><div id="srcCode" style="text-align: left; display: inline-block; width: 75%"><!-- CodeMirror editor --></div></div>
+         <div style="text-align:center; margin: 0px;"><div id="srcCode" style="text-align: left; display: inline-block; width: 75%; height:300px;"><!-- CodeMirror editor --></div></div>
 
         <textarea style="display: none" id="srcCode0">
 ""
@@ -1185,9 +1186,10 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
 })(jQuery);
 </script>
 
-    <script type="text/javascript">
+<script src="../lib/monaco-editor/min/vs/loader.js"></script>
+<script src="js/loadMonaco.js"></script>
 
-      var myCodeMirror;
+    <script type="text/javascript">
 
       function loadFromUrl() {
         var urlToLoad = document.getElementById("urlLoader").value;
@@ -1213,21 +1215,24 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
       }
 
       function insertSpecialChar(specialChar) {
-        myCodeMirror.replaceSelection(specialChar);
-        myCodeMirror.focus();
+        /*myCodeMirror.replaceSelection(specialChar);
+        myCodeMirror.focus();*/
+        //TODO
       }
 
       function loadProg(progNumber) {
         stopCodeExecution();
         var srcCode = document.getElementById("srcCode"+progNumber).value;
         // document.getElementById("srcCode").value = srcCode;
-        myCodeMirror.setValue(srcCode);
+        window.editor.setValue(srcCode);
+        window.editor.setScrollPosition({scrollTop: 0})
         executeCode();
       }
 
       function loadProgFromSrc(srcCode) {
         stopCodeExecution();
-        myCodeMirror.setValue(srcCode);
+        window.editor.setValue(srcCode);
+        window.editor.setScrollPosition({scrollTop: 0})
         executeCode();
       }
 
@@ -1239,21 +1244,22 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
       }
 
       function removeErrorLines() {
-          var lineCount = myCodeMirror.getDoc().lineCount();
+          /*var lineCount = myCodeMirror.getDoc().lineCount();
           for (var i = 0; i< lineCount; i++) {
               myCodeMirror.getDoc().removeLineClass(i, "background", "error");
-          }
+          }*/
+          //TODO, useful?
       }
 
       function executeCode() {
         removeErrorLines();
-        var srcCode = myCodeMirror.getValue();
+        var srcCode = window.editor.getValue();
         $("#code").val(srcCode);
         $("#codesize").text(srcCode.length);
         document.getElementById("canvas1").focus();
         document.getElementById("srcCode").className = 'readOnly';
-        myCodeMirror.setOption("readOnly", "nocursor");
-        myCodeMirror.setOption("className", "readOnly");
+        //myCodeMirror.setOption("readOnly", "nocursor");
+        //myCodeMirror.setOption("className", "readOnly");
         document.getElementById("error").value = '';
         document.getElementById("status").innerHTML = '';
         $("#statusbar").hide();
@@ -1266,13 +1272,13 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
                     displayStatusMsg(msg + (detail ? detail : ""));
                   }
                   if (lineNumber) {
-                    myCodeMirror.getDoc().addLineClass(lineNumber - 1, "background", "error");
+                    //myCodeMirror.getDoc().addLineClass(lineNumber - 1, "background", "error");
                     jumpToLine(lineNumber);
                   }
               }
               //document.getElementById("srcCode").disabled = false;
               document.getElementById("srcCode").className = '';
-              myCodeMirror.setOption("readOnly", false);
+              //myCodeMirror.setOption("readOnly", false);
           });
         }
       }
@@ -1286,17 +1292,13 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
       };
 
       function jumpToLine(i) {
-        var t = myCodeMirror.charCoords({line: i, ch: 0}, "local").top;
+        /*var t = myCodeMirror.charCoords({line: i, ch: 0}, "local").top;
         var middleHeight = myCodeMirror.getScrollerElement().offsetHeight / 2;
-        myCodeMirror.scrollTo(null, t - middleHeight - 5);
+        myCodeMirror.scrollTo(null, t - middleHeight - 5);*/
+        //TODO, redo with marks on sidebar
       }
 
       window.onload = function() {
-          myCodeMirror = CodeMirror(document.getElementById("srcCode"), {
-              lineNumbers: true,
-              lineWrapping: true,
-              mode: "javascript",
-          });
           var url_string = window.location.href
           var url = new URL(url_string);
           var compressedSrcCode = url.searchParams.get("src");
@@ -1311,7 +1313,7 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
 
 $("#share").on("click" , function(event){
     event.preventDefault();
-    var srcCode = myCodeMirror.getValue();
+    var srcCode = window.editor.getValue();
     var compressed = LZString.compressToEncodedURIComponent(srcCode);
     var url = window.location.protocol+'//'+window.location.hostname+window.location.pathname;
     displayStatusMsg('<input id="urlToCopy" value="'+url+'?src='+compressed+'" size="80" /> <button id="copy"><i class="fa fa-files-o" aria-hidden="true"></i> Copy Url</button>');
@@ -1328,13 +1330,14 @@ $("#srcCode").bind('paste drop', function(e) {
 
     setTimeout(function() {
         // gets the copied text after a specified time (100 milliseconds)
-        var savedCursorPos = myCodeMirror.getCursor();
-        var text = myCodeMirror.getValue();
+        //var savedCursorPos = myCodeMirror.getCursor();
+        var text = window.editor.getValue();
         text = text.replace(/(\uE015)/g, 'r'); // Replace "rho" (U+E015 used in BIDE) by "r"
         text = text.replace(/(\uE016)/g, 'i'); // Replace "i" (imaginary unit of complex number) (U+E016 used in BIDE) by "i"
         text = text.replace(/(\uE063)/g, '/'); // Replace "slash" (U+E063 used in BIDE) by "/"
-        myCodeMirror.setValue(text);
-        myCodeMirror.setCursor(savedCursorPos); // Replace cursor where it was (because setting the value of the content place cursor at beginning)
+        window.editor.setValue(text);
+        window.editor.setScrollPosition({scrollTop: 0})
+        //myCodeMirror.setCursor(savedCursorPos); // Replace cursor where it was (because setting the value of the content place cursor at beginning)
     }, 100);
 });
 
