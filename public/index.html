@@ -63,6 +63,11 @@ button {
   background-color: lightpink;
 }
 
+@font-face {
+    font-family: 'DejaVuAvecCasio'; /*a name to be used later*/
+    src: url('../fonts/DejaVuAvecCasio.ttf'); /*URL to font*/
+}
+
 </style>
   </head>
   <body style="background-color: lightsteelblue">
@@ -134,6 +139,47 @@ button {
         <div id="statusbar" style="display: none"><span id="status" style="color: red"></span></div>
          <div style="text-align:center; margin: 0px;"><div id="srcCode" style="text-align: left; display: inline-block; width: 75%; height:300px;"><!-- CodeMirror editor --></div></div>
 
+<textarea style="display: none" id="srcCode26">
+#This is a syntax coloration test.
+#These lines should appear in preprocessor color, even with "strings", &entities; and 'comments.
+
+'This is a comment. It should appear in comment color, even with "strings", &entities; and #preprocessor.
+'Comments stop when there is a new line, but also with a colon: this should not be colored.
+
+'These keywords should be colored the same.
+If Then Else IfEnd For To Step Next Do LpWhile While WhileEnd Prog Return Stop Break Goto Lbl
+=> :
+&disp; ◢
+
+'These operators should be colored the same.
+~ + - * / ^ < > = != ? -> <= >=
+And Or Xor Not Rmdr
+Optional: [] {} () ,
+&femto;&pico;&nano;&micro;&kilo;&mega;&giga;&tera;&peta;&exa;
+µ
+&neg; &E; &_10; &sqrt; &cbrt; &nth_root; &nCr; &nPr; &frac; &^-1; &^2; &angle;
+﹣   √ √ √   ⌟  ² ∠
+
+'Variables & numbers
+{&pi;&i;, π, ﹣3.59}->List 14
+Mat A
+Vct B
+Str 20
+Ans &r; &theta;  θ
+a0 a1 a2 anStart b0 b1 b2 bnStart c0 c1 c2 cnStart
+a a a b b b c c c
+(optional, careful for opcodes like F-Line) A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+'Entities
+&entity; &!!; &#CFAB; &...; &%_disp; &+-; &-+; this should not be colored &,; &<<; &//; &/\; &||_strike; &; &should_be_colored
+
+"String with an &entity; inside that should be colored (including &neg; and &disp;). Also, no 'comments or #preprocessor. Watch for \\\"backslashes.\\" This should not be colored.
+"This string should be colored, even though there is no closing quote.
+
+Careful: 'Comments can begin anywhere on the line,
+however #preprocessor cannot! This line should not be colored.
+  
+</textarea>
         <textarea style="display: none" id="srcCode0">
 ""
 ""
@@ -1108,6 +1154,7 @@ Red SketchThin Graph(X,Y)=(2T - 3*sin T, 2 - 3*cos T
         <button onclick="loadProg(16);">List 3</button>
         <button onclick="loadProg(22);">Lst2Tab</button>
         <button onclick="loadProg(20);">Menu</button>
+        <button onclick="loadProg(26);">Syntax coloration test</button>
         <br><br>
       </div>
     </div>
