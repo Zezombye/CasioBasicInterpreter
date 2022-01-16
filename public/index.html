@@ -161,7 +161,7 @@ button {
           <button onclick="displayStatusMsg('Log DEBUG is '+(debugToggle()?'On':'Off'))"><i class="fa fa-bug" aria-hidden="true"></i> Log debug On/Off</button>
           <button onclick="displayStatusMsg('Increasing speed. Timeout is now '+adjustTimeout(-1)+' ms')">Speed <i class="fa fa-plus" aria-hidden="true"></i></button>
           <button onclick="displayStatusMsg('Decreasing speed. Timeout is now '+adjustTimeout(1)+' ms')">Speed <i class="fa fa-minus" aria-hidden="true"></i></button>
-          <button id="feedback"><i class="fa fa-envelope-o"></i> Send bug report</button>
+          <button id="feedback"><a href="https://github.com/Zezombye/CasioBasicInterpreter/issues/new" target="_blank"><i class="fa fa-envelope-o"></i> Send bug report</a></button>
           <button id="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</button>
         </span>
         <div id="statusbar" style="display: none"><span id="status" style="color: red"></span></div>
@@ -221,80 +221,6 @@ button {
         <br><br>
       </div>
     </div>
-
-<div class="feedback-box">
-  <div class="content"> <a class="close" href="#"><i class="fa fa-times"></i></a>
-    <div class="confirm">
-      <h1><strong>BOOOM!</strong> <span>We'll get right on that for ya</span></h1>
-    </div>
-    <header>Help me to improve the <i>Casio Basic Web Interpreter</i> !</header>
-    <section>
-      <form id="bugReportForm" action="/">
-      <input type="hidden" id="code" name="code">
-      <div>
-        <label for="name">Last status</label>
-        <span style="float: right;" title="Your current program is attached to this message"><i class="fa fa-paperclip" aria-hidden="true"></i> <span id="codesize">xx</span> bytes</span>
-      </div>
-      <input type="text" id="error" name="error"><br><br>
-      <label for="name">Name or Pseudo</label><br>
-      <input type="text" name="name"><br><br>
-      <label for="email">Email (if you want an answer)</label><br>
-      <input type="text" name="email"><br><br>
-      <label for="feedback">Message (english or french accepted)</label><br>
-      <textarea id="feedbackArea" name="feedback"></textarea>
-      <button id='submit'>Send bug report</button>
-      </form>
-    </section>
-  </div>
-</div>
-
-<script>
-(function($){
-  var words = ["Boom!" , "Whammy!", "Booya!" , "Holler!", "Broskee!" , "All Good!" , "Right on!"];
-  var feedback = $(".feedback-box");
-
-  //Feedback Toggle
-	$("#feedback").on("click" , function(){
-		feedback.addClass("show");
-	});
-
-  //Close Trigger
-	$(".close").on("click" , function(){
-    feedback.removeClass("show");
-    setTimeout(function(){
-      feedback.removeClass("show-confirm").find("textarea").val('');
-      console.log("reset")
-    }, 1000);
-	});
-
-//Submit
-  $("#submit").on("click" , function(event){
-    event.preventDefault();
-    if (!feedback.find("textarea").val() ) {
-  //     if( !$("textarea").val() ) {
-       feedback.addClass("error");
-       setTimeout(function(){
-         feedback.removeClass("error");
-       }, 500)
-    } else {
-      console.log("Send feedback !");
-      console.log($('#bugReportForm').serialize());
-      $.post( "bugreport.php", $( "#bugReportForm" ).serialize() );
-      feedback.addClass("show-confirm");
-      var randomWord = words[Math.floor(Math.random() * words.length)];
-      $(".feedback-box h1 strong").text(randomWord);
-
-      setTimeout(function(){
-         feedback.removeClass("show").find("textarea").val('').delay(1000);
-      },2000);
-
-       setTimeout(function(){
-         feedback.removeClass("show-confirm");
-      },2200);
-    }
-  })
-})(jQuery);
-</script>
 
 <script src="../lib/monaco-editor/min/vs/loader.js"></script>
 <script src="js/loadMonaco.js"></script>
