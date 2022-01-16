@@ -6,10 +6,10 @@ The javascript parser at the heart of this project is generated with JsCC.
 
 ### Generate the parser
 
-The parser is generated from the grammar and then concatened with other javascript source files. You just have to do (you may have to install `rhino` before) :
+The parser is generated from the grammar and then concatened with other javascript source files. You just have to do (you may have to install node.js before) :
 
 ```
-> make
+> bash build.sh
 ```
 
 Then, just open `public/index.html` in your browser to test it locally.
