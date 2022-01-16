@@ -1463,7 +1463,7 @@ var EXIT_DOMAIN_ERROR = 19;
 
 function debug(msg) {
     if (DEBUG) {
-        console.log(msg);
+        console.debug(msg);
     }
 }
 
@@ -2745,38 +2745,29 @@ function manageDirectives(line) {
 
 var finishCallBack = null;
 
-function jsccRun(str, finishCallBack) {
+function jsccRun(parts, finishCallBack) {
 
     if (ctx1 == undefined) {
         cbiInit();
     }
 
-    programs = new Array();
-    programsSrc = new Array();
+    programs = {};
+    programsSrc = {};
 
     this.finishCallBack = finishCallBack;
 
-    str = str.replace(/(?:\r\n|\r|\n)/g, "\n");
-
-    var arrayOfLines = str.split("\n");
-    debug(arrayOfLines);
-    var progName = "main"; // default prog name
+    debug(parts);
+    parts = parts.filter(x => x["type"] === "program");
+    var mainProgName = parts[0].name;
     var currentBoundary = 0;
-    for (i = 0; i < arrayOfLines.length; i++) {
-        var line = arrayOfLines[i];
-
-        manageDirectives(line);
-
-        var res = line.match(/@@\s?Prog(?:ram)?\s+"?([a-zA-Z0-9\-]*)"?\s?.?/);
-        if (res != null) {
-            debug(res); // It matched and res[0] contain the all string, res[1] the sub-matched part ie the programe name or number
-            // cut from old boundary to i, then i become new boundary
-            programsSrc[progName] = cut(progName, arrayOfLines, currentBoundary, i);
-            progName = res[1];
-            currentBoundary = i;
+    for (var part of parts) {
+        
+        part.content = part.content.replace(/(?:\r\n|\r|\n)/g, "\n"); //why replace "?", it is not instruction ending?
+        for (var line of part.content.split("\n")) {
+            manageDirectives(line);
         }
+        programsSrc[part.name] = part.content.split("\n").map((line, index) => (index+1)+"|"+line);
     }
-    programsSrc[progName] = cut(progName, arrayOfLines, currentBoundary, arrayOfLines.length);
 
     reset();
     preset();
@@ -2808,8 +2799,9 @@ function jsccRun(str, finishCallBack) {
 
     debug(programs);
 
-    // ... puis lancer le programme "main"
-    currentPrgName = "main";
+    // ... puis lancer le programme principal
+    debug("Main program: "+mainProgName);
+    currentPrgName = mainProgName;
 
     nextLine = 0;
 
@@ -2926,11 +2918,11 @@ function expandIfNode(nodes) {
 
 function parse(programsSrc, progName) {
 
+    debug("Parsing " + progName + " ...");
     var linesOfSourceCode = programsSrc[progName].map(cbiReplace);
     var lineOffsets = calculateLinesOffset(linesOfSourceCode); // Calculate offsets and remove line number indicator (ie "xx|" at the beginning)
     var str = linesOfSourceCode.join(":");
 
-    debug("Parsing " + progName + " ...");
     var nodes = new Array();
     var labels = new Map();
     var where = "";
@@ -2978,11 +2970,11 @@ function throwRuntimeError(errorCode, offset) {
 */
 
 function cbiReplace(str) {
+    //TODO remove most of these replacements as they can confuse the grammar
     str = str.replace(/(\u00A0)/g, ' '); // Replace "non breakable space" by space
     str = str.replace(/(\u00F7)/g, '/'); // Replace "division sign" by "/"
     str = str.replace(/(\u00D7)/g, '*'); // Replace "multiplication sign" by "*"
     str = str.replace(/(\uE015)/g, 'r'); // Replace "rho" (U+E015 used in BIDE) by "r"
-    str = str.replace(/(\uE063)/g, '/'); // Replace "/" (U+E063 used in BIDE) by "/"
     str = str.replace(/(\uFE63)/g, '-'); // Replace "small hyphen minus" by "-"
     str = str.replace(/(\u03B8)/g, 't'); // Replace "theta" by "t"
     str = str.replace(/(\u03C0)/g, 'Pi'); // Replace Pi symbol by "Pi"
@@ -3124,8 +3116,8 @@ function finish(errorCode, str, programs, where, lineNum) {
       finishCallBack(errorCode, str, programs, where, lineNum); // call the finish callback
     }
 }
-var CBI_VERSION = 'r1225((1642113571 - 1406844000))';
-var CBI_BUILD_DATE = '2022-01-13';
+var CBI_VERSION = 'r551((1642362651 - 1406844000))';
+var CBI_BUILD_DATE = '2022-01-16';
 
 function cbiGetVersion(withBuildDate) {
     toReturn = "Casio Basic Web Interpreter "+ CBI_VERSION;
