@@ -1480,7 +1480,7 @@ function jsccRun(parts, finishCallBack) {
         for (var line of part.content.split("\n")) {
             manageDirectives(line);
         }
-        programsSrc[part.name] = part.content.split("\n").map((line, index) => (index+1)+"|"+line);
+        programsSrc[part.name] = part.content.split("\n").filter(line => !line.trim().startsWith("#") && !line.trim().startsWith("'") && line.trim() !== "").map((line, index) => (index+1)+"|"+line);
     }
 
     reset();

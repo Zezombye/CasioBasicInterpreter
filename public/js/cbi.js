@@ -2766,7 +2766,7 @@ function jsccRun(parts, finishCallBack) {
         for (var line of part.content.split("\n")) {
             manageDirectives(line);
         }
-        programsSrc[part.name] = part.content.split("\n").map((line, index) => (index+1)+"|"+line);
+        programsSrc[part.name] = part.content.split("\n").filter(line => !line.trim().startsWith("#") && !line.trim().startsWith("'") && line.trim() !== "").map((line, index) => (index+1)+"|"+line);
     }
 
     reset();
@@ -3116,7 +3116,7 @@ function finish(errorCode, str, programs, where, lineNum) {
       finishCallBack(errorCode, str, programs, where, lineNum); // call the finish callback
     }
 }
-var CBI_VERSION = 'r551((1642362651 - 1406844000))';
+var CBI_VERSION = 'r663((1642367707 - 1406844000))';
 var CBI_BUILD_DATE = '2022-01-16';
 
 function cbiGetVersion(withBuildDate) {
