@@ -115,7 +115,6 @@ require(['vs/editor/editor.main'], function() {
 		automaticLayout: true,
         fontFamily: 'DejaVuAvecCasio',
         renderWhitespace: "none",
-		model: null,
 	});
 });
 window.onresize = function (){
