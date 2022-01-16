@@ -4,35 +4,76 @@ require(['vs/editor/editor.main'], function() {
 
 	monaco.languages.register({id: "basic-casio"});
 	monaco.languages.setMonarchTokensProvider("basic-casio", {
-		// Set defaultToken to invalid to see what you do not tokenize yet
-		// defaultToken: 'invalid',
 
-		// The main tokenizer for our languages
-		ignoreCase: false,
+		variables: [
+			"Mat", "List", "Str", "Vct", "Ans",
+			"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+			"a0", "a1", "a2", "a\uE027", "a\uE028", "a\uE029", "anStart",
+			"b0", "b1", "b2", "b\uE027", "b\uE028", "b\uE029", "bnStart",
+			"c0", "c1", "c2", "c\uE027", "c\uE028", "c\uE029", "cnStart",
+			"\uE015", "\u03B8", //r, theta
+		],
+		keywords: [
+			"If", "Else", "Then", "IfEnd", "For", "To", "Step", "Next", "Do", "LpWhile", "While", "WhileEnd", "Prog", "Return", "Stop", "Break", "Goto", "Lbl", "\u25E2",
+		],
+		operatorWords: [
+			"And", "Or", "Xor", "Not", "Rmdr",
+		],
+		keywordOperators: ["=>", ":"],
+		operators: [
+			"~", "+", "-", "*", "/", "^", "<", ">", "=", "!=", "?", "->", "<=", ">=", "%",
+			"\uE064", "\uE00D", "\uE00F", "\uE000", "\uE001", "\uE002", "\uE003", "\uE004", "\uE005", "\u00B2", "\uFE63", "\u221A", "\u2220", "\uE02D", "\uE008", "\uE01B", "\u231F", "\uE02B", "\u00B5",
+		],
+
+		entities: /&.*?;/,
+
+		keywordEntities: [
+			"&disp;",
+		],
+		operatorEntities: [
+			"&neg;", "&E;", "&_10;", "&sqrt;", "&cbrt;", "&nth_root;", "&nCr;", "&nPr;", "&femto;", "&pico;", "&nano;", "&micro;", "&milli;", "&kilo;", "&mega;", "&giga;", "&tera;", "&peta;", "&exa;", "&frac;", "&^-1;", "&^2;", "&angle;"
+		],
+		variableEntities: [
+			"&r;", "&theta;",
+		],
+
+
 		tokenizer: {
 			root: [
 
-                //TODO: add everything
 				[/'[^:\n]*/, 'comment' ],
 				[/^#.*/, "preprocessor"],
-				[/&.*?;"/, "entity"],
+				[/@entities/, {cases: {
+					"@variableEntities": "variable",
+					"@operatorEntities": "operator",
+					"@keywordEntities": "keyword",
+					"@default": "entity",
+				}}],
+				
+				[/\b(S-L-Normal|S-L-Thick|S-L-Broken|S-L-Dot|S-Gph1|S-Gph2|S-Gph3|S-WindAuto|S-WindMan|G-Connect|G-Plot|F-Line|S-L-Thin|1-Variable|2-Variable|S-Gph1|S-Gph2|S-Gph3|BG-None|BG-Pict|StoV-Win|RclV-Win)\b|List-\>Mat\(|Mat-\>List\(|Exp-\>Str/, "function"],
 
-				[/"[^"\\]*(\\.[^"\\]*)*"/, "string"],
+				[/"[^"\\]*(\\.[^"\\]*)*("|$)/, "string"],
 
-				[/\b(Mat|List|Str|Vct|Ans|[A-Z]|([abc](0|1|2|\uE027|\uE028|\uE029|nStart))\b)|&r;|&theta;|[\uE015\u03B8]/, "variable"],
+				[/[\w\uE027-\uE029\uE015\u03B8\u25E2&;$]+/, {cases: {
+					"@variables": "variable",
+					"@keywords": "keyword",
+					"@operatorWords": "operator",
+				}}],
 
-				[/=>|:|&disp;|\u25E2|\b(|If|Else|Then|IfEnd|For|To|Step|Next|Do|LpWhile|While|WhileEnd|Prog|Return|Stop|Break|Goto|Lbl)\b/, "keyword"],
+				[/[-=<>!:*+\/?\^~%]+/, {cases: {
+					"@keywordOperators": "keyword",
+					"@operators": "operator",
+				}}],
 
-				[/\b(And|Or|Xor|Not|Rmdr)\b|&neg;|&E;|&_10;|&sqrt;|&cbrt;|&nth_root;|&nCr;|&nPr;|&femto;|&pico;|&nano;|&micro;|&milli;|&kilo;|&mega;|&giga;|&tera;|&peta;|&exa;|&frac;|&\^-1;|&\^2;|&angle;|\!|\*|\+|\-|\!\=|\/|\:|\<|\=|\>|\?|\^|\~|\%|\uE064|\uE00D|\uE00F|\uE000|\uE001|\uE002|\uE003|\uE004|\uE005|\u00B2|\uFE63|\u221A|\u2220|\uE02D|\uE008|\uE01B|\u231F|\uE02B|\u00B5/, "operator"],
+				[/\uE064|\uE00D|\uE00F|\uE000|\uE001|\uE002|\uE003|\uE004|\uE005|\u00B2|\uFE63|\u221A|\u2220|\uE02D|\uE008|\uE01B|\u231F|\uE02B|\u00B5/, "operator"],
                 
-				[/\b(S-L-Normal|S-L-Thick|S-L-Broken|S-L-Dot|S-Gph1|S-Gph2|S-Gph3|S-WindAuto|S-WindMan|G-Connect|G-Plot|F-Line|S-L-Thin|List-\>Mat\(|Mat-\>List\(|1-Variable|2-Variable|S-Gph1|S-Gph2|S-Gph3|BG-None|BG-Pict|StoV-Win|RclV-Win|Exp-\>Str)\b/, "function"],
 			],
 		},
 	});
 
 	monaco.editor.defineTheme("basic-casio-theme", {
 		base: "vs",
-		inherit: false,
+		inherit: true,
 		rules: [
 			{
 				token: "comment",
@@ -69,7 +110,8 @@ require(['vs/editor/editor.main'], function() {
 	window.editor = monaco.editor.create(document.getElementById('srcCode'), {
 		language: 'basic-casio',
 		theme: "basic-casio-theme",
-		wordWrap: "on",
+		wordWrap: true,
+		wrappingStrategy: "advanced",
 		automaticLayout: true,
         fontFamily: 'DejaVuAvecCasio',
         renderWhitespace: "none",
