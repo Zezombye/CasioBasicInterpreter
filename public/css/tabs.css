@@ -2,14 +2,20 @@
 	height: 20px;
 	line-height: 20px;
 	box-sizing: border-box;
-	color: #999;
+	color: #000;
+	background-color: #BBB;
 	padding: 0 8px;
-	border: 1px solid #999;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	border-bottom: 0;
 	cursor: pointer;
 	float: left;
+	font-family: "DejaVuAvecCasio";
+	font-size: 14px;
 }
 .tab.active {
 	color: #000;
+	background-color: #fff;
 	border-bottom: 1px solid #fff;
 }

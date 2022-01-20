@@ -15,6 +15,7 @@
 
     <script src="../examples/boolTable.json.js"></script>
     <script src="../examples/calendar.json.js"></script>
+    <script src="../examples/characterTest.json.js"></script>
     <script src="../examples/city.json.js"></script>
     <script src="../examples/countdown.json.js"></script>
     <script src="../examples/cycloid.json.js"></script>
@@ -33,6 +34,7 @@
     <script src="../examples/mazeGenerator.json.js"></script>
     <script src="../examples/menu.json.js"></script>
     <script src="../examples/polygon.json.js"></script>
+    <script src="../examples/puissance4.json.js"></script>
     <script src="../examples/randomNum.json.js"></script>
     <script src="../examples/randomDots.json.js"></script>
     <script src="../examples/screenSaver.json.js"></script>
@@ -211,6 +213,7 @@ button {
         <button onclick="loadProg('city');">City</button>
         <button onclick="loadProg('labyrinth');">Labyrinthe</button>
         <button onclick="loadProg('tentacles');">Tentacules</button>
+        <button onclick="loadProg('puissance4');">Puissance 4</button>
         <br>
         <button onclick="loadProg('worldMap');">World map</button>
         <button onclick="loadProg('footballPitch');">Football pitch</button>
@@ -220,7 +223,9 @@ button {
         <button onclick="loadProg('list3');">List 3</button>
         <button onclick="loadProg('lst2tab');">Lst2Tab</button>
         <button onclick="loadProg('menu');">Menu</button>
+        <br>
         <button onclick="loadProg('syntaxColorationTest');">Syntax coloration test</button>
+        <button onclick="loadProg('characterTest');">Character test</button>
         <br><br>
       </div>
     </div>
@@ -472,7 +477,7 @@ button {
             var decompressedSrcCode = LZString.decompressFromEncodedURIComponent(compressedSrcCode);
             loadProgFromSrc(decompressedSrcCode);
           } else {
-            loadProg("screenSaver");
+            loadProg("puissance4");
           }
       }
 
