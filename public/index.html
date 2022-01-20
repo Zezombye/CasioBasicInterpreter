@@ -7,7 +7,9 @@
     <script type="text/javascript" src="js/opcodes.js"></script>
     <script type="text/javascript" src="js/casiotoAscii.js"></script>
     <script type="text/javascript" src="js/g1mtojson.js"></script>
+    <script type="text/javascript" src="js/calcKeys.js"></script>
     <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="css/feedback.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 
@@ -42,68 +44,8 @@
     <script src="../examples/tentacles.json.js"></script>
     <script src="../examples/textMenu.json.js"></script>
     <script src="../examples/worldMap.json.js"></script>
-<style>
-form {
-  margin-block-end: 0;
-}
-
-button {
-  border-radius: 4px;
-  margin: 2px;
-}
-
-.buttonVert {
-  display: inline-block;
-  padding: 2px 4px;
-  margin: 3px 2px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #85db85;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px #999;
-}
-
-.buttonVert:hover {background-color: #52c452}
-
-.buttonVert:active {
-  background-color: #52c452;
-  box-shadow: 0 0 #666;
-  transform: translateY(2px) translateX(2px);
-}
-
-.CodeMirror {
-  background: transparent;
-}
-
-.CodeMirror-linenumber {
-  color: blue;
-}
-
-#srcCode:not(.readOnly) {
-  background-color: white;
-}
-
-#srcCode.readOnly {
-  background-color: #eee;
-}
-
-.error {
-  background-color: lightpink;
-}
-
-@font-face {
-    font-family: 'DejaVuAvecCasio'; /*a name to be used later*/
-    src: url('../fonts/DejaVuAvecCasio.ttf'); /*URL to font*/
-}
-
-</style>
   </head>
-  <body style="background-color: lightsteelblue">
+  <body>
     <div style="text-align: center">
       <div>
         <i><script type="text/javascript">document.write(cbiGetVersion(true));</script></i>
@@ -116,38 +58,7 @@ button {
           <canvas id="canvas3" width="508" height="252" style="z-index:-1; position: relative; background-color: white"></canvas>
         </div>
 
-        <div style="display: block; padding-bottom: 4px;" >
-         <!-- onclick="calcKeyDown(79); setTimeout(calcKeyUp, 200)" -->
-         <button class="buttonVert" onmousedown="calcKeyDown(79)" onmouseup="calcKeyUp()" >F1</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(69)" onmouseup="calcKeyUp()" >F2</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(59)" onmouseup="calcKeyUp()" >F3</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(49)" onmouseup="calcKeyUp()" >F4</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(39)" onmouseup="calcKeyUp()" >F5</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(29)" onmouseup="calcKeyUp()" >F6</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(38)" onmouseup="calcKeyUp()" >←</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(28)" onmouseup="calcKeyUp()" >↑</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(37)" onmouseup="calcKeyUp()" >↓</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(27)" onmouseup="calcKeyUp()" >→</button>
-        <br>
-         <button class="buttonVert" onmousedown="calcKeyDown(71)" onmouseup="calcKeyUp()" >0</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(72)" onmouseup="calcKeyUp()" >1</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(62)" onmouseup="calcKeyUp()" >2</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(52)" onmouseup="calcKeyUp()" >3</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(73)" onmouseup="calcKeyUp()" >4</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(63)" onmouseup="calcKeyUp()" >5</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(53)" onmouseup="calcKeyUp()" >6</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(74)" onmouseup="calcKeyUp()" >7</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(64)" onmouseup="calcKeyUp()" >8</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(54)" onmouseup="calcKeyUp()" >9</button>
-        <br>
-         <button class="buttonVert" onmousedown="calcKeyDown(61)" onmouseup="calcKeyUp()" >.</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(42)" onmouseup="calcKeyUp()" >+</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(32)" onmouseup="calcKeyUp()" >-</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(43)" onmouseup="calcKeyUp()" >×</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(33)" onmouseup="calcKeyUp()" >÷</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(44)" onmouseup="calcKeyUp()" >DEL</button>
-         <button class="buttonVert" onmousedown="calcKeyDown(31)" onmouseup="calcKeyUp()" >Exe</button>
-        </div>
+        <div id="calculator-keys"></div>
          <form action="">
            <input type="radio" id="black_white" name="colorScheme" onchange="chooseColorScheme('black&white');" >Black/White
            <input type="radio" id="blue_green" name="colorScheme" onchange="chooseColorScheme('blue&green');" >Blue/Green
@@ -336,6 +247,26 @@ button {
         request = null;
       }
 
+      //Create calculator keys
+      for (var row of calcKeys) {
+        calcKeyDiv = document.getElementById("calculator-keys");
+         //<button class="buttonVert" onmousedown="calcKeyDown(79)" onmouseup="calcKeyUp()" >F1</button>
+        for (var key of row) {
+          keyElem = document.createElement("button");
+          keyElem.className = "buttonVert";
+          keyElem.innerText = key.displayName;
+          let calcCode = key.calcCode;
+          keyElem.onmousedown = function() {
+            calcKeyDown(calcCode);
+          }
+          keyElem.onmouseup = function() {
+            calcKeyUp();
+          }
+          calcKeyDiv.appendChild(keyElem);
+        }
+        calcKeyDiv.appendChild(document.createElement("br"));
+      }
+
       function insertSpecialChar(specialChar) {
         /*myCodeMirror.replaceSelection(specialChar);
         myCodeMirror.focus();*/
@@ -477,7 +408,7 @@ button {
             var decompressedSrcCode = LZString.decompressFromEncodedURIComponent(compressedSrcCode);
             loadProgFromSrc(decompressedSrcCode);
           } else {
-            loadProg("puissance4");
+            loadProg("helloWorld");
           }
       }
 
@@ -493,25 +424,6 @@ $("#share").on("click" , function(event){
         document.execCommand("copy");
     });
 });
-
-// Replace non-visible caracters by visible ones.
-$("#srcCode").bind('paste drop', function(e) {
-    var elem = $(this);
-
-    setTimeout(function() {
-        // gets the copied text after a specified time (100 milliseconds)
-        //var savedCursorPos = myCodeMirror.getCursor();
-        var text = window.editor.getValue();
-        text = text.replace(/(\uE015)/g, 'r'); // Replace "rho" (U+E015 used in BIDE) by "r"
-        text = text.replace(/(\uE016)/g, 'i'); // Replace "i" (imaginary unit of complex number) (U+E016 used in BIDE) by "i"
-        text = text.replace(/(\uE063)/g, '/'); // Replace "slash" (U+E063 used in BIDE) by "/"
-        window.editor.setValue(text);
-        window.editor.setScrollPosition({scrollTop: 0})
-        //myCodeMirror.setCursor(savedCursorPos); // Replace cursor where it was (because setting the value of the content place cursor at beginning)
-    }, 100);
-});
-
-      //executeCode();
     </script>
 
   </body>
