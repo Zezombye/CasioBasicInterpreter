@@ -1,0 +1,6064 @@
+var opcodes = [{
+    "hex": "",
+    "relevance": 0,
+    "text": "\t"
+}, {
+    "hex": 0x1,
+    "relevance": 0,
+    "text": "&femto;"
+}, {
+    "hex": 0x2,
+    "relevance": 0,
+    "text": "&pico;"
+}, {
+    "hex": 0x3,
+    "relevance": 0,
+    "text": "&nano;",
+    "unicode": ""
+}, {
+    "hex": 0x4,
+    "relevance": 0,
+    "text": "&micro;",
+    "unicode": "µ"
+}, {
+    "hex": 0x5,
+    "relevance": 0,
+    "text": "&milli;"
+}, {
+    "hex": 0x6,
+    "relevance": 0,
+    "text": "&kilo;"
+}, {
+    "hex": 0x7,
+    "relevance": 0,
+    "text": "&mega;",
+    "unicode": ""
+}, {
+    "hex": 0x8,
+    "relevance": 0,
+    "text": "&giga;",
+    "unicode": ""
+}, {
+    "hex": 0x9,
+    "relevance": 0,
+    "text": "&tera;",
+    "unicode": ""
+}, {
+    "hex": 0xA,
+    "relevance": 0,
+    "text": "&peta;",
+    "unicode": ""
+}, {
+    "hex": 0xB,
+    "relevance": 0,
+    "text": "&exa;",
+    "unicode": ""
+}, {
+    "hex": 0xC,
+    "relevance": 5,
+    "text": "&disp;",
+    "unicode": "◢"
+}, {
+    "hex": 0xD,
+    "relevance": 0,
+    "text": "\n"
+}, {
+    "hex": 0xE,
+    "relevance": 0,
+    "text": "->"
+}, {
+    "hex": 0xF,
+    "relevance": 5,
+    "text": "&E;",
+    "unicode": ""
+}, {
+    "hex": 0x10,
+    "relevance": 0,
+    "text": "<="
+}, {
+    "hex": 0x11,
+    "relevance": 0,
+    "text": "!="
+}, {
+    "hex": 0x12,
+    "relevance": 0,
+    "text": ">="
+}, {
+    "hex": 0x13,
+    "relevance": 0,
+    "text": "=>"
+}, {
+    "hex": 0x14,
+    "relevance": 0,
+    "text": "f1",
+    "unicode": "f₁"
+}, {
+    "hex": 0x15,
+    "relevance": 0,
+    "text": "f2",
+    "unicode": "f₂"
+}, {
+    "hex": 0x16,
+    "relevance": 0,
+    "text": "f3",
+    "unicode": "f₃"
+}, {
+    "hex": 0x17,
+    "relevance": 0,
+    "text": "f4",
+    "unicode": "f₄"
+}, {
+    "hex": 0x18,
+    "relevance": 0,
+    "text": "f5",
+    "unicode": "f₅"
+}, {
+    "hex": 0x19,
+    "relevance": 0,
+    "text": "f6",
+    "unicode": "f₆"
+}, {
+    "hex": 0x1A,
+    "relevance": 0,
+    "text": "&hexA;",
+    "unicode": ""
+}, {
+    "hex": 0x1B,
+    "relevance": 0,
+    "text": "&hexB;",
+    "unicode": ""
+}, {
+    "hex": 0x1C,
+    "relevance": 0,
+    "text": "&hexC;"
+}, {
+    "hex": 0x1D,
+    "relevance": 0,
+    "text": "&hexD;",
+    "unicode": ""
+}, {
+    "hex": 0x1E,
+    "relevance": 0,
+    "text": "&hexE;",
+    "unicode": ""
+}, {
+    "hex": 0x1F,
+    "relevance": 0,
+    "text": "&hexF;",
+    "unicode": ""
+}, {
+    "hex": 0x22,
+    "relevance": 0,
+    "text": "\""
+}, {
+    "hex": 0x26,
+    "relevance": 0,
+    "text": "&amp;"
+}, {
+    "hex": 0x27,
+    "relevance": 0,
+    "text": "'"
+}, {
+    "hex": 0x28,
+    "relevance": 0,
+    "text": "("
+}, {
+    "hex": 0x29,
+    "relevance": 0,
+    "text": ")"
+}, {
+    "hex": 0x2A,
+    "relevance": 0,
+    "text": "&ascii_*;",
+    "unicode": ""
+}, {
+    "hex": 0x2B,
+    "relevance": 0,
+    "text": "&ascii_+;"
+}, {
+    "hex": 0x2c,
+    "relevance": 0,
+    "text": ","
+}, {
+    "hex": 0x2D,
+    "relevance": 0,
+    "text": "&ascii_-;"
+}, {
+    "hex": 0x2e,
+    "relevance": 0,
+    "text": "."
+}, {
+    "hex": 0x2F,
+    "relevance": 0,
+    "text": "&ascii_/;",
+    "unicode": ""
+}, {
+    "hex": 0x30,
+    "relevance": 0,
+    "text": "0"
+}, {
+    "hex": 0x31,
+    "relevance": 0,
+    "text": "1"
+}, {
+    "hex": 0x32,
+    "relevance": 0,
+    "text": "2"
+}, {
+    "hex": 0x33,
+    "relevance": 0,
+    "text": "3"
+}, {
+    "hex": 0x34,
+    "relevance": 0,
+    "text": "4"
+}, {
+    "hex": 0x35,
+    "relevance": 0,
+    "text": "5"
+}, {
+    "hex": 0x36,
+    "relevance": 0,
+    "text": "6"
+}, {
+    "hex": 0x37,
+    "relevance": 0,
+    "text": "7"
+}, {
+    "hex": 0x38,
+    "relevance": 0,
+    "text": "8"
+}, {
+    "hex": 0x39,
+    "relevance": 0,
+    "text": "9"
+}, {
+    "hex": 0x3a,
+    "relevance": 0,
+    "text": ":"
+}, {
+    "hex": 0x3c,
+    "relevance": 0,
+    "text": "<"
+}, {
+    "hex": 0x3d,
+    "relevance": 0,
+    "text": "="
+}, {
+    "hex": 0x3D,
+    "relevance": 0,
+    "text": "&=;"
+}, {
+    "hex": 0x3e,
+    "relevance": 0,
+    "text": ">"
+}, {
+    "hex": 0x3f,
+    "relevance": 0,
+    "text": "?"
+}, {
+    "hex": 0x41,
+    "relevance": 0,
+    "text": "A"
+}, {
+    "hex": 0x42,
+    "relevance": 0,
+    "text": "B"
+}, {
+    "hex": 0x43,
+    "relevance": 0,
+    "text": "C"
+}, {
+    "hex": 0x44,
+    "relevance": 0,
+    "text": "D"
+}, {
+    "hex": 0x45,
+    "relevance": 0,
+    "text": "E"
+}, {
+    "hex": 0x46,
+    "relevance": 0,
+    "text": "F"
+}, {
+    "hex": 0x47,
+    "relevance": 0,
+    "text": "G"
+}, {
+    "hex": 0x48,
+    "relevance": 0,
+    "text": "H"
+}, {
+    "hex": 0x49,
+    "relevance": 0,
+    "text": "I"
+}, {
+    "hex": 0x4a,
+    "relevance": 0,
+    "text": "J"
+}, {
+    "hex": 0x4b,
+    "relevance": 0,
+    "text": "K"
+}, {
+    "hex": 0x4c,
+    "relevance": 0,
+    "text": "L"
+}, {
+    "hex": 0x4d,
+    "relevance": 0,
+    "text": "M"
+}, {
+    "hex": 0x4e,
+    "relevance": 0,
+    "text": "N"
+}, {
+    "hex": 0x4f,
+    "relevance": 0,
+    "text": "O"
+}, {
+    "hex": 0x50,
+    "relevance": 0,
+    "text": "P"
+}, {
+    "hex": 0x51,
+    "relevance": 0,
+    "text": "Q"
+}, {
+    "hex": 0x52,
+    "relevance": 0,
+    "text": "R"
+}, {
+    "hex": 0x53,
+    "relevance": 0,
+    "text": "S"
+}, {
+    "hex": 0x54,
+    "relevance": 0,
+    "text": "T"
+}, {
+    "hex": 0x55,
+    "relevance": 0,
+    "text": "U"
+}, {
+    "hex": 0x56,
+    "relevance": 0,
+    "text": "V"
+}, {
+    "hex": 0x57,
+    "relevance": 0,
+    "text": "W"
+}, {
+    "hex": 0x58,
+    "relevance": 0,
+    "text": "X"
+}, {
+    "hex": 0x59,
+    "relevance": 0,
+    "text": "Y"
+}, {
+    "hex": 0x5a,
+    "relevance": 0,
+    "text": "Z"
+}, {
+    "hex": 0x5b,
+    "relevance": 0,
+    "text": "["
+}, {
+    "hex": 0x5c,
+    "relevance": 0,
+    "text": "\\"
+}, {
+    "hex": 0x5d,
+    "relevance": 0,
+    "text": "]"
+}, {
+    "hex": 0x5E,
+    "relevance": 0,
+    "text": "&ascii_^;"
+}, {
+    "hex": 0x7b,
+    "relevance": 0,
+    "text": "{"
+}, {
+    "hex": 0x7d,
+    "relevance": 0,
+    "text": "}"
+}, {
+    "hex": 0x7e,
+    "relevance": 0,
+    "text": "~"
+}, {
+    "hex": 0x80,
+    "relevance": 0,
+    "text": "Pol("
+}, {
+    "hex": 0x81,
+    "relevance": 3,
+    "text": "sin "
+}, {
+    "hex": 0x82,
+    "relevance": 3,
+    "text": "cos "
+}, {
+    "hex": 0x83,
+    "relevance": 3,
+    "text": "tan "
+}, {
+    "hex": 0x84,
+    "relevance": 0,
+    "text": "&hex;"
+}, {
+    "hex": 0x85,
+    "relevance": 3,
+    "text": "ln "
+}, {
+    "hex": 0x86,
+    "relevance": 3,
+    "text": "&sqrt;",
+    "unicode": "√"
+}, {
+    "hex": 0x87,
+    "relevance": 5,
+    "text": "&neg;",
+    "unicode": "﹣"
+}, {
+    "hex": 0x88,
+    "relevance": 0,
+    "text": "&nPr;",
+    "unicode": ""
+}, {
+    "hex": 0x89,
+    "relevance": 0,
+    "text": "+"
+}, {
+    "hex": 0x8A,
+    "relevance": 0,
+    "text": "&bitwisexnor;"
+}, {
+    "hex": 0x8B,
+    "relevance": 4,
+    "text": "&^2;",
+    "unicode": "²"
+}, {
+    "hex": 0x8C,
+    "relevance": 0,
+    "text": "&dms;",
+    "unicode": ""
+}, {
+    "hex": 0x8D,
+    "relevance": 0,
+    "text": "&integral;(",
+    "unicode": "∫("
+}, {
+    "hex": 0x8E,
+    "relevance": 0,
+    "text": "Mod"
+}, {
+    "hex": 0x8F,
+    "relevance": 0,
+    "text": "sum(x^2)",
+    "unicode": "Σx²"
+}, {
+    "hex": 0x90,
+    "relevance": 0,
+    "text": "&x;"
+}, {
+    "hex": 0x91,
+    "relevance": 0,
+    "text": "asin "
+}, {
+    "hex": 0x92,
+    "relevance": 0,
+    "text": "acos "
+}, {
+    "hex": 0x93,
+    "relevance": 0,
+    "text": "atan "
+}, {
+    "hex": 0x94,
+    "relevance": 0,
+    "text": "&dec;"
+}, {
+    "hex": 0x95,
+    "relevance": 4,
+    "text": "log "
+}, {
+    "hex": 0x96,
+    "relevance": 4,
+    "text": "&cbrt;",
+    "unicode": "√"
+}, {
+    "hex": 0x97,
+    "relevance": 4,
+    "text": "Abs ",
+    "syntax": "Abs <number>\nAbs <list>\nAbs <mat>",
+    "description": "Calculates the absolute value of the number (distance from 0 in the complex plane). If a list/matrix is given, returns a list/matrix with the absolute value of each case.\n\nDo not forget the parentheses if you are calculating the absolute value of a complex number.",
+    "example": "[code]Abs -5[/code] returns 5\n[code]Abs (1+2i)[/code] returns sqrt(5)"
+}, {
+    "hex": 0x98,
+    "relevance": 0,
+    "text": "&nCr;",
+    "unicode": ""
+}, {
+    "hex": 0x99,
+    "relevance": 0,
+    "text": "&-;",
+    "unicode": "-"
+}, {
+    "hex": 0x9A,
+    "relevance": 0,
+    "text": "&bitwisexor;"
+}, {
+    "hex": 0x9B,
+    "relevance": 4,
+    "text": "&^-1;",
+    "unicode": ""
+}, {
+    "hex": 0x9C,
+    "relevance": 0,
+    "text": "&deg;",
+    "unicode": "°"
+}, {
+    "hex": 0x9E,
+    "relevance": 0,
+    "text": "Med"
+}, {
+    "hex": 0x9F,
+    "relevance": 0,
+    "text": "&sum(x);",
+    "unicode": "Σx"
+}, {
+    "hex": 0xA0,
+    "relevance": 0,
+    "text": "Rec("
+}, {
+    "hex": 0xA1,
+    "relevance": 0,
+    "text": "sinh "
+}, {
+    "hex": 0xA2,
+    "relevance": 0,
+    "text": "cosh "
+}, {
+    "hex": 0xA3,
+    "relevance": 0,
+    "text": "tanh "
+}, {
+    "hex": 0xA4,
+    "relevance": 0,
+    "text": "&oct;"
+}, {
+    "hex": 0xA5,
+    "relevance": 4,
+    "text": "e^"
+}, {
+    "hex": 0xA6,
+    "relevance": 5,
+    "text": "Int ",
+    "syntax": "Int <number>\nInt <list>\nInt <matrix>",
+    "description": "Returns the given number with the fractional part set to 0. If the number is complex, it also sets the fractional complex part to 0.\n\nIf a list/matrix is given, it returns a list/matrix with the integer part of each case.\n\nSee also : Frac, Intg",
+    "example": "[code]Int {-3.4, 4.5+2.6i}[code] returns {-3, 4+2i}"
+}, {
+    "hex": 0xA7,
+    "relevance": 0,
+    "text": "&bitwiseNot;"
+}, {
+    "hex": 0xA8,
+    "relevance": 0,
+    "text": "^"
+}, {
+    "hex": 0xA9,
+    "relevance": 0,
+    "text": "*"
+}, {
+    "hex": 0xAA,
+    "relevance": 0,
+    "text": "&bitwiseor;"
+}, {
+    "hex": 0xAB,
+    "relevance": 0,
+    "text": "&fact;",
+    "syntax": "<int>&fact;",
+    "example": "[code]3&fact;[/code] is 3*2*1=6",
+    "description": "Calculates the factorial of the given integer."
+}, {
+    "hex": 0xAC,
+    "relevance": 0,
+    "text": "&rad;",
+    "unicode": ""
+}, {
+    "hex": 0xAD,
+    "relevance": 0,
+    "text": "minY"
+}, {
+    "hex": 0xAE,
+    "relevance": 0,
+    "text": "minX"
+}, {
+    "hex": 0xAF,
+    "relevance": 0,
+    "text": "&n_stat;"
+}, {
+    "hex": 0xB1,
+    "relevance": 0,
+    "text": "asinh "
+}, {
+    "hex": 0xB2,
+    "relevance": 0,
+    "text": "acosh "
+}, {
+    "hex": 0xB3,
+    "relevance": 0,
+    "text": "atanh "
+}, {
+    "hex": 0xB4,
+    "relevance": 0,
+    "text": "&bin;"
+}, {
+    "hex": 0xB5,
+    "relevance": 4,
+    "text": "&_10;",
+    "unicode": ""
+}, {
+    "hex": 0xB6,
+    "relevance": 0,
+    "text": "Frac ",
+    "syntax": "Frac <value>\nFrac <list>\nFrac <mat>",
+    "description": "Returns the fractionary part of the given value. If it is a list or matrix, it returns a list/matrix with their fractionary parts (as if Frac were applied to each case).",
+    "example": "[code]Frac {1.5, 3}[/code] returns {0.5, 0}"
+}, {
+    "hex": 0xB7,
+    "relevance": 0,
+    "text": "Neg "
+}, {
+    "hex": 0xB8,
+    "relevance": 4,
+    "text": "&nth_root;",
+    "unicode": "√"
+}, {
+    "hex": 0xB9,
+    "relevance": 0,
+    "text": "/"
+}, {
+    "hex": 0xBA,
+    "relevance": 0,
+    "text": "&bitwiseand;"
+}, {
+    "hex": 0xBB,
+    "relevance": 0,
+    "text": "&frac;",
+    "unicode": "⌟"
+}, {
+    "hex": 0xBC,
+    "relevance": 0,
+    "text": "&gra;",
+    "unicode": ""
+}, {
+    "hex": 0xBD,
+    "relevance": 0,
+    "text": "maxY"
+}, {
+    "hex": 0xBE,
+    "relevance": 0,
+    "text": "maxX"
+}, {
+    "hex": 0xBF,
+    "relevance": 0,
+    "text": "sum(y^2)",
+    "unicode": "Σy²"
+}, {
+    "hex": 0xC0,
+    "relevance": 5,
+    "text": "Ans",
+    "description": "The temporary variable Ans.\n\nWhen you perform a calculation without assigning the result to a variable, the result of this calculation is stored in Ans. If it is a list/matrix, it is stored in List Ans or Mat Ans."
+}, {
+    "hex": 0xC1,
+    "relevance": 4,
+    "text": "Ran# ",
+    "description": "Returns a random number between 0 (included) and 1 (excluded)."
+}, {
+    "hex": 0xC2,
+    "relevance": 0,
+    "text": "&x_overline;",
+    "unicode": ""
+}, {
+    "hex": 0xC3,
+    "relevance": 0,
+    "text": "&y_overline;",
+    "unicode": ""
+}, {
+    "hex": 0xC4,
+    "relevance": 0,
+    "text": "sigma(x)",
+    "unicode": "σx"
+}, {
+    "hex": 0xC5,
+    "relevance": 0,
+    "text": "sx"
+}, {
+    "hex": 0xC6,
+    "relevance": 0,
+    "text": "sigma(y)",
+    "unicode": "σy"
+}, {
+    "hex": 0xC7,
+    "relevance": 0,
+    "text": "sy"
+}, {
+    "hex": 0xC8,
+    "relevance": 0,
+    "text": "&a_reg;"
+}, {
+    "hex": 0xC9,
+    "relevance": 0,
+    "text": "&b_reg;"
+}, {
+    "hex": 0xCA,
+    "relevance": 0,
+    "text": "&r_reg;"
+}, {
+    "hex": 0xCB,
+    "relevance": 0,
+    "text": "&x^;",
+    "unicode": ""
+}, {
+    "hex": 0xCC,
+    "relevance": 0,
+    "text": "&y^;",
+    "unicode": ""
+}, {
+    "hex": 0xCD,
+    "relevance": 5,
+    "text": "&r;",
+    "unicode": ""
+}, {
+    "hex": 0xCE,
+    "relevance": 5,
+    "text": "&theta;",
+    "unicode": "θ"
+}, {
+    "hex": 0xCF,
+    "relevance": 0,
+    "text": "sum(y)",
+    "unicode": "Σy"
+}, {
+    "hex": 0xD0,
+    "relevance": 5,
+    "text": "&pi;",
+    "unicode": "π"
+}, {
+    "hex": 0xD1,
+    "relevance": 5,
+    "text": "Cls",
+    "description": "Clears the graphical screen, but not the ViewWindow. To clear the ViewWindow, see ClrGraph."
+}, {
+    "hex": 0xD3,
+    "relevance": 0,
+    "text": "Rnd"
+}, {
+    "hex": 0xD4,
+    "relevance": 0,
+    "text": "Dec"
+}, {
+    "hex": 0xD5,
+    "relevance": 0,
+    "text": "Hex"
+}, {
+    "hex": 0xD6,
+    "relevance": 0,
+    "text": "Bin"
+}, {
+    "hex": 0xD7,
+    "relevance": 0,
+    "text": "Oct"
+}, {
+    "hex": 0xD8,
+    "relevance": 0,
+    "text": "&white_rectangle;",
+    "unicode": "▯"
+}, {
+    "hex": 0xD9,
+    "relevance": 0,
+    "text": "Norm ",
+    "syntax": "Norm <1-2>",
+    "description": "Sets the display mode to Normal.\n\nIf Norm 1 is selected, the number will not be converted to scientific notation if 10^-2 ≤ x < 10^10.\nIf Norm 2 is selected, the number will not be converted to scientific notation if 10^-9 ≤ x < 10^10.",
+    "example": "With [code]Norm 1[/code]: [code]0.003[/code] will display as [code]3-03[/code]\nWith [code]Norm 2[/code]: [code]0.003[/code] will display as [code]0.003[/code]"
+}, {
+    "hex": 0xDA,
+    "relevance": 0,
+    "text": "Deg",
+    "description": "Sets the calculation mode to Degrees. See also : Rad, Gra"
+}, {
+    "hex": 0xDB,
+    "relevance": 0,
+    "text": "Rad",
+    "description": "Sets the calculation mode to Radians (360 deg = 2pi rad). See also : Deg, Gra"
+}, {
+    "hex": 0xDC,
+    "relevance": 0,
+    "text": "Gra",
+    "description": "Sets the calculation mode to Gradians (1 gra = 1/400th of circle). See also : Deg, Rad"
+}, {
+    "hex": 0xDD,
+    "relevance": 0,
+    "text": "Eng"
+}, {
+    "hex": 0xDE,
+    "relevance": 0,
+    "text": "Intg ",
+    "syntax": "Intg <number>\nIntg <list>\nIntg <matrix>",
+    "description": "Equivalent of the floor() function in other programming languages. Returns the highest integer that is lower than the given number. If the number is complex, it also returns the floor of the complex part.\n\nIf a list/matrix is given, it returns a list/matrix with the floor of each case.\n\nSee also : Int",
+    "example": "[code]Intg {-3.4, 4.5+2.6i}[code] returns {-4, 4+2i}"
+}, {
+    "hex": 0xDF,
+    "relevance": 0,
+    "text": "sum(x,y)",
+    "unicode": "Σxy"
+}, {
+    "hex": 0xE0,
+    "relevance": 0,
+    "text": "Plot ",
+    "syntax": "Plot <x>, <y>",
+    "description": "If it is the last instruction of the program, or followed by a Disp (◢), it stops the execution until the user presses [EXE], and positions the graphical cursor at the given coordinates. Else, it draws a pixel at the specified coordinates (according to the ViewWindow), same as PlotOn.",
+    "example": "[code]Plot 10, 50◢[/code] will display the graphical screen, with the cursor positioned as (10, 50) according to the ViewWindow."
+}, {
+    "hex": 0xE1,
+    "relevance": 0,
+    "text": "Line",
+    "description": "Draws a line between two points drawn by Plot in the previous instructions. This function is deprecated; see F-Line to draw lines.",
+    "example": "[code]Plot 1,2\nPlot 3,4\nLine[/code]"
+}, {
+    "hex": 0xE2,
+    "relevance": 5,
+    "text": "Lbl ",
+    "syntax": "Lbl <0-9, A-Z, r, theta>",
+    "description": "Used by Goto and Menu functions. There cannot be two labels with the same number in the same program.\n\nSee also : Goto",
+    "example": "[code]Lbl 3[/code] will be jumped to upon executing [code]Goto 3[/code]"
+}, {
+    "hex": 0xE3,
+    "relevance": 0,
+    "text": "Fix ",
+    "syntax": "Fix <0-9>",
+    "description": "Fixes the number of decimals displayed when displaying a number. Note that it does not affect the internal calculations, only the display.\n\nThe result is rounded, or padded with 0's.\n\nThis function only supports literals, using [code]Fix A[/code] will give a syntax error.",
+    "example": "With [code]Fix 3[/code] :\n- 0.5678 is displayed as 0.568\n- 0.4 is displayed as 0.400"
+}, {
+    "hex": 0xE4,
+    "relevance": 0,
+    "text": "Sci "
+}, {
+    "hex": 0xE8,
+    "relevance": 0,
+    "text": "Dsz ",
+    "syntax": "Dsz <alphaVar>",
+    "description": "Decrements the given alpha var (A-Z, r, theta) by 1. [b]If the variable is 0 after the decrementation, the following instruction will not be executed![/b]\n\nThe instruction takes slightly less time than [code]alphaVar-1->alphaVar[/code], but it is advised not to use it because of the quirk, or at least to put an ':' after it so that it always executes the next instruction.\n\nSee also : Isz",
+    "example": "[code]1->A : Dsz A : \"Test\"[/code] - \"Test\" will not be displayed because A = 0 after the decrementation."
+}, {
+    "hex": 0xE9,
+    "relevance": 0,
+    "text": "Isz ",
+    "syntax": "Isz <alphaVar>",
+    "description": "Increments the given alpha var (A-Z, r, theta) by 1. [b]If the variable is 0 after the incrementation, the following instruction will not be executed![/b]\n\nThe instruction takes slightly less time than [code]alphaVar+1->alphaVar[/code], but it is advised not to use it because of the quirk, or at least to put an ':' after it so that it always executes the next instruction.\n\nSee also : Dsz",
+    "example": "[code]-1->A : Isz A : \"Test\"[/code] - \"Test\" will not be displayed because A = 0 after the incrementation."
+}, {
+    "hex": 0xEA,
+    "relevance": 0,
+    "text": "Factor "
+}, {
+    "hex": 0xEB,
+    "relevance": 5,
+    "text": "ViewWindow "
+}, {
+    "hex": 0xEC,
+    "relevance": 5,
+    "text": "Goto ",
+    "syntax": "Goto <0-9, A-Z, r, theta>",
+    "description": "Jumps to the corresponding Lbl, and continues execution from there.\n\nGotos should not be used because excessive use of them make the program flow very difficult to understand. Use subprograms (see Prog), or loops (While/WhileEnd or Do/LpWhile).\n\nGotos are bound to the program, meaning they cannot jump to a label in another program.",
+    "example": "[code]Goto 2[/code] will jump to [code]Lbl 2[/code]"
+}, {
+    "hex": 0xED,
+    "relevance": 5,
+    "text": "Prog "
+}, {
+    "hex": 0xEE,
+    "relevance": 0,
+    "text": "Graph Y="
+}, {
+    "hex": 0xEF,
+    "relevance": 0,
+    "text": "Graph &integral;",
+    "unicode": "Graph ∫"
+}, {
+    "hex": 0xF0,
+    "relevance": 0,
+    "text": "Graph Y>"
+}, {
+    "hex": 0xF1,
+    "relevance": 0,
+    "text": "Graph Y<"
+}, {
+    "hex": 0xF2,
+    "relevance": 0,
+    "text": "Graph Y>="
+}, {
+    "hex": 0xF3,
+    "relevance": 0,
+    "text": "Graph Y<="
+}, {
+    "hex": 0xF4,
+    "relevance": 0,
+    "text": "Graph r="
+}, {
+    "hex": 0xF5,
+    "relevance": 5,
+    "text": "Graph(X,Y)=("
+}, {
+    "hex": 0xF6,
+    "relevance": 0,
+    "text": "&,;"
+}, {
+    "hex": 0xFB,
+    "relevance": 0,
+    "text": "&prob_P(;"
+}, {
+    "hex": 0xFC,
+    "relevance": 0,
+    "text": "&prob_Q(;"
+}, {
+    "hex": 0xFD,
+    "relevance": 0,
+    "text": "&prob_R(;"
+}, {
+    "hex": 0xFE,
+    "relevance": 0,
+    "text": "&prob_t(;"
+}, {
+    "hex": 0x7F00,
+    "relevance": 0,
+    "text": "Xmin"
+}, {
+    "hex": 0x7F01,
+    "relevance": 0,
+    "text": "Xmax"
+}, {
+    "hex": 0x7F02,
+    "relevance": 0,
+    "text": "Xscl"
+}, {
+    "hex": 0x7F04,
+    "relevance": 0,
+    "text": "Ymin"
+}, {
+    "hex": 0x7F05,
+    "relevance": 0,
+    "text": "Ymax"
+}, {
+    "hex": 0x7F06,
+    "relevance": 0,
+    "text": "Yscl"
+}, {
+    "hex": 0x7F08,
+    "relevance": 0,
+    "text": "T&theta;min",
+    "unicode": "Tθmin"
+}, {
+    "hex": 0x7F09,
+    "relevance": 0,
+    "text": "T&theta;max",
+    "unicode": "Tθmax"
+}, {
+    "hex": 0x7F0A,
+    "relevance": 0,
+    "text": "T&theta;ptch",
+    "unicode": "Tθptch"
+}, {
+    "hex": 0x7F0B,
+    "relevance": 0,
+    "text": "Xfct"
+}, {
+    "hex": 0x7F0C,
+    "relevance": 0,
+    "text": "Yfct"
+}, {
+    "hex": 0x7F0D,
+    "relevance": 0,
+    "text": "D Start"
+}, {
+    "hex": 0x7F0E,
+    "relevance": 0,
+    "text": "D End"
+}, {
+    "hex": 0x7F0F,
+    "relevance": 0,
+    "text": "D pitch"
+}, {
+    "hex": 0x7F10,
+    "relevance": 0,
+    "text": "RightXmin"
+}, {
+    "hex": 0x7F11,
+    "relevance": 0,
+    "text": "RightXmax"
+}, {
+    "hex": 0x7F12,
+    "relevance": 0,
+    "text": "RightXscl"
+}, {
+    "hex": 0x7F14,
+    "relevance": 0,
+    "text": "RightYmin"
+}, {
+    "hex": 0x7F15,
+    "relevance": 0,
+    "text": "RightYmax"
+}, {
+    "hex": 0x7F16,
+    "relevance": 0,
+    "text": "RightYscl"
+}, {
+    "hex": 0x7F18,
+    "relevance": 0,
+    "text": "RightT&theta;min",
+    "unicode": "Rightθmin"
+}, {
+    "hex": 0x7F19,
+    "relevance": 0,
+    "text": "RightT&theta;max",
+    "unicode": "Rightθmax"
+}, {
+    "hex": 0x7F1A,
+    "relevance": 0,
+    "text": "RightT&theta;ptch",
+    "unicode": "Rightθptch"
+}, {
+    "hex": 0x7F1B,
+    "relevance": 0,
+    "text": "StdDef_&sigma;(",
+    "unicode": "StdDev_σ("
+}, {
+    "hex": 0x7F1C,
+    "relevance": 0,
+    "text": "Variance_&sigma;&^2;(",
+    "unicode": "Variance_σ²("
+}, {
+    "hex": 0x7F1D,
+    "relevance": 0,
+    "text": "&c_reg;"
+}, {
+    "hex": 0x7F1E,
+    "relevance": 0,
+    "text": "&d_reg;"
+}, {
+    "hex": 0x7F1F,
+    "relevance": 0,
+    "text": "&e_reg;"
+}, {
+    "hex": 0x7F20,
+    "relevance": 0,
+    "text": "Max(",
+    "syntax": "Max(<list>)",
+    "description": "Returns the highest number of the given list. If the list contains complex numbers, the imaginary part is ignored.\n\nNote that this function does not support list expressions; as such, [code]Max({1,2,3}=3)[/code] will give a syntax error.\n\nSee also : Min",
+    "example": "[code]Max({3, 2+i, -6.5})[/code] will return 3"
+}, {
+    "hex": 0x7F21,
+    "relevance": 0,
+    "text": "Det "
+}, {
+    "hex": 0x7F22,
+    "relevance": 0,
+    "text": "Arg "
+}, {
+    "hex": 0x7F23,
+    "relevance": 0,
+    "text": "Conjg "
+}, {
+    "hex": 0x7F24,
+    "relevance": 4,
+    "text": "ReP ",
+    "syntax": "ReP <nb&slash;list&slash;mat>",
+    "description": "Returns the real part of the number provided. If a list/mat is provided, returns a list/mat with each number replaced by its real part. Be sure to put parentheses, as [code]ReP 1+2i[/code] is parsed as [code](ReP 1)+2i[/code].",
+    "example": "[code]ReP {1+i, -3i}[/code] returns {1,0}"
+}, {
+    "hex": 0x7F25,
+    "relevance": 4,
+    "text": "ImP ",
+    "syntax": "ImP <nb&slash;list&slash;mat>",
+    "description": "Returns the real part of the number provided. If a list/mat is provided, returns a list/mat with each number replaced by its real part. Be sure to put parentheses, as [code]ImP 1+2i[/code] is parsed as [code](ImP 1)+2i[/code].",
+    "example": "[code]ImP {1, -3i}[/code] returns {0, -3}"
+}, {
+    "hex": 0x7F26,
+    "relevance": 0,
+    "text": "d/dx(",
+    "unicode": "ddx("
+}, {
+    "hex": 0x7F27,
+    "relevance": 0,
+    "text": "d^2/dx^2(",
+    "unicode": "d²dx²("
+}, {
+    "hex": 0x7F28,
+    "relevance": 0,
+    "text": "Solve("
+}, {
+    "hex": 0x7F29,
+    "relevance": 0,
+    "text": "sum(",
+    "unicode": "Σ("
+}, {
+    "hex": 0x7F2A,
+    "relevance": 0,
+    "text": "FMin("
+}, {
+    "hex": 0x7F2B,
+    "relevance": 0,
+    "text": "FMax("
+}, {
+    "hex": 0x7F2C,
+    "relevance": 0,
+    "text": "Seq("
+}, {
+    "hex": 0x7F2D,
+    "relevance": 0,
+    "text": "Min(",
+    "syntax": "Min(<list>)",
+    "description": "Returns the lowest number of the given list. If the list contains complex numbers, the imaginary part is ignored.\n\nNote that this function does not support list expressions; as such, [code]Min({1,2,3}=3)[/code] will give a syntax error.\n\nSee also : Max",
+    "example": "[code]Min({3, 2+i, -6.5})[/code] will return -6.5"
+}, {
+    "hex": 0x7F2E,
+    "relevance": 0,
+    "text": "Mean(",
+    "syntax": "Mean(<list>)",
+    "description": "Returns the average of the given list (defined as the sum of the numbers in the list, divided by the length of the list). It will give an error if the list contains complex numbers.\n\nNote that this function does not support list expressions; as such, [code]Mean({1,2,3}+1)[/code] will give a syntax error.",
+    "example": "[code]Mean({3, 2, -6.5})[/code] will return -0.5"
+}, {
+    "hex": 0x7F2F,
+    "relevance": 0,
+    "text": "Median(",
+    "syntax": "Median(<list>)",
+    "description": "Returns the median of the given list. The median is defined:\n- If the list has an odd number of elements: the number such that half of the elements are above it, and the other half below it\n- If the list has an even number of elements: the average between the 2 numbers at the \"center\" of the list\n\nIt will give an error if the list contains complex numbers.\n\nNote that this function does not support list expressions; as such, [code]Median({1,2,3}+1)[/code] will give a syntax error.",
+    "example": "[code]Median({1,3,7})[/code] returns 3\n[code]Median({1, 3, 7, 20})[/code] returns 5: (3+7)/2"
+}, {
+    "hex": 0x7F30,
+    "relevance": 0,
+    "text": "SolveN("
+}, {
+    "hex": 0x7F34,
+    "relevance": 0,
+    "text": "Red ",
+    "syntax": "Red <graphical function>",
+    "description": "Displays the given graphical function in red.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0x7F35,
+    "relevance": 0,
+    "text": "Blue ",
+    "syntax": "Blue <graphical function>",
+    "description": "Displays the given graphical function in blue.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0x7F36,
+    "relevance": 0,
+    "text": "Green ",
+    "syntax": "Green <graphical function>",
+    "description": "Displays the given graphical function in green.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0x7F3A,
+    "relevance": 5,
+    "text": "MOD(",
+    "syntax": "MOD(int a, int b)",
+    "description": "Calculates A mod B. MOD() only supports integers.\n\nIt is advised to use Rmdr instead, as it is usable in more places (for example, hardcoded lists).\n\nIf B is a negative number, it seems to have no effect than if it were a positive number.",
+    "example": "[code]MOD(9, 7)[/code] returns 2."
+}, {
+    "hex": 0x7F3B,
+    "relevance": 0,
+    "text": "MOD_Exp("
+}, {
+    "hex": 0x7F3C,
+    "relevance": 0,
+    "text": "GCD(",
+    "syntax": "GCD(int nb1, int nb2[, int ...])\nGCD(List l)\nGCD(int nb, List l)\nGCD(List l, int nb)",
+    "description": "Calculates the Greatest Common Divisor (PGCD in french) of the given numbers.\n\nIf ints (at least 2) or a list (at least 2 cases) of integers is given, it calculates the GCD of all these numbers. If a list and int is given, it calculates the GCD between the int and each case of the list (separately).",
+    "example": "[code]GCD(12, 48)[/code] = [code]GCD({12, 48})[/code] = 12\n[code]GCD(12, 48, 3)[/code] = 3\n[code]GCD({12, 16}, 3)[/code] = {3, 1}"
+}, {
+    "hex": 0x7F3D,
+    "relevance": 0,
+    "text": "LCM(",
+    "syntax": "LCM(int nb1, int nb2[, int ...])\nLCM(List l)\nLCM(int nb, List l)\nLCM(List l, int nb)",
+    "description": "Calculates the Lowest Common Multiple (PPCM in french) of the given numbers.\n\nIf ints (at least 2) or a list (at least 2 cases) of integers is given, it calculates the LCM of all these numbers. If a list and int is given, it calculates the LCM between the int and each case of the list (separately).",
+    "example": "[code]LCM(3,4)[/code] = [code]LCM({3,4})[/code] = 12\n[code]LCM(3,4,5)[/code] = 60\n[code]LCM({12, 16}, 3)[/code] = {12, 48}"
+}, {
+    "hex": 0x7F3E,
+    "relevance": 0,
+    "text": "StdDev("
+}, {
+    "hex": 0x7F3F,
+    "relevance": 0,
+    "text": "Variance("
+}, {
+    "hex": 0x7F40,
+    "relevance": 5,
+    "text": "Mat ",
+    "syntax": "Mat <A-Z, Ans>\nMat <A-Z, Ans>[<line>, <column>]",
+    "description": "Matrixes (or matrices) are 2D arrays, and are often used to store 2D maps in games. Unlike Lists, they do not expand automatically, and have a fixed size (see Dim).\n\nThe linear notation of writing a matrix is such that:\n[code][[1,2,3][4,5,6]][/code]\nmeans, in natural notation:\n[code]1 2 3\n4 5 6[/code]\n\nMatrixes are 1-indexed, and are accessed by (line, column) which is (y, x).\n\nSome mathematical functions such as Abs or Int support matrixes, in which case the function is applied to each case of the matrix. Note that some operators such as multiplication or inverse (^-1) can be applied to matrixes, but behave differently from lists/numbers.",
+    "example": "[code]Mat A+[[1,2][3,4]]->Mat C\nMat A[2, Mat A[3, 4]]+3 -> B[/code]"
+}, {
+    "hex": 0x7F41,
+    "relevance": 0,
+    "text": "Trn "
+}, {
+    "hex": 0x7F42,
+    "relevance": 0,
+    "text": "*Row ",
+    "unicode": "Row",
+    "syntax": "&mult;Row <multiplier>, <matLetter>, <line>",
+    "description": "Calculates the product of the given line of the given matrix by the multiplier.", "example": "[code]&mult;Row 4,C,3[/code] computes the product of the 3rd line of Mat C by 4"
+}, {
+    "hex": 0x7F43,
+    "relevance": 0,
+    "text": "*Row+ ",
+    "unicode": "Row+ ",
+    "syntax": "&mult;Row+ <multiplier>, <matLetter>, <line1>, <line2>",
+    "description": "Calculates the product of the line1-th line of the given matrix by the multiplier, then adds the result to the line2-th line.",
+    "example": "[code]&mult;Row 4,C,3,6[/code] computes the product of the 3rd line of Mat C by 4, then adds the result to the 6th line of Mat C."
+}, {
+    "hex": 0x7F44,
+    "relevance": 0,
+    "text": "Row+ "
+}, {
+    "hex": 0x7F45,
+    "relevance": 0,
+    "text": "Swap "
+}, {
+    "hex": 0x7F46,
+    "relevance": 0,
+    "text": "Dim ",
+    "syntax": "<number> -> Dim <list>\n<list of 2 cases> -> Dim <mat>\nDim <list&slash;mat>",
+    "description": "Sets (or gets, if there is no assignment) the dimension of the given matrix/list.\n\nIf it assigns a value to the dimension, it creates a new list/matrix of the given dimension, filled with 0's.",
+    "example": "[code]3->Dim List 1[/code] - List 1 is now {0,0,0}\n[code]{2,3}->Dim Mat A[/code] - Mat A is now [[0,0,0][0,0,0]]"
+}, {
+    "hex": 0x7F47,
+    "relevance": 0,
+    "text": "Fill(",
+    "syntax": "Fill(Nbr n, Mat m)\nFill(Nbr n, List l)",
+    "description": "Fills the given matrix/list with the given number."
+}, {
+    "hex": 0x7F48,
+    "relevance": 0,
+    "text": "Identity "
+}, {
+    "hex": 0x7F49,
+    "relevance": 0,
+    "text": "Augment(",
+    "syntax": "Augment(Mat matA, Mat matB)\nAugment(List list1, List list2)",
+    "description": "Returns the concatenation of the given matrixes/lists. Both matrixes must have the same number of lines.",
+    "example": "[code]Augment([[1,2][3,4]], [[5][7]])[/code] returns [[1,2,5][3,4,7]]\n[code]Augment({1,2,3}, {4,5}[/code] returns {1,2,3,4,5}"
+}, {
+    "hex": 0x7F4A,
+    "relevance": 0,
+    "text": "List->Mat(",
+    "syntax": "List->Mat(int&slash;list l1 [, int&slash;list ...])",
+    "description": "Returns a matrix made from the given lists.\n\nIf an integer is given, it takes the list corresponding to that integer (for example, [code]List->Mat(3)[/code] is equivalent to [code]List->Mat(List 3)[/code]).\n\nEach list is [b]one column[/b], not one line! The lists must obviously have the same size.",
+    "example": "[code]List->Mat({1,2,3}{4,5,6})[/code] returns the following matrix:\n[code]1 4\n2 5\n3 6[/code]"
+}, {
+    "hex": 0x7F4B,
+    "relevance": 0,
+    "text": "Mat->List(",
+    "syntax": "Mat->List(<matLetter>, <column>)\nMat->List(<matrix>, <column>)",
+    "description": "Converts the given column of the given matrix to a list.",
+    "example": "[code]Mat->List([[1,2,3][4,5,6]], 2)[/code] returns {2, 5}"
+}, {
+    "hex": 0x7F4C,
+    "relevance": 0,
+    "text": "Sum "
+}, {
+    "hex": 0x7F4D,
+    "relevance": 0,
+    "text": "Prod "
+}, {
+    "hex": 0x7F4E,
+    "relevance": 0,
+    "text": "Percent "
+}, {
+    "hex": 0x7F4F,
+    "relevance": 0,
+    "text": "Cuml ",
+    "syntax": "Cuml <list>",
+    "description": "Returns the cumulated sum of the given list, such that each case of the list is the sum of itself and the previous ones.",
+    "example": "[code]Cuml {1,2,3,4}[/code] returns {1,3,6,10} ({1, 1+2, 1+2+3, 1+2+3+4})"
+}, {
+    "hex": 0x7F50,
+    "relevance": 5,
+    "text": "&i;",
+    "unicode": "",
+    "description": "The imaginary unit i such that i² = -1."
+}, {
+    "hex": 0x7F51,
+    "relevance": 5,
+    "text": "List ",
+    "syntax": "List <alphaVar, number, str>\nList <alphaVar, number, str>[value]",
+    "description": "A List behaves like an array in other programming languages, except that [b]lists are 1-indexed[/b], and they expand automatically if assigning a value to (length of list + 1).\n\nThe 0th index in a list is not a number, but a string that is the \"name\" of the list. Two lists cannot have the same name, and you can call a list by its name rather than its number.\n\nLists can be hard-coded by wrapping them with '{' and '}', and by separating each case with a comma (,)\n\nAlmost all mathematical operators, and most mathematical functions such as Abs, Int, And, etc, support lists; usually, they apply the mathematical operator/function to each case of the list separately.\n\nSee also : ClrList, Dim, File",
+    "example": "[code]{1,2,3}+List 2[List 3[4]]->List 1\n\"Items\"->List 4[/code] or [code]\"Items\"->List 4[0]\nList \"Items\"[3]->A\n3*{1,2,3}[/code] returns {3,6,9}"
+}, {
+    "hex": 0x7F52,
+    "relevance": 0,
+    "text": "&Delta;List ",
+    "unicode": "ΔList"
+}, {
+    "hex": 0x7F53,
+    "relevance": 0,
+    "text": "&infty;",
+    "unicode": "∞"
+}, {
+    "hex": 0x7F54,
+    "relevance": 0,
+    "text": "&angle;",
+    "unicode": "∠"
+}, {
+    "hex": 0x7F55,
+    "relevance": 0,
+    "text": "Ref "
+}, {
+    "hex": 0x7F56,
+    "relevance": 0,
+    "text": "Rref "
+}, {
+    "hex": 0x7F57,
+    "relevance": 0,
+    "text": "&to;"
+}, {
+    "hex": 0x7F60,
+    "relevance": 0,
+    "text": "Sim Coef"
+}, {
+    "hex": 0x7F61,
+    "relevance": 0,
+    "text": "Ply Coef"
+}, {
+    "hex": 0x7F62,
+    "relevance": 0,
+    "text": "Sim Result"
+}, {
+    "hex": 0x7F63,
+    "relevance": 0,
+    "text": "Ply Result"
+}, {
+    "hex": 0x7F64,
+    "relevance": 0,
+    "text": "&n_financ;"
+}, {
+    "hex": 0x7F65,
+    "relevance": 0,
+    "text": "I%"
+}, {
+    "hex": 0x7F66,
+    "relevance": 0,
+    "text": "&PV;"
+}, {
+    "hex": 0x7F67,
+    "relevance": 0,
+    "text": "&PMT;"
+}, {
+    "hex": 0x7F68,
+    "relevance": 0,
+    "text": "&FV;"
+}, {
+    "hex": 0x7F6A,
+    "relevance": 0,
+    "text": "List1"
+}, {
+    "hex": 0x7F6B,
+    "relevance": 0,
+    "text": "List2"
+}, {
+    "hex": 0x7F6C,
+    "relevance": 0,
+    "text": "List3"
+}, {
+    "hex": 0x7F6D,
+    "relevance": 0,
+    "text": "List4"
+}, {
+    "hex": 0x7F6E,
+    "relevance": 0,
+    "text": "List5"
+}, {
+    "hex": 0x7F6F,
+    "relevance": 0,
+    "text": "List6"
+}, {
+    "hex": 0x7F76,
+    "relevance": 0,
+    "text": "Q_1",
+    "unicode": "Q₁"
+}, {
+    "hex": 0x7F77,
+    "relevance": 0,
+    "text": "Q_3",
+    "unicode": "Q₃"
+}, {
+    "hex": 0x7F78,
+    "relevance": 0,
+    "text": "x_1",
+    "unicode": "x₁"
+}, {
+    "hex": 0x7F79,
+    "relevance": 0,
+    "text": "y_1",
+    "unicode": "y₁"
+}, {
+    "hex": 0x7F7A,
+    "relevance": 0,
+    "text": "x_2",
+    "unicode": "x₂"
+}, {
+    "hex": 0x7F7B,
+    "relevance": 0,
+    "text": "y_2",
+    "unicode": "y₂"
+}, {
+    "hex": 0x7F7C,
+    "relevance": 0,
+    "text": "x_3",
+    "unicode": "x₃"
+}, {
+    "hex": 0x7F7D,
+    "relevance": 0,
+    "text": "y_3",
+    "unicode": "y₃"
+}, {
+    "hex": 0x7F84,
+    "relevance": 0,
+    "text": "Vct "
+}, {
+    "hex": 0x7F85,
+    "relevance": 0,
+    "text": "logab("
+}, {
+    "hex": 0x7F86,
+    "relevance": 0,
+    "text": "RndFix("
+}, {
+    "hex": 0x7F87,
+    "relevance": 5,
+    "text": "RanInt#(",
+    "syntax": "RanInt#(int lowerBound, int higherBound)\nRanInt#(int lowerBound, int higherBound, int nbGenerations)",
+    "example": "[code]RanInt#(1,2)[/code] returns randomly 1 or 2\n[code]RanInt#(1,2,3)[/code] will return a list with 3 elements, either 1 or 2 in value",
+    "description": "Returns a random number (or a list of [code]nbGenerations[/code] random numbers, if specified) between lowerBound and higherBound (included). lowerBound must be strictly inferior to higherBound.",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0x7F88,
+    "relevance": 0,
+    "text": "RanList#("
+}, {
+    "hex": 0x7F89,
+    "relevance": 0,
+    "text": "RanBin#("
+}, {
+    "hex": 0x7F8A,
+    "relevance": 0,
+    "text": "RanNorm#("
+}, {
+    "hex": 0x7F8B,
+    "relevance": 0,
+    "text": "RanSamp#("
+}, {
+    "hex": 0x7F8C,
+    "relevance": 0,
+    "text": "sum(a_n)",
+    "unicode": "Σa"
+}, {
+    "hex": 0x7F8D,
+    "relevance": 0,
+    "text": "sum(b_n)",
+    "unicode": "Σb"
+}, {
+    "hex": 0x7F8E,
+    "relevance": 0,
+    "text": "sum(c_n)",
+    "unicode": "Σc"
+}, {
+    "hex": 0x7F8F,
+    "relevance": 5,
+    "text": "GetKey",
+    "description": "[img]getkey.png[/img]\n\nReturns the value of the pressed key (see above image). If multiple keys are pressed at the same time, returns the value of the first pressed key.\n\nBIDE allows the use of macros key_xx, in order not to have to remember each value.",
+    "example": "[code]Do : GetKey : LpWhile Ans != 31[/code] waits until the user has pressed [EXE] (value 31)."
+}, {
+    "hex": 0x7F90,
+    "relevance": 0,
+    "text": "F Result"
+}, {
+    "hex": 0x7F91,
+    "relevance": 0,
+    "text": "F Start"
+}, {
+    "hex": 0x7F92,
+    "relevance": 0,
+    "text": "F End"
+}, {
+    "hex": 0x7F93,
+    "relevance": 0,
+    "text": "F pitch"
+}, {
+    "hex": 0x7F94,
+    "relevance": 0,
+    "text": "R Result"
+}, {
+    "hex": 0x7F95,
+    "relevance": 0,
+    "text": "R Start"
+}, {
+    "hex": 0x7F96,
+    "relevance": 0,
+    "text": "R End"
+}, {
+    "hex": 0x7F97,
+    "relevance": 0,
+    "text": "H Start"
+}, {
+    "hex": 0x7F98,
+    "relevance": 0,
+    "text": "H pitch"
+}, {
+    "hex": 0x7F9C,
+    "relevance": 0,
+    "text": "->Simp "
+}, {
+    "hex": 0x7FA0,
+    "relevance": 0,
+    "text": "a_n",
+    "unicode": "a"
+}, {
+    "hex": 0x7FA1,
+    "relevance": 0,
+    "text": "a_(n+1)",
+    "unicode": "a₊₁"
+}, {
+    "hex": 0x7FA2,
+    "relevance": 0,
+    "text": "a_(n+2)",
+    "unicode": "a₊₂"
+}, {
+    "hex": 0x7FA3,
+    "relevance": 0,
+    "text": "&n_recur;"
+}, {
+    "hex": 0x7FA4,
+    "relevance": 5,
+    "text": "a0",
+    "unicode": "a"
+}, {
+    "hex": 0x7FA5,
+    "relevance": 5,
+    "text": "a1",
+    "unicode": "a"
+}, {
+    "hex": 0x7FA6,
+    "relevance": 5,
+    "text": "a2",
+    "unicode": "a"
+}, {
+    "hex": 0x7FA7,
+    "relevance": 0,
+    "text": "b_n",
+    "unicode": "b"
+}, {
+    "hex": 0x7FA8,
+    "relevance": 0,
+    "text": "b_(n+1)",
+    "unicode": "b₊₁"
+}, {
+    "hex": 0x7FA9,
+    "relevance": 0,
+    "text": "b_(n+2)",
+    "unicode": "b₊₂"
+}, {
+    "hex": 0x7FAA,
+    "relevance": 5,
+    "text": "b0",
+    "unicode": "b"
+}, {
+    "hex": 0x7FAB,
+    "relevance": 5,
+    "text": "b1",
+    "unicode": "b"
+}, {
+    "hex": 0x7FAC,
+    "relevance": 5,
+    "text": "b2",
+    "unicode": "b"
+}, {
+    "hex": 0x7FAD,
+    "relevance": 5,
+    "text": "anStart"
+}, {
+    "hex": 0x7FAE,
+    "relevance": 5,
+    "text": "bnStart"
+}, {
+    "hex": 0x7FB0,
+    "relevance": 5,
+    "text": " And ",
+    "syntax": "<number&slash;list> And <number&slash;list>",
+    "description": "Performs a logical And on the operands.",
+    "example": "[code]0 And 0[/code] is 0\n[code]0 And 1[/code] is 0\n[code]1 And 0[/code] is 0\n[code]1 And 1[/code] is 1\nNote that 1 could be replaced by any non-0 value (0.3, -4, etc).\nIf performed on lists, it matches each value in the list with the other operand:\n[code]{1,0} And 1[/code] is {1,0}\n[code]{1,0,1} And {1,1,0}[/code] is {1,0,0}"
+}, {
+    "hex": 0x7FB1,
+    "relevance": 5,
+    "text": " Or "
+}, {
+    "hex": 0x7FB3,
+    "relevance": 5,
+    "text": "Not ",
+    "syntax": "Not <number>\nNot <list>",
+    "description": "Performs a logical Not on the operands. If there is a list, returns a list with a logical Not performed on each case.",
+    "example": "[code]Not 0[/code] is 1\n[code]Not 1[/code] is 0\nNote that 1 could be replaced by any non-0 value (0.3, -4, etc)."
+}, {
+    "hex": 0x7FB4,
+    "relevance": 5,
+    "text": " Xor "
+}, {
+    "hex": 0x7FB5,
+    "relevance": 0,
+    "text": "sum(a_n+1)",
+    "unicode": "Σa₊₁"
+}, {
+    "hex": 0x7FB6,
+    "relevance": 0,
+    "text": "sum(b_n+1)",
+    "unicode": "Σb₊₁"
+}, {
+    "hex": 0x7FB7,
+    "relevance": 0,
+    "text": "sum(c_n+1)",
+    "unicode": "Σc₊₁"
+}, {
+    "hex": 0x7FB9,
+    "relevance": 0,
+    "text": "sum(a_n+2)",
+    "unicode": "Σa₊₂"
+}, {
+    "hex": 0x7FBA,
+    "relevance": 0,
+    "text": "sum(b_n+2)",
+    "unicode": "Σb₊₂"
+}, {
+    "hex": 0x7FBB,
+    "relevance": 0,
+    "text": "sum(c_n+2)",
+    "unicode": "Σc₊₂"
+}, {
+    "hex": 0x7FBC,
+    "relevance": 0,
+    "text": " Int/ "
+}, {
+    "hex": 0x7FBD,
+    "relevance": 0,
+    "text": " Rmdr "
+}, {
+    "hex": 0x7FBE,
+    "relevance": 0,
+    "text": "Fa"
+}, {
+    "hex": 0x7FC0,
+    "relevance": 0,
+    "text": "n1"
+}, {
+    "hex": 0x7FC1,
+    "relevance": 0,
+    "text": "n2"
+}, {
+    "hex": 0x7FC2,
+    "relevance": 0,
+    "text": "&mean_1;",
+    "unicode": "1"
+}, {
+    "hex": 0x7FC3,
+    "relevance": 0,
+    "text": "&mean_2;",
+    "unicode": "2"
+}, {
+    "hex": 0x7FC4,
+    "relevance": 0,
+    "text": "sx1"
+}, {
+    "hex": 0x7FC5,
+    "relevance": 0,
+    "text": "sx2"
+}, {
+    "hex": 0x7FC6,
+    "relevance": 0,
+    "text": "sp"
+}, {
+    "hex": 0x7FC7,
+    "relevance": 0,
+    "text": "&p^;",
+    "unicode": ""
+}, {
+    "hex": 0x7FC8,
+    "relevance": 0,
+    "text": "&p^_1;",
+    "unicode": "1"
+}, {
+    "hex": 0x7FC9,
+    "relevance": 0,
+    "text": "&p^_2;",
+    "unicode": "2"
+}, {
+    "hex": 0x7FCA,
+    "relevance": 0,
+    "text": "Lower"
+}, {
+    "hex": 0x7FCB,
+    "relevance": 0,
+    "text": "Upper"
+}, {
+    "hex": 0x7FCC,
+    "relevance": 0,
+    "text": "&P/Y;",
+    "unicode": "PY"
+}, {
+    "hex": 0x7FCD,
+    "relevance": 0,
+    "text": "&C/Y;",
+    "unicode": "CY"
+}, {
+    "hex": 0x7FCE,
+    "relevance": 0,
+    "text": "Fb"
+}, {
+    "hex": 0x7FD0,
+    "relevance": 0,
+    "text": "&F_val;"
+}, {
+    "hex": 0x7FD1,
+    "relevance": 0,
+    "text": "&z_val;"
+}, {
+    "hex": 0x7FD2,
+    "relevance": 0,
+    "text": "&p_val;"
+}, {
+    "hex": 0x7FD3,
+    "relevance": 0,
+    "text": "&t_val;"
+}, {
+    "hex": 0x7FD4,
+    "relevance": 0,
+    "text": "se"
+}, {
+    "hex": 0x7FD5,
+    "relevance": 0,
+    "text": "&chi^2;",
+    "unicode": "χ²"
+}, {
+    "hex": 0x7FD6,
+    "relevance": 0,
+    "text": "&r^2;",
+    "unicode": "r²"
+}, {
+    "hex": 0x7FD7,
+    "relevance": 0,
+    "text": "Adf"
+}, {
+    "hex": 0x7FD8,
+    "relevance": 0,
+    "text": "Edf"
+}, {
+    "hex": 0x7FD9,
+    "relevance": 0,
+    "text": "df"
+}, {
+    "hex": 0x7FDA,
+    "relevance": 0,
+    "text": "SSa"
+}, {
+    "hex": 0x7FDB,
+    "relevance": 0,
+    "text": "MSa"
+}, {
+    "hex": 0x7FDC,
+    "relevance": 0,
+    "text": "SSe"
+}, {
+    "hex": 0x7FDD,
+    "relevance": 0,
+    "text": "MSe"
+}, {
+    "hex": 0x7FDE,
+    "relevance": 0,
+    "text": "Fab"
+}, {
+    "hex": 0x7FE0,
+    "relevance": 0,
+    "text": "Bdf"
+}, {
+    "hex": 0x7FE1,
+    "relevance": 0,
+    "text": "ABdf"
+}, {
+    "hex": 0x7FE2,
+    "relevance": 0,
+    "text": "pa"
+}, {
+    "hex": 0x7FE3,
+    "relevance": 0,
+    "text": "pb"
+}, {
+    "hex": 0x7FE4,
+    "relevance": 0,
+    "text": "pab"
+}, {
+    "hex": 0x7FE9,
+    "relevance": 0,
+    "text": "CellSum("
+}, {
+    "hex": 0x7FEA,
+    "relevance": 0,
+    "text": "CellProd("
+}, {
+    "hex": 0x7FEB,
+    "relevance": 0,
+    "text": "CellMin("
+}, {
+    "hex": 0x7FEC,
+    "relevance": 0,
+    "text": "CellMax("
+}, {
+    "hex": 0x7FED,
+    "relevance": 0,
+    "text": "CellMean("
+}, {
+    "hex": 0x7FEE,
+    "relevance": 0,
+    "text": "CellMedian("
+}, {
+    "hex": 0x7FEF,
+    "relevance": 0,
+    "text": "CellIf("
+}, {
+    "hex": 0x7FF0,
+    "relevance": 0,
+    "text": "&Y_graph;",
+    "unicode": ""
+}, {
+    "hex": 0x7FF1,
+    "relevance": 0,
+    "text": "&r_graph;",
+    "unicode": ""
+}, {
+    "hex": 0x7FF2,
+    "relevance": 0,
+    "text": "&Xt_graph;",
+    "unicode": "t"
+}, {
+    "hex": 0x7FF3,
+    "relevance": 0,
+    "text": "&Yt_graph;",
+    "unicode": "t"
+}, {
+    "hex": 0x7FF4,
+    "relevance": 0,
+    "text": "&X_graph;",
+    "unicode": ""
+}, {
+    "hex": 0x7FFB,
+    "relevance": 0,
+    "text": "SSb"
+}, {
+    "hex": 0x7FFC,
+    "relevance": 0,
+    "text": "SSab"
+}, {
+    "hex": 0x7FFD,
+    "relevance": 0,
+    "text": "MSb"
+}, {
+    "hex": 0x7FFE,
+    "relevance": 0,
+    "text": "MSab"
+}, {
+    "hex": 0xE501,
+    "relevance": 0,
+    "text": "&Agrave;",
+    "unicode": "À"
+}, {
+    "hex": 0xE502,
+    "relevance": 0,
+    "text": "&Aacute;",
+    "unicode": "Á"
+}, {
+    "hex": 0xE503,
+    "relevance": 0,
+    "text": "&Acirc;",
+    "unicode": "Â"
+}, {
+    "hex": 0xE504,
+    "relevance": 0,
+    "text": "&Atilde;",
+    "unicode": "Ã"
+}, {
+    "hex": 0xE505,
+    "relevance": 0,
+    "text": "&Auml;",
+    "unicode": "Ä"
+}, {
+    "hex": 0xE506,
+    "relevance": 0,
+    "text": "&Aring;",
+    "unicode": "Å"
+}, {
+    "hex": 0xE507,
+    "relevance": 0,
+    "text": "&AE;",
+    "unicode": "Æ"
+}, {
+    "hex": 0xE508,
+    "relevance": 0,
+    "text": "&Ccedil;",
+    "unicode": "Ç"
+}, {
+    "hex": 0xE509,
+    "relevance": 0,
+    "text": "&Egrave;",
+    "unicode": "È"
+}, {
+    "hex": 0xE50A,
+    "relevance": 0,
+    "text": "&Eacute;",
+    "unicode": "É"
+}, {
+    "hex": 0xE50B,
+    "relevance": 0,
+    "text": "&Ecirc;",
+    "unicode": "Ê"
+}, {
+    "hex": 0xE50C,
+    "relevance": 0,
+    "text": "&Euml;",
+    "unicode": "Ë"
+}, {
+    "hex": 0xE50D,
+    "relevance": 0,
+    "text": "&Igrave;",
+    "unicode": "Ì"
+}, {
+    "hex": 0xE50E,
+    "relevance": 0,
+    "text": "&Iacute;",
+    "unicode": "Í"
+}, {
+    "hex": 0xE50F,
+    "relevance": 0,
+    "text": "&Icirc;",
+    "unicode": "Î"
+}, {
+    "hex": 0xE510,
+    "relevance": 0,
+    "text": "&Iuml;",
+    "unicode": "Ï"
+}, {
+    "hex": 0xE511,
+    "relevance": 0,
+    "text": "&Eth;",
+    "unicode": "Ð"
+}, {
+    "hex": 0xE512,
+    "relevance": 0,
+    "text": "&Ntilde;",
+    "unicode": "Ñ"
+}, {
+    "hex": 0xE513,
+    "relevance": 0,
+    "text": "&Ograve;",
+    "unicode": "Ò"
+}, {
+    "hex": 0xE514,
+    "relevance": 0,
+    "text": "&Oacute;",
+    "unicode": "Ó"
+}, {
+    "hex": 0xE515,
+    "relevance": 0,
+    "text": "&Ocirc;",
+    "unicode": "Ô"
+}, {
+    "hex": 0xE516,
+    "relevance": 0,
+    "text": "&Otilde;",
+    "unicode": "Õ"
+}, {
+    "hex": 0xE517,
+    "relevance": 0,
+    "text": "&Ouml;",
+    "unicode": "Ö"
+}, {
+    "hex": 0xE518,
+    "relevance": 0,
+    "text": "&Oslash;",
+    "unicode": "Ø"
+}, {
+    "hex": 0xE519,
+    "relevance": 0,
+    "text": "&Ugrave;",
+    "unicode": "Ù"
+}, {
+    "hex": 0xE51A,
+    "relevance": 0,
+    "text": "&Uacute;",
+    "unicode": "Ú"
+}, {
+    "hex": 0xE51B,
+    "relevance": 0,
+    "text": "&Ucirc;",
+    "unicode": "Û"
+}, {
+    "hex": 0xE51C,
+    "relevance": 0,
+    "text": "&Uuml;",
+    "unicode": "Ü"
+}, {
+    "hex": 0xE51D,
+    "relevance": 0,
+    "text": "&Yacute;",
+    "unicode": "Ý"
+}, {
+    "hex": 0xE51E,
+    "relevance": 0,
+    "text": "&Thorn;",
+    "unicode": "Þ"
+}, {
+    "hex": 0xE520,
+    "relevance": 0,
+    "text": "&Yuml;",
+    "unicode": "Ÿ"
+}, {
+    "hex": 0xE521,
+    "relevance": 0,
+    "text": "&Abreve;",
+    "unicode": "Ă"
+}, {
+    "hex": 0xE522,
+    "relevance": 0,
+    "text": "&Aogon;",
+    "unicode": "Ą"
+}, {
+    "hex": 0xE523,
+    "relevance": 0,
+    "text": "&Cacute;",
+    "unicode": "Ć"
+}, {
+    "hex": 0xE524,
+    "relevance": 0,
+    "text": "&Ccaron;",
+    "unicode": "Č"
+}, {
+    "hex": 0xE525,
+    "relevance": 0,
+    "text": "&OElig;",
+    "unicode": "Œ"
+}, {
+    "hex": 0xE526,
+    "relevance": 0,
+    "text": "&Dcaron;",
+    "unicode": "Ď"
+}, {
+    "hex": 0xE527,
+    "relevance": 0,
+    "text": "&Eogon;",
+    "unicode": "Ę"
+}, {
+    "hex": 0xE528,
+    "relevance": 0,
+    "text": "&Ecaron;",
+    "unicode": "Ě"
+}, {
+    "hex": 0xE529,
+    "relevance": 0,
+    "text": "&Lstrok;",
+    "unicode": "Ł"
+}, {
+    "hex": 0xE52A,
+    "relevance": 0,
+    "text": "&Nacute;",
+    "unicode": "Ń"
+}, {
+    "hex": 0xE52B,
+    "relevance": 0,
+    "text": "&Ncaron;",
+    "unicode": "Ň"
+}, {
+    "hex": 0xE52C,
+    "relevance": 0,
+    "text": "&Odblac;",
+    "unicode": "Ő"
+}, {
+    "hex": 0xE52D,
+    "relevance": 0,
+    "text": "&Rcaron;",
+    "unicode": "Ř"
+}, {
+    "hex": 0xE52E,
+    "relevance": 0,
+    "text": "&Sacute;",
+    "unicode": "Ś"
+}, {
+    "hex": 0xE52F,
+    "relevance": 0,
+    "text": "&Scaron;",
+    "unicode": "Š"
+}, {
+    "hex": 0xE530,
+    "relevance": 0,
+    "text": "&Tcaron;",
+    "unicode": "Ť"
+}, {
+    "hex": 0xE531,
+    "relevance": 0,
+    "text": "&Uring;",
+    "unicode": "Ů"
+}, {
+    "hex": 0xE532,
+    "relevance": 0,
+    "text": "&Udblac;",
+    "unicode": "Ű"
+}, {
+    "hex": 0xE533,
+    "relevance": 0,
+    "text": "&Zacute;",
+    "unicode": "Ź"
+}, {
+    "hex": 0xE534,
+    "relevance": 0,
+    "text": "&Zdot;",
+    "unicode": "Ż"
+}, {
+    "hex": 0xE535,
+    "relevance": 0,
+    "text": "&Zcaron;",
+    "unicode": "Ž"
+}, {
+    "hex": 0xE540,
+    "relevance": 0,
+    "text": "&Alpha;"
+}, {
+    "hex": 0xE541,
+    "relevance": 0,
+    "text": "&Beta;"
+}, {
+    "hex": 0xE542,
+    "relevance": 0,
+    "text": "&Gamma;",
+    "unicode": "Γ"
+}, {
+    "hex": 0xE543,
+    "relevance": 0,
+    "text": "&Delta;",
+    "unicode": "Δ"
+}, {
+    "hex": 0xE544,
+    "relevance": 0,
+    "text": "&Epsilon;"
+}, {
+    "hex": 0xE545,
+    "relevance": 0,
+    "text": "&Zeta;"
+}, {
+    "hex": 0xE546,
+    "relevance": 0,
+    "text": "&Eta;"
+}, {
+    "hex": 0xE547,
+    "relevance": 0,
+    "text": "&Theta;",
+    "unicode": "Θ"
+}, {
+    "hex": 0xE548,
+    "relevance": 0,
+    "text": "&Iota;"
+}, {
+    "hex": 0xE549,
+    "relevance": 0,
+    "text": "&Kappa;"
+}, {
+    "hex": 0xE54A,
+    "relevance": 0,
+    "text": "&Lambda;",
+    "unicode": "Λ"
+}, {
+    "hex": 0xE54B,
+    "relevance": 0,
+    "text": "&Mu;"
+}, {
+    "hex": 0xE54C,
+    "relevance": 0,
+    "text": "&Nu;"
+}, {
+    "hex": 0xE54D,
+    "relevance": 0,
+    "text": "&Xi;",
+    "unicode": "Ξ"
+}, {
+    "hex": 0xE54E,
+    "relevance": 0,
+    "text": "&Omicron;"
+}, {
+    "hex": 0xE54F,
+    "relevance": 0,
+    "text": "&Pi;",
+    "unicode": "Π"
+}, {
+    "hex": 0xE550,
+    "relevance": 0,
+    "text": "&Rho;"
+}, {
+    "hex": 0xE551,
+    "relevance": 0,
+    "text": "&Sigma;",
+    "unicode": "Σ"
+}, {
+    "hex": 0xE553,
+    "relevance": 0,
+    "text": "&Tau;"
+}, {
+    "hex": 0xE554,
+    "relevance": 0,
+    "text": "&Upsilon;"
+}, {
+    "hex": 0xE555,
+    "relevance": 0,
+    "text": "&Phi;",
+    "unicode": "Φ"
+}, {
+    "hex": 0xE556,
+    "relevance": 0,
+    "text": "&Chi;"
+}, {
+    "hex": 0xE557,
+    "relevance": 0,
+    "text": "&Psi;",
+    "unicode": "Ψ"
+}, {
+    "hex": 0xE558,
+    "relevance": 0,
+    "text": "&Omega;",
+    "unicode": "Ω"
+}, {
+    "hex": 0xE560,
+    "relevance": 0,
+    "text": "&Acy;"
+}, {
+    "hex": 0xE561,
+    "relevance": 0,
+    "text": "&Bcy;",
+    "unicode": "Б"
+}, {
+    "hex": 0xE562,
+    "relevance": 0,
+    "text": "&Vcy;"
+}, {
+    "hex": 0xE563,
+    "relevance": 0,
+    "text": "&Gcy;"
+}, {
+    "hex": 0xE564,
+    "relevance": 0,
+    "text": "&Dcy;",
+    "unicode": "Д"
+}, {
+    "hex": 0xE565,
+    "relevance": 0,
+    "text": "&IEcy;"
+}, {
+    "hex": 0xE566,
+    "relevance": 0,
+    "text": "&IOcy;"
+}, {
+    "hex": 0xE567,
+    "relevance": 0,
+    "text": "&ZHcy;",
+    "unicode": "Ж"
+}, {
+    "hex": 0xE568,
+    "relevance": 0,
+    "text": "&Zcy;",
+    "unicode": "З"
+}, {
+    "hex": 0xE569,
+    "relevance": 0,
+    "text": "&Icy;",
+    "unicode": "И"
+}, {
+    "hex": 0xE56A,
+    "relevance": 0,
+    "text": "&Jcy;",
+    "unicode": "Й"
+}, {
+    "hex": 0xE56B,
+    "relevance": 0,
+    "text": "&Kcy;"
+}, {
+    "hex": 0xE56C,
+    "relevance": 0,
+    "text": "&Lcy;",
+    "unicode": "Л"
+}, {
+    "hex": 0xE56D,
+    "relevance": 0,
+    "text": "&Mcy;"
+}, {
+    "hex": 0xE56E,
+    "relevance": 0,
+    "text": "&Ncy;"
+}, {
+    "hex": 0xE56F,
+    "relevance": 0,
+    "text": "&Ocy;"
+}, {
+    "hex": 0xE570,
+    "relevance": 0,
+    "text": "&Pcy;",
+    "unicode": "П"
+}, {
+    "hex": 0xE571,
+    "relevance": 0,
+    "text": "&Rcy;"
+}, {
+    "hex": 0xE572,
+    "relevance": 0,
+    "text": "&Scy;"
+}, {
+    "hex": 0xE573,
+    "relevance": 0,
+    "text": "&Tcy;"
+}, {
+    "hex": 0xE574,
+    "relevance": 0,
+    "text": "&Ucy;",
+    "unicode": "У"
+}, {
+    "hex": 0xE575,
+    "relevance": 0,
+    "text": "&Fcy;",
+    "unicode": "Ф"
+}, {
+    "hex": 0xE576,
+    "relevance": 0,
+    "text": "&KHcy;"
+}, {
+    "hex": 0xE577,
+    "relevance": 0,
+    "text": "&TScy;",
+    "unicode": "Ц"
+}, {
+    "hex": 0xE578,
+    "relevance": 0,
+    "text": "&CHcy;",
+    "unicode": "Ч"
+}, {
+    "hex": 0xE579,
+    "relevance": 0,
+    "text": "&SHcy;",
+    "unicode": "Ш"
+}, {
+    "hex": 0xE57A,
+    "relevance": 0,
+    "text": "&SHCHcy;",
+    "unicode": "Щ"
+}, {
+    "hex": 0xE57B,
+    "relevance": 0,
+    "text": "&HARDcy;",
+    "unicode": "Ъ"
+}, {
+    "hex": 0xE57C,
+    "relevance": 0,
+    "text": "&Ycy;",
+    "unicode": "Ы"
+}, {
+    "hex": 0xE57D,
+    "relevance": 0,
+    "text": "&SOFTcy;",
+    "unicode": "Ь"
+}, {
+    "hex": 0xE57E,
+    "relevance": 0,
+    "text": "&Ecy;",
+    "unicode": "Э"
+}, {
+    "hex": 0xE580,
+    "relevance": 0,
+    "text": "&YUcy;",
+    "unicode": "Ю"
+}, {
+    "hex": 0xE581,
+    "relevance": 0,
+    "text": "&YAcy;",
+    "unicode": "Я"
+}, {
+    "hex": 0xE582,
+    "relevance": 0,
+    "text": "&Jukcy;",
+    "unicode": "Є"
+}, {
+    "hex": 0xE590,
+    "relevance": 0,
+    "text": "&inverted_!;",
+    "unicode": "¡"
+}, {
+    "hex": 0xE591,
+    "relevance": 0,
+    "text": "&inverted_?;",
+    "unicode": "¿"
+}, {
+    "hex": 0xE592,
+    "relevance": 0,
+    "text": "&euro;",
+    "unicode": "€"
+}, {
+    "hex": 0xE593,
+    "relevance": 0,
+    "text": "&franc;",
+    "unicode": "₣"
+}, {
+    "hex": 0xE594,
+    "relevance": 0,
+    "text": "&...;",
+    "unicode": "…"
+}, {
+    "hex": 0xE595,
+    "relevance": 0,
+    "text": "&left_';",
+    "unicode": "‘"
+}, {
+    "hex": 0xE596,
+    "relevance": 0,
+    "text": "&right_';"
+}, {
+    "hex": 0xE597,
+    "relevance": 0,
+    "text": "&left_\";",
+    "unicode": "“"
+}, {
+    "hex": 0xE598,
+    "relevance": 0,
+    "text": "&right_\";",
+    "unicode": "”"
+}, {
+    "hex": 0xE599,
+    "relevance": 0,
+    "text": "&cent;",
+    "unicode": "¢"
+}, {
+    "hex": 0xE59A,
+    "relevance": 0,
+    "text": "&pound;",
+    "unicode": "£"
+}, {
+    "hex": 0xE59B,
+    "relevance": 0,
+    "text": "&headshot;",
+    "unicode": "¤"
+}, {
+    "hex": 0xE59C,
+    "relevance": 0,
+    "text": "&yen;",
+    "unicode": "¥"
+}, {
+    "hex": 0xE59D,
+    "relevance": 0,
+    "text": "&sect;",
+    "unicode": "§"
+}, {
+    "hex": 0xE59E,
+    "relevance": 0,
+    "text": "&copyright;",
+    "unicode": "©"
+}, {
+    "hex": 0xE59F,
+    "relevance": 0,
+    "text": "&underlined_a;",
+    "unicode": ""
+}, {
+    "hex": 0xE5A0,
+    "relevance": 0,
+    "text": "&logical_not;",
+    "unicode": "¬"
+}, {
+    "hex": 0xE5A1,
+    "relevance": 0,
+    "text": "&registered;",
+    "unicode": "®"
+}, {
+    "hex": 0xE5A2,
+    "relevance": 0,
+    "text": "&underlined_o;",
+    "unicode": ""
+}, {
+    "hex": 0xE5A3,
+    "relevance": 0,
+    "text": "&<<;",
+    "unicode": "«"
+}, {
+    "hex": 0xE5A4,
+    "relevance": 0,
+    "text": "&>>;",
+    "unicode": "»"
+}, {
+    "hex": 0xE5A5,
+    "relevance": 0,
+    "text": "&small_square;",
+    "unicode": "▫"
+}, {
+    "hex": 0xE5A6,
+    "relevance": 0,
+    "text": "&small_cross;",
+    "unicode": "⨯"
+}, {
+    "hex": 0xE5A7,
+    "relevance": 0,
+    "text": "&middle_dot;",
+    "unicode": "·"
+}, {
+    "hex": 0xE5AB,
+    "relevance": 0,
+    "text": "&!?;",
+    "unicode": "⁉"
+}, {
+    "hex": 0xE5AC,
+    "relevance": 0,
+    "text": "&!!;",
+    "unicode": "‼"
+}, {
+    "hex": 0xE5AD,
+    "relevance": 0,
+    "text": "&star;",
+    "unicode": "☆"
+}, {
+    "hex": 0xE5AE,
+    "relevance": 0,
+    "text": "&2_rectangles;"
+}, {
+    "hex": 0xE5AF,
+    "relevance": 0,
+    "text": "&cross;"
+}, {
+    "hex": 0xE5B0,
+    "relevance": 0,
+    "text": "&bold_e;",
+    "unicode": ""
+}, {
+    "hex": 0xE5B1,
+    "relevance": 0,
+    "text": "&bold_P;"
+}, {
+    "hex": 0xE5B2,
+    "relevance": 0,
+    "text": "&bold_r;"
+}, {
+    "hex": 0xE5B3,
+    "relevance": 0,
+    "text": "&bold_X;"
+}, {
+    "hex": 0xE5B4,
+    "relevance": 0,
+    "text": "&bold_Y;"
+}, {
+    "hex": 0xE5B5,
+    "relevance": 0,
+    "text": "&negative_B;",
+    "unicode": ""
+}, {
+    "hex": 0xE5B6,
+    "relevance": 0,
+    "text": "&negative_R;",
+    "unicode": ""
+}, {
+    "hex": 0xE5B7,
+    "relevance": 0,
+    "text": "&negative_L;",
+    "unicode": ""
+}, {
+    "hex": 0xE5B8,
+    "relevance": 0,
+    "text": "&negative_=;",
+    "unicode": ""
+}, {
+    "hex": 0xE5B9,
+    "relevance": 0,
+    "text": "&negative_<;",
+    "unicode": ""
+}, {
+    "hex": 0xE5BA,
+    "relevance": 0,
+    "text": "&negative_>;",
+    "unicode": ""
+}, {
+    "hex": 0xE5BB,
+    "relevance": 0,
+    "text": "&negative_<=;",
+    "unicode": ""
+}, {
+    "hex": 0xE5BC,
+    "relevance": 0,
+    "text": "&negative_>=;",
+    "unicode": ""
+}, {
+    "hex": 0xE5BD,
+    "relevance": 0,
+    "text": "&left_bottom_';",
+    "unicode": "‚"
+}, {
+    "hex": 0xE5BE,
+    "relevance": 0,
+    "text": "&+-;",
+    "unicode": "±"
+}, {
+    "hex": 0xE5BF,
+    "relevance": 0,
+    "text": "&-+;",
+    "unicode": "∓"
+}, {
+    "hex": 0xE5C0,
+    "relevance": 0,
+    "text": "&^0;",
+    "unicode": "⁰"
+}, {
+    "hex": 0xE5C1,
+    "relevance": 0,
+    "text": "&^1;",
+    "unicode": "¹"
+}, {
+    "hex": 0xE5C2,
+    "relevance": 0,
+    "text": "&^2_char;"
+}, {
+    "hex": 0xE5C3,
+    "relevance": 0,
+    "text": "&^3;",
+    "unicode": "³"
+}, {
+    "hex": 0xE5C4,
+    "relevance": 0,
+    "text": "&^4;",
+    "unicode": "⁴"
+}, {
+    "hex": 0xE5C5,
+    "relevance": 0,
+    "text": "&^5;",
+    "unicode": "⁵"
+}, {
+    "hex": 0xE5C6,
+    "relevance": 0,
+    "text": "&^6;",
+    "unicode": "⁶"
+}, {
+    "hex": 0xE5C7,
+    "relevance": 0,
+    "text": "&^7;",
+    "unicode": "⁷"
+}, {
+    "hex": 0xE5C8,
+    "relevance": 0,
+    "text": "&^8;",
+    "unicode": "⁸"
+}, {
+    "hex": 0xE5C9,
+    "relevance": 0,
+    "text": "&^9;",
+    "unicode": "⁹"
+}, {
+    "hex": 0xE5CA,
+    "relevance": 0,
+    "text": "&^-1_char;"
+}, {
+    "hex": 0xE5CB,
+    "relevance": 0,
+    "text": "&^+;",
+    "unicode": "⁺"
+}, {
+    "hex": 0xE5CC,
+    "relevance": 0,
+    "text": "&^-;",
+    "unicode": "⁻"
+}, {
+    "hex": 0xE5CD,
+    "relevance": 0,
+    "text": "&small_0;",
+    "unicode": ""
+}, {
+    "hex": 0xE5CE,
+    "relevance": 0,
+    "text": "&small_1;",
+    "unicode": ""
+}, {
+    "hex": 0xE5CF,
+    "relevance": 0,
+    "text": "&small_2;",
+    "unicode": ""
+}, {
+    "hex": 0xE5D0,
+    "relevance": 0,
+    "text": "&_0;",
+    "unicode": "₀"
+}, {
+    "hex": 0xE5D1,
+    "relevance": 0,
+    "text": "&_1;",
+    "unicode": "₁"
+}, {
+    "hex": 0xE5D2,
+    "relevance": 0,
+    "text": "&_2;",
+    "unicode": "₂"
+}, {
+    "hex": 0xE5D3,
+    "relevance": 0,
+    "text": "&_3;",
+    "unicode": "₃"
+}, {
+    "hex": 0xE5D4,
+    "relevance": 0,
+    "text": "&_4;",
+    "unicode": "₄"
+}, {
+    "hex": 0xE5D5,
+    "relevance": 0,
+    "text": "&_5;",
+    "unicode": "₅"
+}, {
+    "hex": 0xE5D6,
+    "relevance": 0,
+    "text": "&_6;",
+    "unicode": "₆"
+}, {
+    "hex": 0xE5D7,
+    "relevance": 0,
+    "text": "&_7;",
+    "unicode": "₇"
+}, {
+    "hex": 0xE5D8,
+    "relevance": 0,
+    "text": "&_8;",
+    "unicode": "₈"
+}, {
+    "hex": 0xE5D9,
+    "relevance": 0,
+    "text": "&_9;",
+    "unicode": "₉"
+}, {
+    "hex": 0xE5DA,
+    "relevance": 0,
+    "text": "&_-1;",
+    "unicode": ""
+}, {
+    "hex": 0xE5DB,
+    "relevance": 0,
+    "text": "&_+;",
+    "unicode": "₊"
+}, {
+    "hex": 0xE5DC,
+    "relevance": 0,
+    "text": "&_-;",
+    "unicode": "₋"
+}, {
+    "hex": 0xE5DD,
+    "relevance": 0,
+    "text": "&^*;",
+    "unicode": ""
+}, {
+    "hex": 0xE5DE,
+    "relevance": 0,
+    "text": "&small_n;",
+    "unicode": ""
+}, {
+    "hex": 0xE5DF,
+    "relevance": 0,
+    "text": "&^3_with_style;",
+    "unicode": ""
+}, {
+    "hex": 0xE5E0,
+    "relevance": 0,
+    "text": "&spade;",
+    "unicode": "♠"
+}, {
+    "hex": 0xE5E1,
+    "relevance": 0,
+    "text": "&club;",
+    "unicode": "♣"
+}, {
+    "hex": 0xE5E2,
+    "relevance": 0,
+    "text": "&heart;",
+    "unicode": "♥"
+}, {
+    "hex": 0xE5E3,
+    "relevance": 0,
+    "text": "&diamond;",
+    "unicode": "♦"
+}, {
+    "hex": 0xE5E8,
+    "relevance": 0,
+    "text": "&left_white_arrow;",
+    "unicode": "⇦"
+}, {
+    "hex": 0xE5E9,
+    "relevance": 0,
+    "text": "&right_white_arrow;",
+    "unicode": "⇨"
+}, {
+    "hex": 0xE5EA,
+    "relevance": 0,
+    "text": "&up_white_arrow;",
+    "unicode": "⇧"
+}, {
+    "hex": 0xE5EB,
+    "relevance": 0,
+    "text": "&down_white_arrow;",
+    "unicode": "⇩"
+}, {
+    "hex": 0xE5EC,
+    "relevance": 0,
+    "text": "&left_index;",
+    "unicode": "☜"
+}, {
+    "hex": 0xE5ED,
+    "relevance": 0,
+    "text": "&right_index;",
+    "unicode": "☞"
+}, {
+    "hex": 0xE5EE,
+    "relevance": 0,
+    "text": "&up_index;",
+    "unicode": "☝"
+}, {
+    "hex": 0xE5EF,
+    "relevance": 0,
+    "text": "&down_index;",
+    "unicode": "☟"
+}, {
+    "hex": 0xE5F0,
+    "relevance": 0,
+    "text": "&circled_1;",
+    "unicode": "①"
+}, {
+    "hex": 0xE5F1,
+    "relevance": 0,
+    "text": "&circled_2;",
+    "unicode": "②"
+}, {
+    "hex": 0xE5F2,
+    "relevance": 0,
+    "text": "&circled_3;",
+    "unicode": "③"
+}, {
+    "hex": 0xE5F3,
+    "relevance": 0,
+    "text": "&circled_4;",
+    "unicode": "④"
+}, {
+    "hex": 0xE5F4,
+    "relevance": 0,
+    "text": "&circled_5;",
+    "unicode": "⑤"
+}, {
+    "hex": 0xE5F5,
+    "relevance": 0,
+    "text": "&circled_6;",
+    "unicode": "⑥"
+}, {
+    "hex": 0xE5FB,
+    "relevance": 0,
+    "text": "&circled_7;",
+    "unicode": "⑦"
+}, {
+    "hex": 0xE5FC,
+    "relevance": 0,
+    "text": "&circled_8;",
+    "unicode": "⑧"
+}, {
+    "hex": 0xE5FD,
+    "relevance": 0,
+    "text": "&circled_9;",
+    "unicode": "⑨"
+}, {
+    "hex": 0xe601,
+    "relevance": 0,
+    "text": "&agrave;",
+    "unicode": "à"
+}, {
+    "hex": 0xe602,
+    "relevance": 0,
+    "text": "&aacute;",
+    "unicode": "á"
+}, {
+    "hex": 0xe603,
+    "relevance": 0,
+    "text": "&acirc;",
+    "unicode": "â"
+}, {
+    "hex": 0xe604,
+    "relevance": 0,
+    "text": "&atilde;",
+    "unicode": "ã"
+}, {
+    "hex": 0xe605,
+    "relevance": 0,
+    "text": "&auml;",
+    "unicode": "ä"
+}, {
+    "hex": 0xe606,
+    "relevance": 0,
+    "text": "&aring;",
+    "unicode": "å"
+}, {
+    "hex": 0xe607,
+    "relevance": 0,
+    "text": "&ae;",
+    "unicode": "æ"
+}, {
+    "hex": 0xe608,
+    "relevance": 0,
+    "text": "&ccedil;",
+    "unicode": "ç"
+}, {
+    "hex": 0xe609,
+    "relevance": 0,
+    "text": "&egrave;",
+    "unicode": "è"
+}, {
+    "hex": 0xe60a,
+    "relevance": 0,
+    "text": "&eacute;",
+    "unicode": "é"
+}, {
+    "hex": 0xe60b,
+    "relevance": 0,
+    "text": "&ecirc;",
+    "unicode": "ê"
+}, {
+    "hex": 0xe60c,
+    "relevance": 0,
+    "text": "&euml;",
+    "unicode": "ë"
+}, {
+    "hex": 0xe60d,
+    "relevance": 0,
+    "text": "&igrave;",
+    "unicode": "ì"
+}, {
+    "hex": 0xe60e,
+    "relevance": 0,
+    "text": "&iacute;",
+    "unicode": "í"
+}, {
+    "hex": 0xe60f,
+    "relevance": 0,
+    "text": "&icirc;",
+    "unicode": "î"
+}, {
+    "hex": 0xe610,
+    "relevance": 0,
+    "text": "&iuml;",
+    "unicode": "ï"
+}, {
+    "hex": 0xe611,
+    "relevance": 0,
+    "text": "&eth;",
+    "unicode": "ð"
+}, {
+    "hex": 0xe612,
+    "relevance": 0,
+    "text": "&ntilde;",
+    "unicode": "ñ"
+}, {
+    "hex": 0xe613,
+    "relevance": 0,
+    "text": "&ograve;",
+    "unicode": "ò"
+}, {
+    "hex": 0xe614,
+    "relevance": 0,
+    "text": "&oacute;",
+    "unicode": "ó"
+}, {
+    "hex": 0xe615,
+    "relevance": 0,
+    "text": "&ocirc;",
+    "unicode": "ô"
+}, {
+    "hex": 0xe616,
+    "relevance": 0,
+    "text": "&otilde;",
+    "unicode": "õ"
+}, {
+    "hex": 0xe617,
+    "relevance": 0,
+    "text": "&ouml;",
+    "unicode": "ö"
+}, {
+    "hex": 0xE618,
+    "relevance": 0,
+    "text": "ø"
+}, {
+    "hex": 0xe618,
+    "relevance": 0,
+    "text": "&oslash;"
+}, {
+    "hex": 0xe619,
+    "relevance": 0,
+    "text": "&ugrave;",
+    "unicode": "ù"
+}, {
+    "hex": 0xe61a,
+    "relevance": 0,
+    "text": "&uacute;",
+    "unicode": "ú"
+}, {
+    "hex": 0xe61b,
+    "relevance": 0,
+    "text": "&ucirc;",
+    "unicode": "û"
+}, {
+    "hex": 0xe61c,
+    "relevance": 0,
+    "text": "&uuml;",
+    "unicode": "ü"
+}, {
+    "hex": 0xe61d,
+    "relevance": 0,
+    "text": "&yacute;",
+    "unicode": "ý"
+}, {
+    "hex": 0xe61e,
+    "relevance": 0,
+    "text": "&thorn;",
+    "unicode": "þ"
+}, {
+    "hex": 0xE61F,
+    "relevance": 0,
+    "text": "&eszett;",
+    "unicode": "ß"
+}, {
+    "hex": 0xe620,
+    "relevance": 0,
+    "text": "&yuml;",
+    "unicode": "ÿ"
+}, {
+    "hex": 0xe621,
+    "relevance": 0,
+    "text": "&abreve;",
+    "unicode": "ă"
+}, {
+    "hex": 0xe622,
+    "relevance": 0,
+    "text": "&aogon;",
+    "unicode": "ą"
+}, {
+    "hex": 0xe623,
+    "relevance": 0,
+    "text": "&cacute;",
+    "unicode": "ć"
+}, {
+    "hex": 0xe624,
+    "relevance": 0,
+    "text": "&ccaron;",
+    "unicode": "č"
+}, {
+    "hex": 0xe625,
+    "relevance": 0,
+    "text": "&oelig;",
+    "unicode": "œ"
+}, {
+    "hex": 0xe626,
+    "relevance": 0,
+    "text": "&dcaron;",
+    "unicode": "ď"
+}, {
+    "hex": 0xe627,
+    "relevance": 0,
+    "text": "&eogon;",
+    "unicode": "ę"
+}, {
+    "hex": 0xe628,
+    "relevance": 0,
+    "text": "&ecaron;",
+    "unicode": "ě"
+}, {
+    "hex": 0xe629,
+    "relevance": 0,
+    "text": "&lstrok;",
+    "unicode": "ł"
+}, {
+    "hex": 0xe62a,
+    "relevance": 0,
+    "text": "&nacute;",
+    "unicode": "ń"
+}, {
+    "hex": 0xe62b,
+    "relevance": 0,
+    "text": "&ncaron;",
+    "unicode": "ň"
+}, {
+    "hex": 0xe62c,
+    "relevance": 0,
+    "text": "&odblac;",
+    "unicode": "ő"
+}, {
+    "hex": 0xe62d,
+    "relevance": 0,
+    "text": "&rcaron;",
+    "unicode": "ř"
+}, {
+    "hex": 0xe62e,
+    "relevance": 0,
+    "text": "&sacute;",
+    "unicode": "ś"
+}, {
+    "hex": 0xe62f,
+    "relevance": 0,
+    "text": "&scaron;",
+    "unicode": "š"
+}, {
+    "hex": 0xe630,
+    "relevance": 0,
+    "text": "&tcaron;",
+    "unicode": "ť"
+}, {
+    "hex": 0xe631,
+    "relevance": 0,
+    "text": "&uring;",
+    "unicode": "ů"
+}, {
+    "hex": 0xe632,
+    "relevance": 0,
+    "text": "&udblac;",
+    "unicode": "ű"
+}, {
+    "hex": 0xe633,
+    "relevance": 0,
+    "text": "&zacute;",
+    "unicode": "ź"
+}, {
+    "hex": 0xe634,
+    "relevance": 0,
+    "text": "&zdot;",
+    "unicode": "ż"
+}, {
+    "hex": 0xe635,
+    "relevance": 0,
+    "text": "&zcaron;",
+    "unicode": "ž"
+}, {
+    "hex": 0xE640,
+    "relevance": 0,
+    "text": "&alpha;",
+    "unicode": "α"
+}, {
+    "hex": 0xE641,
+    "relevance": 0,
+    "text": "&beta;",
+    "unicode": "β"
+}, {
+    "hex": 0xE642,
+    "relevance": 0,
+    "text": "&gamma;",
+    "unicode": "γ"
+}, {
+    "hex": 0xE643,
+    "relevance": 0,
+    "text": "&delta;",
+    "unicode": "δ"
+}, {
+    "hex": 0xE644,
+    "relevance": 0,
+    "text": "&epsilon;",
+    "unicode": "ε"
+}, {
+    "hex": 0xE645,
+    "relevance": 0,
+    "text": "&zeta;",
+    "unicode": "ζ"
+}, {
+    "hex": 0xE646,
+    "relevance": 0,
+    "text": "&eta;",
+    "unicode": "η"
+}, {
+    "hex": 0xE647,
+    "relevance": 0,
+    "text": "&theta_char;"
+}, {
+    "hex": 0xE648,
+    "relevance": 0,
+    "text": "&iota;",
+    "unicode": "ι"
+}, {
+    "hex": 0xE649,
+    "relevance": 0,
+    "text": "&kappa;",
+    "unicode": "κ"
+}, {
+    "hex": 0xE64A,
+    "relevance": 0,
+    "text": "&lambda;",
+    "unicode": "λ"
+}, {
+    "hex": 0xE64B,
+    "relevance": 0,
+    "text": "&mu;"
+}, {
+    "hex": 0xE64C,
+    "relevance": 0,
+    "text": "&nu;",
+    "unicode": "ν"
+}, {
+    "hex": 0xE64D,
+    "relevance": 0,
+    "text": "&xi;",
+    "unicode": "ξ"
+}, {
+    "hex": 0xE64E,
+    "relevance": 0,
+    "text": "&omicron;"
+}, {
+    "hex": 0xE64F,
+    "relevance": 0,
+    "text": "&pi_char;"
+}, {
+    "hex": 0xE650,
+    "relevance": 0,
+    "text": "&rho;",
+    "unicode": "ρ"
+}, {
+    "hex": 0xE651,
+    "relevance": 0,
+    "text": "&sigma;",
+    "unicode": "σ"
+}, {
+    "hex": 0xE652,
+    "relevance": 0,
+    "text": "&sigma2;",
+    "unicode": "ς"
+}, {
+    "hex": 0xE653,
+    "relevance": 0,
+    "text": "&tau;",
+    "unicode": "τ"
+}, {
+    "hex": 0xE654,
+    "relevance": 0,
+    "text": "&upsilon;"
+}, {
+    "hex": 0xE655,
+    "relevance": 0,
+    "text": "&phi;",
+    "unicode": "φ"
+}, {
+    "hex": 0xE656,
+    "relevance": 0,
+    "text": "&chi;",
+    "unicode": "χ"
+}, {
+    "hex": 0xE657,
+    "relevance": 0,
+    "text": "&psi;",
+    "unicode": "ψ"
+}, {
+    "hex": 0xE658,
+    "relevance": 0,
+    "text": "&omega;",
+    "unicode": "ω"
+}, {
+    "hex": 0xE660,
+    "relevance": 0,
+    "text": "&acy;"
+}, {
+    "hex": 0xE661,
+    "relevance": 0,
+    "text": "&bcy;",
+    "unicode": "б"
+}, {
+    "hex": 0xE662,
+    "relevance": 0,
+    "text": "&vcy;",
+    "unicode": "в"
+}, {
+    "hex": 0xE663,
+    "relevance": 0,
+    "text": "&gcy;",
+    "unicode": "г"
+}, {
+    "hex": 0xE664,
+    "relevance": 0,
+    "text": "&dcy;",
+    "unicode": "д"
+}, {
+    "hex": 0xE665,
+    "relevance": 0,
+    "text": "&iecy;"
+}, {
+    "hex": 0xE666,
+    "relevance": 0,
+    "text": "&iocy;"
+}, {
+    "hex": 0xE667,
+    "relevance": 0,
+    "text": "&zhcy;",
+    "unicode": "ж"
+}, {
+    "hex": 0xE668,
+    "relevance": 0,
+    "text": "&zcy;",
+    "unicode": "з"
+}, {
+    "hex": 0xE669,
+    "relevance": 0,
+    "text": "&icy;",
+    "unicode": "и"
+}, {
+    "hex": 0xE66A,
+    "relevance": 0,
+    "text": "&jcy;",
+    "unicode": "й"
+}, {
+    "hex": 0xE66B,
+    "relevance": 0,
+    "text": "&kcy;"
+}, {
+    "hex": 0xE66C,
+    "relevance": 0,
+    "text": "&lcy;",
+    "unicode": "л"
+}, {
+    "hex": 0xE66D,
+    "relevance": 0,
+    "text": "&mcy;",
+    "unicode": "м"
+}, {
+    "hex": 0xE66E,
+    "relevance": 0,
+    "text": "&ncy;",
+    "unicode": "н"
+}, {
+    "hex": 0xE66F,
+    "relevance": 0,
+    "text": "&ocy;"
+}, {
+    "hex": 0xE670,
+    "relevance": 0,
+    "text": "&pcy;",
+    "unicode": "п"
+}, {
+    "hex": 0xE671,
+    "relevance": 0,
+    "text": "&rcy;"
+}, {
+    "hex": 0xE672,
+    "relevance": 0,
+    "text": "&scy;"
+}, {
+    "hex": 0xE673,
+    "relevance": 0,
+    "text": "&tcy;",
+    "unicode": "т"
+}, {
+    "hex": 0xE674,
+    "relevance": 0,
+    "text": "&ucy;",
+    "unicode": "у"
+}, {
+    "hex": 0xE675,
+    "relevance": 0,
+    "text": "&fcy;",
+    "unicode": "ф"
+}, {
+    "hex": 0xE676,
+    "relevance": 0,
+    "text": "&khcy;"
+}, {
+    "hex": 0xE677,
+    "relevance": 0,
+    "text": "&tscy;",
+    "unicode": "ц"
+}, {
+    "hex": 0xE678,
+    "relevance": 0,
+    "text": "&chcy;",
+    "unicode": "ч"
+}, {
+    "hex": 0xE679,
+    "relevance": 0,
+    "text": "&shcy;",
+    "unicode": "ш"
+}, {
+    "hex": 0xE67A,
+    "relevance": 0,
+    "text": "&shchcy;",
+    "unicode": "щ"
+}, {
+    "hex": 0xE67B,
+    "relevance": 0,
+    "text": "&hardcy;",
+    "unicode": "ъ"
+}, {
+    "hex": 0xE67C,
+    "relevance": 0,
+    "text": "&ycy;",
+    "unicode": "ы"
+}, {
+    "hex": 0xE67D,
+    "relevance": 0,
+    "text": "&softcy;",
+    "unicode": "ь"
+}, {
+    "hex": 0xE67E,
+    "relevance": 0,
+    "text": "&ecy;",
+    "unicode": "э"
+}, {
+    "hex": 0xE680,
+    "relevance": 0,
+    "text": "&yucy;",
+    "unicode": "ю"
+}, {
+    "hex": 0xE681,
+    "relevance": 0,
+    "text": "&yacy;",
+    "unicode": "я"
+}, {
+    "hex": 0xE682,
+    "relevance": 0,
+    "text": "&jukcy;",
+    "unicode": "є"
+}, {
+    "hex": 0xE690,
+    "relevance": 0,
+    "text": "&left_arrow;",
+    "unicode": "←"
+}, {
+    "hex": 0xE691,
+    "relevance": 0,
+    "text": "&right_arrow;",
+    "unicode": "→"
+}, {
+    "hex": 0xE692,
+    "relevance": 0,
+    "text": "&up_arrow;",
+    "unicode": "↑"
+}, {
+    "hex": 0xE693,
+    "relevance": 0,
+    "text": "&down_arrow;",
+    "unicode": "↓"
+}, {
+    "hex": 0xE694,
+    "relevance": 0,
+    "text": "&left_right_arrow;",
+    "unicode": "↔"
+}, {
+    "hex": 0xE695,
+    "relevance": 0,
+    "text": "&up_down_arrow;",
+    "unicode": "↕"
+}, {
+    "hex": 0xE696,
+    "relevance": 0,
+    "text": "&top_left_arrow;",
+    "unicode": "↖"
+}, {
+    "hex": 0xE697,
+    "relevance": 0,
+    "text": "&top_right_arrow;",
+    "unicode": "↗"
+}, {
+    "hex": 0xE698,
+    "relevance": 0,
+    "text": "&bottom_left_arrow;",
+    "unicode": "↘"
+}, {
+    "hex": 0xE699,
+    "relevance": 0,
+    "text": "&bottom_right_arrow;",
+    "unicode": "↙"
+}, {
+    "hex": 0xE69A,
+    "relevance": 0,
+    "text": "&left_black_triangle;",
+    "unicode": "◀"
+}, {
+    "hex": 0xE69B,
+    "relevance": 0,
+    "text": "&right_black_triangle;",
+    "unicode": "▶"
+}, {
+    "hex": 0xE69C,
+    "relevance": 0,
+    "text": "&up_black_triangle;",
+    "unicode": "▲"
+}, {
+    "hex": 0xE69D,
+    "relevance": 0,
+    "text": "&down_black_triangle;",
+    "unicode": "▼"
+}, {
+    "hex": 0xE69E,
+    "relevance": 0,
+    "text": "&right_small_black_triangle;",
+    "unicode": "▸"
+}, {
+    "hex": 0xE69F,
+    "relevance": 0,
+    "text": "&right_white_triangle;",
+    "unicode": "▷"
+}, {
+    "hex": 0xE6A0,
+    "relevance": 0,
+    "text": "&divide_on_times;",
+    "unicode": "⋇"
+}, {
+    "hex": 0xE6A1,
+    "relevance": 0,
+    "text": "&left_lenticular_bracket;",
+    "unicode": "【"
+}, {
+    "hex": 0xE6A2,
+    "relevance": 0,
+    "text": "&right_lenticular_bracket;",
+    "unicode": "】"
+}, {
+    "hex": 0xE6A3,
+    "relevance": 0,
+    "text": "&white_circle;",
+    "unicode": "○"
+}, {
+    "hex": 0xE6A4,
+    "relevance": 0,
+    "text": "&black_circle;",
+    "unicode": "●"
+}, {
+    "hex": 0xE6A5,
+    "relevance": 0,
+    "text": "&white_square;",
+    "unicode": "□"
+}, {
+    "hex": 0xE6A6,
+    "relevance": 0,
+    "text": "&black_square;",
+    "unicode": "■"
+}, {
+    "hex": 0xE6A7,
+    "relevance": 0,
+    "text": "&white_diamond;",
+    "unicode": "◇"
+}, {
+    "hex": 0xE6A8,
+    "relevance": 0,
+    "text": "&black_diamond;",
+    "unicode": "◆"
+}, {
+    "hex": 0xE6A9,
+    "relevance": 0,
+    "text": "&black_square_with_cross;",
+    "unicode": "⊠"
+}, {
+    "hex": 0xE6AA,
+    "relevance": 0,
+    "text": "&bullet_operator;",
+    "unicode": "▪"
+}, {
+    "hex": 0xE6AC,
+    "relevance": 0,
+    "text": "&up_white_triangle;",
+    "unicode": "△"
+}, {
+    "hex": 0xE6AE,
+    "relevance": 0,
+    "text": "&bold_cross;",
+    "unicode": "✖"
+}, {
+
+    "hex": 0xE6B0,
+    "relevance": 0,
+    "text": "&equal_with_dots;",
+    "unicode": "≒"
+}, {
+    "hex": 0xE6B1,
+    "relevance": 0,
+    "text": "&approx_equal_to;",
+    "unicode": "≈"
+}, {
+    "hex": 0xE6B2,
+    "relevance": 0,
+    "text": "&triple_equal;",
+    "unicode": "≡"
+}, {
+    "hex": 0xE6B3,
+    "relevance": 0,
+    "text": "&not_triple_equal;",
+    "unicode": "≢"
+}, {
+    "hex": 0xE6B4,
+    "relevance": 0,
+    "text": "&approx_triple_equal;",
+    "unicode": "≅"
+}, {
+    "hex": 0xE6B5,
+    "relevance": 0,
+    "text": "&reversed_tilde;",
+    "unicode": "∽"
+}, {
+    "hex": 0xE6B6,
+    "relevance": 0,
+    "text": "&proportional_to;",
+    "unicode": "∝"
+}, {
+    "hex": 0xE6B7,
+    "relevance": 0,
+    "text": "&double_integral;",
+    "unicode": "∬"
+}, {
+    "hex": 0xE6B8,
+    "relevance": 0,
+    "text": "&contour_integral;",
+    "unicode": "∮"
+}, {
+    "hex": 0xE6B9,
+    "relevance": 0,
+    "text": "&partial_differential;",
+    "unicode": "∂"
+}, {
+    "hex": 0xE6BB,
+    "relevance": 0,
+    "text": "&integral;",
+    "unicode": "∫"
+}, {
+    "hex": 0xE6BC,
+    "relevance": 0,
+    "text": "&measured_angle;",
+    "unicode": "∡"
+}, {
+    "hex": 0xE6BD,
+    "relevance": 0,
+    "text": "&element_of;",
+    "unicode": "∈"
+}, {
+    "hex": 0xE6BE,
+    "relevance": 0,
+    "text": "&contains_as_member;",
+    "unicode": "∋"
+}, {
+    "hex": 0xE6BF,
+    "relevance": 0,
+    "text": "&subset_of_or_equal_to;",
+    "unicode": "⊆"
+}, {
+    "hex": 0xE6C0,
+    "relevance": 0,
+    "text": "&superset_of_or_equal_to;",
+    "unicode": "⊇"
+}, {
+    "hex": 0xE6C1,
+    "relevance": 0,
+    "text": "&subset_of;",
+    "unicode": "⊂"
+}, {
+    "hex": 0xE6C2,
+    "relevance": 0,
+    "text": "&superset_of;",
+    "unicode": "⊃"
+}, {
+    "hex": 0xE6C3,
+    "relevance": 0,
+    "text": "&union;",
+    "unicode": "∪"
+}, {
+    "hex": 0xE6C4,
+    "relevance": 0,
+    "text": "&intersection;",
+    "unicode": "∩"
+}, {
+    "hex": 0xE6C5,
+    "relevance": 0,
+    "text": "&not_an_element_of;",
+    "unicode": "∉"
+}, {
+    "hex": 0xE6C6,
+    "relevance": 0,
+    "text": "&does_not_contain_as_member;",
+    "unicode": "∌"
+}, {
+    "hex": 0xE6C7,
+    "relevance": 0,
+    "text": "&neither_a_subset_of_nor_equal_to;",
+    "unicode": "⊈"
+}, {
+    "hex": 0xE6C8,
+    "relevance": 0,
+    "text": "&neither_a_superset_of_nor_equal_to;",
+    "unicode": "⊉"
+}, {
+    "hex": 0xE6C9,
+    "relevance": 0,
+    "text": "&not_a_subset_of;",
+    "unicode": "⊄"
+}, {
+    "hex": 0xE6CA,
+    "relevance": 0,
+    "text": "&not_a_superset_of;",
+    "unicode": "⊅"
+}, {
+    "hex": 0xE6CB,
+    "relevance": 0,
+    "text": "&empty_set;",
+    "unicode": "∅"
+}, {
+    "hex": 0xE6CC,
+    "relevance": 0,
+    "text": "&there_exists;",
+    "unicode": "∃"
+}, {
+    "hex": 0xE6CD,
+    "relevance": 0,
+    "text": "&right_angle;",
+    "unicode": "∟"
+}, {
+    "hex": 0xE6CE,
+    "relevance": 0,
+    "text": "&\\/;",
+    "unicode": "∨"
+}, {
+    "hex": 0xE6CF,
+    "relevance": 0,
+    "text": "&/\\;",
+    "unicode": "∧"
+}, {
+    "hex": 0xE6D0,
+    "relevance": 0,
+    "text": "&for_all;",
+    "unicode": "∀"
+}, {
+    "hex": 0xE6D1,
+    "relevance": 0,
+    "text": "&circled_+;",
+    "unicode": "⊕"
+}, {
+    "hex": 0xE6D2,
+    "relevance": 0,
+    "text": "&circled_-;",
+    "unicode": "⊖"
+}, {
+    "hex": 0xE6D3,
+    "relevance": 0,
+    "text": "&circled_x;",
+    "unicode": "⊗"
+}, {
+    "hex": 0xE6D4,
+    "relevance": 0,
+    "text": "&circled_/;",
+    "unicode": "⊘"
+}, {
+    "hex": 0xE6D5,
+    "relevance": 0,
+    "text": "&perpendicular_to;",
+    "unicode": "⊥"
+}, {
+    "hex": 0xE6D6,
+    "relevance": 0,
+    "text": "&left_right_double_arrow;",
+    "unicode": "⇔"
+}, {
+    "hex": 0xE6D7,
+    "relevance": 0,
+    "text": "&||;",
+    "unicode": "∥"
+}, {
+    "hex": 0xE6D8,
+    "relevance": 0,
+    "text": "&||_strike;",
+    "unicode": "∦"
+}, {
+    "hex": 0xE6D9,
+    "relevance": 0,
+    "text": "&//;",
+    "unicode": "⫽"
+}, {
+    "hex": 0xE6DA,
+    "relevance": 0,
+    "text": "&shield;",
+    "unicode": "∇"
+}, {
+    "hex": 0xE6DB,
+    "relevance": 0,
+    "text": "&dots_in_^;",
+    "unicode": "∴"
+}, {
+    "hex": 0xE6DC,
+    "relevance": 0,
+    "text": "&dots_in_v;",
+    "unicode": "∵"
+}, {
+    "hex": 0xE6DD,
+    "relevance": 0,
+    "text": "&prime;",
+    "unicode": "′"
+}, {
+    "hex": 0xE6DE,
+    "relevance": 0,
+    "text": "&double_prime;",
+    "unicode": "″"
+}, {
+    "hex": 0xE701,
+    "relevance": 0,
+    "text": "[ns]"
+}, {
+    "hex": 0xE702,
+    "relevance": 0,
+    "text": "[µs]"
+}, {
+    "hex": 0xE703,
+    "relevance": 0,
+    "text": "[&micro;s]",
+    "unicode": "[ms]"
+}, {
+    "hex": 0xE704,
+    "relevance": 0,
+    "text": "[s]"
+}, {
+    "hex": 0xE705,
+    "relevance": 0,
+    "text": "[min]"
+}, {
+    "hex": 0xE706,
+    "relevance": 0,
+    "text": "[h]"
+}, {
+    "hex": 0xE707,
+    "relevance": 0,
+    "text": "[day]"
+}, {
+    "hex": 0xE708,
+    "relevance": 0,
+    "text": "[week]"
+}, {
+    "hex": 0xE709,
+    "relevance": 0,
+    "text": "[yr]"
+}, {
+    "hex": 0xE70A,
+    "relevance": 0,
+    "text": "[s-yr]"
+}, {
+    "hex": 0xE70B,
+    "relevance": 0,
+    "text": "[t-yr]"
+}, {
+    "hex": 0xE70C,
+    "relevance": 0,
+    "text": "[&deg;C]",
+    "unicode": "[C]"
+}, {
+    "hex": 0xE70D,
+    "relevance": 0,
+    "text": "&[K];"
+}, {
+    "hex": 0xE70E,
+    "relevance": 0,
+    "text": "[&deg;F]",
+    "unicode": "[F]"
+}, {
+    "hex": 0xE70F,
+    "relevance": 0,
+    "text": "[&deg;R]",
+    "unicode": "[R]"
+}, {
+    "hex": 0xE710,
+    "relevance": 0,
+    "text": "[u]"
+}, {
+    "hex": 0xE711,
+    "relevance": 0,
+    "text": "[g]"
+}, {
+    "hex": 0xE712,
+    "relevance": 0,
+    "text": "[kg]"
+}, {
+    "hex": 0xE713,
+    "relevance": 0,
+    "text": "[lb]"
+}, {
+    "hex": 0xE714,
+    "relevance": 0,
+    "text": "[oz]"
+}, {
+    "hex": 0xE715,
+    "relevance": 0,
+    "text": "[slug]"
+}, {
+    "hex": 0xE716,
+    "relevance": 0,
+    "text": "[ton(short)]"
+}, {
+    "hex": 0xE717,
+    "relevance": 0,
+    "text": "[ton(long)]"
+}, {
+    "hex": 0xE719,
+    "relevance": 0,
+    "text": "[mton]"
+}, {
+    "hex": 0xE71A,
+    "relevance": 0,
+    "text": "[l-atm]"
+}, {
+    "hex": 0xE71B,
+    "relevance": 0,
+    "text": "[ft.lbf]"
+}, {
+    "hex": 0xE71C,
+    "relevance": 0,
+    "text": "[cal_IT]",
+    "unicode": "[cal]"
+}, {
+    "hex": 0xE71D,
+    "relevance": 0,
+    "text": "[cal_th]",
+    "unicode": "[cal]"
+}, {
+    "hex": 0xE71E,
+    "relevance": 0,
+    "text": "[Btu]"
+}, {
+    "hex": 0xE71F,
+    "relevance": 0,
+    "text": "[kW.h]"
+}, {
+    "hex": 0xE720,
+    "relevance": 0,
+    "text": "[kgf.m]"
+}, {
+    "hex": 0xE721,
+    "relevance": 0,
+    "text": "[Pa]"
+}, {
+    "hex": 0xE722,
+    "relevance": 0,
+    "text": "[kPa]"
+}, {
+    "hex": 0xE723,
+    "relevance": 0,
+    "text": "[bar]"
+}, {
+    "hex": 0xE724,
+    "relevance": 0,
+    "text": "[mmH2O]"
+}, {
+    "hex": 0xE725,
+    "relevance": 0,
+    "text": "[mmHg]"
+}, {
+    "hex": 0xE726,
+    "relevance": 0,
+    "text": "[inH20]"
+}, {
+    "hex": 0xE727,
+    "relevance": 0,
+    "text": "[inHg]"
+}, {
+    "hex": 0xE728,
+    "relevance": 0,
+    "text": "[lbf/in^2]"
+}, {
+    "hex": 0xE729,
+    "relevance": 0,
+    "text": "[kgf/cm^2]"
+}, {
+    "hex": 0xE72A,
+    "relevance": 0,
+    "text": "[atm]"
+}, {
+    "hex": 0xE72B,
+    "relevance": 0,
+    "text": "[dyne]"
+}, {
+    "hex": 0xE72C,
+    "relevance": 0,
+    "text": "&[N];"
+}, {
+    "hex": 0xE72D,
+    "relevance": 0,
+    "text": "[kgf]"
+}, {
+    "hex": 0xE72E,
+    "relevance": 0,
+    "text": "[lbf]"
+}, {
+    "hex": 0xE72F,
+    "relevance": 0,
+    "text": "[tonf]"
+}, {
+    "hex": 0xe741,
+    "relevance": 0,
+    "text": "&_A;",
+    "unicode": ""
+}, {
+    "hex": 0xe742,
+    "relevance": 0,
+    "text": "&_B;",
+    "unicode": ""
+}, {
+    "hex": 0xe743,
+    "relevance": 0,
+    "text": "&_C;",
+    "unicode": ""
+}, {
+    "hex": 0xe744,
+    "relevance": 0,
+    "text": "&_D;",
+    "unicode": ""
+}, {
+    "hex": 0xe745,
+    "relevance": 0,
+    "text": "&_E;",
+    "unicode": ""
+}, {
+    "hex": 0xe746,
+    "relevance": 0,
+    "text": "&_F;",
+    "unicode": ""
+}, {
+    "hex": 0xe747,
+    "relevance": 0,
+    "text": "&_G;",
+    "unicode": ""
+}, {
+    "hex": 0xe748,
+    "relevance": 0,
+    "text": "&_H;",
+    "unicode": ""
+}, {
+    "hex": 0xe749,
+    "relevance": 0,
+    "text": "&_I;",
+    "unicode": ""
+}, {
+    "hex": 0xe74a,
+    "relevance": 0,
+    "text": "&_J;",
+    "unicode": ""
+}, {
+    "hex": 0xe74b,
+    "relevance": 0,
+    "text": "&_K;",
+    "unicode": ""
+}, {
+    "hex": 0xe74c,
+    "relevance": 0,
+    "text": "&_L;",
+    "unicode": ""
+}, {
+    "hex": 0xe74d,
+    "relevance": 0,
+    "text": "&_M;",
+    "unicode": ""
+}, {
+    "hex": 0xe74e,
+    "relevance": 0,
+    "text": "&_N;",
+    "unicode": ""
+}, {
+    "hex": 0xe74f,
+    "relevance": 0,
+    "text": "&_O;",
+    "unicode": ""
+}, {
+    "hex": 0xe750,
+    "relevance": 0,
+    "text": "&_P;",
+    "unicode": ""
+}, {
+    "hex": 0xe751,
+    "relevance": 0,
+    "text": "&_Q;",
+    "unicode": ""
+}, {
+    "hex": 0xe752,
+    "relevance": 0,
+    "text": "&_R;",
+    "unicode": ""
+}, {
+    "hex": 0xe753,
+    "relevance": 0,
+    "text": "&_S;",
+    "unicode": ""
+}, {
+    "hex": 0xe754,
+    "relevance": 0,
+    "text": "&_T;",
+    "unicode": ""
+}, {
+    "hex": 0xe755,
+    "relevance": 0,
+    "text": "&_U;",
+    "unicode": ""
+}, {
+    "hex": 0xe756,
+    "relevance": 0,
+    "text": "&_V;",
+    "unicode": ""
+}, {
+    "hex": 0xe757,
+    "relevance": 0,
+    "text": "&_W;",
+    "unicode": ""
+}, {
+    "hex": 0xe758,
+    "relevance": 0,
+    "text": "&_X;",
+    "unicode": ""
+}, {
+    "hex": 0xe759,
+    "relevance": 0,
+    "text": "&_Y;",
+    "unicode": ""
+}, {
+    "hex": 0xe75a,
+    "relevance": 0,
+    "text": "&_Z;",
+    "unicode": ""
+}, {
+    "hex": 0xe761,
+    "relevance": 0,
+    "text": "&_a;",
+    "unicode": ""
+}, {
+    "hex": 0xe762,
+    "relevance": 0,
+    "text": "&_b;",
+    "unicode": ""
+}, {
+    "hex": 0xe763,
+    "relevance": 0,
+    "text": "&_c;",
+    "unicode": ""
+}, {
+    "hex": 0xe764,
+    "relevance": 0,
+    "text": "&_d;",
+    "unicode": ""
+}, {
+    "hex": 0xe765,
+    "relevance": 0,
+    "text": "&_e;",
+    "unicode": ""
+}, {
+    "hex": 0xe766,
+    "relevance": 0,
+    "text": "&_f;",
+    "unicode": ""
+}, {
+    "hex": 0xe767,
+    "relevance": 0,
+    "text": "&_g;",
+    "unicode": ""
+}, {
+    "hex": 0xe768,
+    "relevance": 0,
+    "text": "&_h;",
+    "unicode": ""
+}, {
+    "hex": 0xe769,
+    "relevance": 0,
+    "text": "&_i;",
+    "unicode": ""
+}, {
+    "hex": 0xe76a,
+    "relevance": 0,
+    "text": "&_j;",
+    "unicode": ""
+}, {
+    "hex": 0xe76b,
+    "relevance": 0,
+    "text": "&_k;",
+    "unicode": ""
+}, {
+    "hex": 0xe76c,
+    "relevance": 0,
+    "text": "&_l;",
+    "unicode": ""
+}, {
+    "hex": 0xe76d,
+    "relevance": 0,
+    "text": "&_m;",
+    "unicode": ""
+}, {
+    "hex": 0xe76e,
+    "relevance": 0,
+    "text": "&_n;",
+    "unicode": ""
+}, {
+    "hex": 0xe76f,
+    "relevance": 0,
+    "text": "&_o;",
+    "unicode": ""
+}, {
+    "hex": 0xe770,
+    "relevance": 0,
+    "text": "&_p;",
+    "unicode": ""
+}, {
+    "hex": 0xe771,
+    "relevance": 0,
+    "text": "&_q;",
+    "unicode": ""
+}, {
+    "hex": 0xe772,
+    "relevance": 0,
+    "text": "&_r;",
+    "unicode": ""
+}, {
+    "hex": 0xe773,
+    "relevance": 0,
+    "text": "&_s;",
+    "unicode": ""
+}, {
+    "hex": 0xe774,
+    "relevance": 0,
+    "text": "&_t;",
+    "unicode": ""
+}, {
+    "hex": 0xe775,
+    "relevance": 0,
+    "text": "&_u;",
+    "unicode": ""
+}, {
+    "hex": 0xe776,
+    "relevance": 0,
+    "text": "&_v;",
+    "unicode": ""
+}, {
+    "hex": 0xe777,
+    "relevance": 0,
+    "text": "&_w;",
+    "unicode": ""
+}, {
+    "hex": 0xe778,
+    "relevance": 0,
+    "text": "&_x;",
+    "unicode": ""
+}, {
+    "hex": 0xe779,
+    "relevance": 0,
+    "text": "&_y;",
+    "unicode": ""
+}, {
+    "hex": 0xe77a,
+    "relevance": 0,
+    "text": "&_z;",
+    "unicode": ""
+}, {
+    "hex": 0xE7B0,
+    "relevance": 0,
+    "text": "[fm]"
+}, {
+    "hex": 0xE7B2,
+    "relevance": 0,
+    "text": "[mm]"
+}, {
+    "hex": 0xE7B3,
+    "relevance": 0,
+    "text": "[cm]"
+}, {
+    "hex": 0xE7B4,
+    "relevance": 0,
+    "text": "[m]"
+}, {
+    "hex": 0xE7B5,
+    "relevance": 0,
+    "text": "[km]"
+}, {
+    "hex": 0xE7B6,
+    "relevance": 123,
+    "text": "[Mil]"
+}, {
+    "hex": 0xE7B7,
+    "relevance": 0,
+    "text": "[in]"
+}, {
+    "hex": 0xE7B8,
+    "relevance": 0,
+    "text": "[ft]"
+}, {
+    "hex": 0xE7B9,
+    "relevance": 0,
+    "text": "[yd]"
+}, {
+    "hex": 0xE7BA,
+    "relevance": 0,
+    "text": "[fath]"
+}, {
+    "hex": 0xE7BB,
+    "relevance": 0,
+    "text": "[rd]"
+}, {
+    "hex": 0xE7BD,
+    "relevance": 0,
+    "text": "[mile]"
+}, {
+    "hex": 0xE7BF,
+    "relevance": 0,
+    "text": "[n mile]"
+}, {
+    "hex": 0xE7C0,
+    "relevance": 0,
+    "text": "[acre]"
+}, {
+    "hex": 0xE7C2,
+    "relevance": 0,
+    "text": "[ha]"
+}, {
+    "hex": 0xE7C3,
+    "relevance": 0,
+    "text": "[cm^2]"
+}, {
+    "hex": 0xE7C4,
+    "relevance": 0,
+    "text": "[m^2]"
+}, {
+    "hex": 0xE7C5,
+    "relevance": 0,
+    "text": "[km^2]"
+}, {
+    "hex": 0xE7C7,
+    "relevance": 0,
+    "text": "[in^2]"
+}, {
+    "hex": 0xE7C8,
+    "relevance": 0,
+    "text": "[ft^2]"
+}, {
+    "hex": 0xE7C9,
+    "relevance": 0,
+    "text": "[yd^2]"
+}, {
+    "hex": 0xE7CA,
+    "relevance": 0,
+    "text": "[mile^2]"
+}, {
+    "hex": 0xE7CB,
+    "relevance": 0,
+    "text": "[m/s]"
+}, {
+    "hex": 0xE7CC,
+    "relevance": 0,
+    "text": "[km/h]"
+}, {
+    "hex": 0xE7CD,
+    "relevance": 0,
+    "text": "[ft/s]"
+}, {
+    "hex": 0xE7CE,
+    "relevance": 0,
+    "text": "[mile/h]"
+}, {
+    "hex": 0xE7CF,
+    "relevance": 0,
+    "text": "[knot]"
+}, {
+    "hex": 0xE7D0,
+    "relevance": 0,
+    "text": "[mL]"
+}, {
+    "hex": 0xE7D1,
+    "relevance": 0,
+    "text": "&[L];"
+}, {
+    "hex": 0xE7D2,
+    "relevance": 0,
+    "text": "[tsp]"
+}, {
+    "hex": 0xE7D3,
+    "relevance": 0,
+    "text": "[cm^3]"
+}, {
+    "hex": 0xE7D4,
+    "relevance": 0,
+    "text": "[m^3]"
+}, {
+    "hex": 0xE7D5,
+    "relevance": 0,
+    "text": "[tbsp]"
+}, {
+    "hex": 0xE7D7,
+    "relevance": 0,
+    "text": "[in^3]"
+}, {
+    "hex": 0xE7D8,
+    "relevance": 0,
+    "text": "[ft^3]"
+}, {
+    "hex": 0xE7D9,
+    "relevance": 0,
+    "text": "[fl_oz(UK)]"
+}, {
+    "hex": 0xE7DA,
+    "relevance": 0,
+    "text": "[fl_oz(US)]"
+}, {
+    "hex": 0xE7DB,
+    "relevance": 0,
+    "text": "[cup]"
+}, {
+    "hex": 0xE7DC,
+    "relevance": 0,
+    "text": "[pt]"
+}, {
+    "hex": 0xE7DD,
+    "relevance": 0,
+    "text": "[qt]"
+}, {
+    "hex": 0xE7DE,
+    "relevance": 0,
+    "text": "[gal(US)]"
+}, {
+    "hex": 0xE7DF,
+    "relevance": 0,
+    "text": "[gal(UK)]"
+}, {
+    "hex": 0xE7E2,
+    "relevance": 0,
+    "text": "[&micro;m]",
+    "unicode": "[µm]"
+}, {
+    "hex": 0xE7E3,
+    "relevance": 0,
+    "text": "[mg]"
+}, {
+    "hex": 0xE7E4,
+    "relevance": 0,
+    "text": "[Ang]"
+}, {
+    "hex": 0xE7E8,
+    "relevance": 0,
+    "text": "&[AU];"
+}, {
+    "hex": 0xE7E9,
+    "relevance": 0,
+    "text": "[l.y.]"
+}, {
+    "hex": 0xE7EA,
+    "relevance": 0,
+    "text": "[pc]"
+}, {
+    "hex": 0xE7EB,
+    "relevance": 0,
+    "text": "[ft.lbf/s]"
+}, {
+    "hex": 0xE7EC,
+    "relevance": 0,
+    "text": "[cal_th/s]"
+}, {
+    "hex": 0xE7ED,
+    "relevance": 0,
+    "text": "[hp]"
+}, {
+    "hex": 0xE7EE,
+    "relevance": 0,
+    "text": "[Btu/min]"
+}, {
+    "hex": 0xE7EF,
+    "relevance": 0,
+    "text": "&[W];"
+}, {
+    "hex": 0xE7F0,
+    "relevance": 0,
+    "text": "[eV]"
+}, {
+    "hex": 0xE7F1,
+    "relevance": 0,
+    "text": "[erg]"
+}, {
+    "hex": 0xE7F2,
+    "relevance": 0,
+    "text": "&[J];"
+}, {
+    "hex": 0xE7F3,
+    "relevance": 0,
+    "text": "[cal_15]"
+}, {
+    "hex": 0xE7F4,
+    "relevance": 0,
+    "text": "[kcal_15]"
+}, {
+    "hex": 0xE7F5,
+    "relevance": 0,
+    "text": "[kcal_th]"
+}, {
+    "hex": 0xE7FB,
+    "relevance": 0,
+    "text": "[kcal_IT]"
+}, {
+    "hex": 0xF700,
+    "relevance": 5,
+    "text": "If ",
+    "syntax": "If <value>\nThen <code>\n(Else <code>)\nIfEnd",
+    "description": "Behaves like a If in other programming languages. If the value given is non-zero and real, it executes the code in the Then block. Else, it executes the code in the Else block (if it exists).\n\nNote that the Then is required, even though it isn't necessary to parse an If block.\n\nA simpler form of the If is the double arrow (=>), for example:\n[code]If A:Then B:IfEnd[/code] can be replaced by [code]A=>B[/code]. Note that the double arrow does not support multiple instructions after the condition, nor an \"else\" like C's ternary operator.",
+    "example": "[code]If A < 18\nThen \"You are a minor\"\nElse \"You are an adult\"\nIfEnd[/code]"
+}, {
+    "hex": 0xF701,
+    "relevance": 5,
+    "text": "Then ",
+    "description": "See [code]If[/code]."
+}, {
+    "hex": 0xF702,
+    "relevance": 5,
+    "text": "Else ",
+    "description": "See [code]If[/code]."
+}, {
+    "hex": 0xF703,
+    "relevance": 5,
+    "text": "IfEnd",
+    "description": "See [code]If[/code]."
+}, {
+    "hex": 0xF704,
+    "relevance": 5,
+    "text": "For ",
+    "syntax": "For <startValue> -> <alphaVar> To <endValue> (Step <stepValue>)\n<code>\nNext",
+    "description": "For loop. If Step is not specified, it defaults to 1. It is possible to modify the value of startValue inside the loop, with the expected behavior.\n\nStarts by putting startValue into alphaVar, and ends when alphaVar is greater than endValue (or lower than endValue, if stepValue is negative).\n\nIf endValue < startValue and Step is positive (or the opposite), the loop is ignored.\n\nBeware of using empty for loops to simulate Sleep, as your code could run faster or slower on different calculators.",
+    "example": "[code]For 1->I To 4 Step 2 : \"test\"◢ : Next[/code] will print \"test\" 2 times"
+}, {
+    "hex": 0xF705,
+    "relevance": 5,
+    "text": " To ",
+    "description": "See [code]For[/code]."
+}, {
+    "hex": 0xF706,
+    "relevance": 5,
+    "text": " Step ",
+    "description": "See [code]For[/code]."
+}, {
+    "hex": 0xF707,
+    "relevance": 5,
+    "text": "Next",
+    "description": "See [code]For[/code]."
+}, {
+    "hex": 0xF708,
+    "relevance": 5,
+    "text": "While "
+}, {
+    "hex": 0xF709,
+    "relevance": 5,
+    "text": "WhileEnd"
+}, {
+    "hex": 0xF70A,
+    "relevance": 5,
+    "text": "Do",
+    "syntax": "Do\n<code>\nLpWhile <number>",
+    "description": "See LpWhile."
+}, {
+    "hex": 0xF70B,
+    "relevance": 5,
+    "text": "LpWhile ",
+    "syntax": "Do\n<code>\nLpWhile <number>",
+    "description": "The Do/LpWhile loop is different from the While/WhileEnd loop, because the condition check is done at the end, so the code is executed at least once. The loop terminates if the number is 0 or non-real.",
+    "example": "[code]Do:GetKey:LpWhile GetKey != 31[/code] loops while the user has not pressed [EXE] (id 31)"
+}, {
+    "hex": 0xF70C,
+    "relevance": 5,
+    "text": "Return",
+    "description": "Stops the execution of the current program, and if the current program has been called by another program, returns to the \"superior\" program."
+}, {
+    "hex": 0xF70D,
+    "relevance": 5,
+    "text": "Break",
+    "description": "Terminates the current loop (While/WhileEnd, For/Next, Do/LpWhile). Note that it only terminates the inner loop, if you are in 2 loops, it only breaks out of the 2nd (like on other programming languages)."
+}, {
+    "hex": 0xF70E,
+    "relevance": 0,
+    "text": "Stop",
+    "description": "Stops the execution of the current program. Unlike [code]Return[/code], it does not return to the caller program if it is a sub-program."
+}, {
+    "hex": 0xF710,
+    "relevance": 5,
+    "text": "Locate ",
+    "syntax": "Locate <x>, <y>, <value&slash;str>",
+    "description": "Displays on the text screen the given text/number at the given coordinates. Cannot display complex numbers.\n\nx must be between 1 and 21, and y must be between 1 and 7 (the 8th line is unavailable). Locate does not support line wrap nor line returns.\n\nSee also: Text",
+    "example": "[code]Locate 1,1,A+2\nLocate 1,1,\"Test\"+Str 1[/code]"
+}, {
+    "hex": 0xF711,
+    "relevance": 0,
+    "text": "Send("
+}, {
+    "hex": 0xF712,
+    "relevance": 0,
+    "text": "Receive("
+}, {
+    "hex": 0xF713,
+    "relevance": 0,
+    "text": "OpenComport38k"
+}, {
+    "hex": 0xF714,
+    "relevance": 0,
+    "text": "CloseComport38k"
+}, {
+    "hex": 0xF715,
+    "relevance": 0,
+    "text": "Send38k "
+}, {
+    "hex": 0xF716,
+    "relevance": 0,
+    "text": "Receive38k "
+}, {
+    "hex": 0xF718,
+    "relevance": 5,
+    "text": "ClrText",
+    "description": "Clears the text screen (Locate)."
+}, {
+    "hex": 0xF719,
+    "relevance": 0,
+    "text": "ClrGraph",
+    "description": "Clears the graphical screen, but also reinitializes the ViewWindow.\n\nTo only clear the graphical screen, use [code]Cls[/code]."
+}, {
+    "hex": 0xF71A,
+    "relevance": 5,
+    "text": "ClrList ",
+    "syntax": "ClrList\nClrList <listNumber>",
+    "description": "Clears the given list, or all the lists if no list number is given.\nNote that this only affects the current ListFile.",
+    "example": "[code]ClrList 3[/code] clears List 3"
+}, {
+    "hex": 0xF71B,
+    "relevance": 0,
+    "text": "LinearReg(a+bx) "
+}, {
+    "hex": 0xF71C,
+    "relevance": 0,
+    "text": "S-L-Normal"
+}, {
+    "hex": 0xF71D,
+    "relevance": 0,
+    "text": "S-L-Thick"
+}, {
+    "hex": 0xF71E,
+    "relevance": 0,
+    "text": "S-L-Broken"
+}, {
+    "hex": 0xF71F,
+    "relevance": 0,
+    "text": "S-L-Dot"
+}, {
+    "hex": 0xF720,
+    "relevance": 0,
+    "text": "DrawGraph"
+}, {
+    "hex": 0xF721,
+    "relevance": 0,
+    "text": "PlotPhase "
+}, {
+    "hex": 0xF722,
+    "relevance": 0,
+    "text": "DrawDyna"
+}, {
+    "hex": 0xF723,
+    "relevance": 0,
+    "text": "DrawStat"
+}, {
+    "hex": 0xF724,
+    "relevance": 0,
+    "text": "DrawFTG-Con"
+}, {
+    "hex": 0xF725,
+    "relevance": 0,
+    "text": "DrawFTG-Plt"
+}, {
+    "hex": 0xF726,
+    "relevance": 0,
+    "text": "DrawR-Con"
+}, {
+    "hex": 0xF727,
+    "relevance": 0,
+    "text": "DrawR-Plt"
+}, {
+    "hex": 0xF728,
+    "relevance": 0,
+    "text": "DrawRSum-Con",
+    "unicode": "DrawRΣ-Con"
+}, {
+    "hex": 0xF729,
+    "relevance": 0,
+    "text": "DrawRSum-Plt",
+    "unicode": "DrawRΣ-Plt"
+}, {
+    "hex": 0xF72A,
+    "relevance": 0,
+    "text": "DrawWeb "
+}, {
+    "hex": 0xF72B,
+    "relevance": 0,
+    "text": "NormalG "
+}, {
+    "hex": 0xF72C,
+    "relevance": 0,
+    "text": "ThickG "
+}, {
+    "hex": 0xF72D,
+    "relevance": 0,
+    "text": "BrokenThickG "
+}, {
+    "hex": 0xF72E,
+    "relevance": 0,
+    "text": "DispF-Tbl"
+}, {
+    "hex": 0xF72F,
+    "relevance": 0,
+    "text": "DispR-Tbl"
+}, {
+    "hex": 0xF730,
+    "relevance": 0,
+    "text": "SimplifyAuto"
+}, {
+    "hex": 0xF731,
+    "relevance": 0,
+    "text": "SimplifyMan"
+}, {
+    "hex": 0xF732,
+    "relevance": 0,
+    "text": "NPPlot"
+}, {
+    "hex": 0xF733,
+    "relevance": 0,
+    "text": "Sinusoidal"
+}, {
+    "hex": 0xF734,
+    "relevance": 0,
+    "text": "SinReg "
+}, {
+    "hex": 0xF735,
+    "relevance": 0,
+    "text": "Logistic"
+}, {
+    "hex": 0xF736,
+    "relevance": 0,
+    "text": "LogisticReg "
+}, {
+    "hex": 0xF73A,
+    "relevance": 0,
+    "text": "Pie"
+}, {
+    "hex": 0xF73C,
+    "relevance": 0,
+    "text": "Bar"
+}, {
+    "hex": 0xF73F,
+    "relevance": 0,
+    "text": "DotG "
+}, {
+    "hex": 0xF740,
+    "relevance": 0,
+    "text": "1-Variable "
+}, {
+    "hex": 0xF741,
+    "relevance": 0,
+    "text": "2-Variable "
+}, {
+    "hex": 0xF742,
+    "relevance": 0,
+    "text": "LinearReg(ax+b) "
+}, {
+    "hex": 0xF743,
+    "relevance": 0,
+    "text": "Med-MedLine "
+}, {
+    "hex": 0xF744,
+    "relevance": 0,
+    "text": "QuadReg "
+}, {
+    "hex": 0xF745,
+    "relevance": 0,
+    "text": "CubicReg "
+}, {
+    "hex": 0xF746,
+    "relevance": 0,
+    "text": "QuartReg "
+}, {
+    "hex": 0xF747,
+    "relevance": 0,
+    "text": "LogReg "
+}, {
+    "hex": 0xF748,
+    "relevance": 0,
+    "text": "ExpReg(a*e^bx) "
+}, {
+    "hex": 0xF749,
+    "relevance": 0,
+    "text": "PowerReg "
+}, {
+    "hex": 0xF74A,
+    "relevance": 0,
+    "text": "S-Gph1 "
+}, {
+    "hex": 0xF74B,
+    "relevance": 0,
+    "text": "S-Gph2 "
+}, {
+    "hex": 0xF74C,
+    "relevance": 0,
+    "text": "S-Gph3 "
+}, {
+    "hex": 0xF74D,
+    "relevance": 0,
+    "text": "Square"
+}, {
+    "hex": 0xF74E,
+    "relevance": 0,
+    "text": "Cross"
+}, {
+    "hex": 0xF74F,
+    "relevance": 0,
+    "text": "Dot"
+}, {
+    "hex": 0xF750,
+    "relevance": 0,
+    "text": "Scatter"
+}, {
+    "hex": 0xF751,
+    "relevance": 0,
+    "text": "xyLine"
+}, {
+    "hex": 0xF752,
+    "relevance": 0,
+    "text": "Hist"
+}, {
+    "hex": 0xF753,
+    "relevance": 0,
+    "text": "MedBox"
+}, {
+    "hex": 0xF755,
+    "relevance": 0,
+    "text": "N-Dist"
+}, {
+    "hex": 0xF756,
+    "relevance": 0,
+    "text": "Broken"
+}, {
+    "hex": 0xF757,
+    "relevance": 0,
+    "text": "Linear"
+}, {
+    "hex": 0xF758,
+    "relevance": 0,
+    "text": "Med-Med"
+}, {
+    "hex": 0xF759,
+    "relevance": 0,
+    "text": "Quad"
+}, {
+    "hex": 0xF75A,
+    "relevance": 0,
+    "text": "Cubic"
+}, {
+    "hex": 0xF75B,
+    "relevance": 0,
+    "text": "Quart"
+}, {
+    "hex": 0xF75C,
+    "relevance": 0,
+    "text": "Log"
+}, {
+    "hex": 0xF75D,
+    "relevance": 0,
+    "text": "Exp(a*e^bx)"
+}, {
+    "hex": 0xF75E,
+    "relevance": 0,
+    "text": "Power"
+}, {
+    "hex": 0xF75F,
+    "relevance": 0,
+    "text": "ExpReg(a*b^x) "
+}, {
+    "hex": 0xF760,
+    "relevance": 0,
+    "text": "S-WindAuto"
+}, {
+    "hex": 0xF761,
+    "relevance": 0,
+    "text": "S-WindMan"
+}, {
+    "hex": 0xF762,
+    "relevance": 0,
+    "text": "Graph X="
+}, {
+    "hex": 0xF763,
+    "relevance": 0,
+    "text": "Y=Type"
+}, {
+    "hex": 0xF764,
+    "relevance": 0,
+    "text": "r=Type"
+}, {
+    "hex": 0xF765,
+    "relevance": 0,
+    "text": "ParamType"
+}, {
+    "hex": 0xF767,
+    "relevance": 0,
+    "text": "X=Type"
+}, {
+    "hex": 0xF768,
+    "relevance": 0,
+    "text": "X>Type"
+}, {
+    "hex": 0xF769,
+    "relevance": 0,
+    "text": "X<Type"
+}, {
+    "hex": 0xF76A,
+    "relevance": 0,
+    "text": "Y>Type"
+}, {
+    "hex": 0xF76B,
+    "relevance": 0,
+    "text": "Y<Type"
+}, {
+    "hex": 0xF76C,
+    "relevance": 0,
+    "text": "Y>=Type"
+}, {
+    "hex": 0xF76D,
+    "relevance": 0,
+    "text": "Y<=Type"
+}, {
+    "hex": 0xF76E,
+    "relevance": 0,
+    "text": "X>=Type"
+}, {
+    "hex": 0xF76F,
+    "relevance": 0,
+    "text": "X<=Type"
+}, {
+    "hex": 0xF770,
+    "relevance": 0,
+    "text": "G-Connect",
+    "description": "Draws a line between points when tracing a function (enabled by default).\n\nWith G-Connect:\n[img]graphoff.png[/img]\nWith G-Plot:\n[img]gplot.png[/img]"
+}, {
+    "hex": 0xF771,
+    "relevance": 0,
+    "text": "G-Plot",
+    "description": "Disable line drawing between points when tracing a function. See G-Connect."
+}, {
+    "hex": 0xF776,
+    "relevance": 0,
+    "text": "Resid-None"
+}, {
+    "hex": 0xF777,
+    "relevance": 0,
+    "text": "Resid-List "
+}, {
+    "hex": 0xF778,
+    "relevance": 5,
+    "text": "BG-None",
+    "description": "Disables the picture background. Use it at the end of your programs to avoid setting a background picture in the Graph app."
+}, {
+    "hex": 0xF779,
+    "relevance": 5,
+    "text": "BG-Pict ",
+    "syntax": "BG-Pict <1-20>",
+    "description": "Sets the background picture to the number specified.",
+    "example": "[code]BG-Pict 3[/code] sets the background to the Picture 3"
+}, {
+    "hex": 0xF77A,
+    "relevance": 0,
+    "text": "GridOff",
+    "description": "Disable the grid on the graphical screen. See GridOn."
+}, {
+    "hex": 0xF77C,
+    "relevance": 0,
+    "text": "GridLine"
+}, {
+    "hex": 0xF77D,
+    "relevance": 0,
+    "text": "GridOn",
+    "description": "Enables the grid on the graphical screen.\n\nWith GridOn:\n[img]gridon.png[/img]\nWith GridOff:\n[img]graphoff.png[/img]"
+}, {
+    "hex": 0xF77E,
+    "relevance": 0,
+    "text": "Exp(a*b^x)"
+}, {
+    "hex": 0xF780,
+    "relevance": 0,
+    "text": "D Var "
+}, {
+    "hex": 0xF787,
+    "relevance": 0,
+    "text": "Q1Q3TypeStd"
+}, {
+    "hex": 0xF788,
+    "relevance": 0,
+    "text": "VarRange"
+}, {
+    "hex": 0xF789,
+    "relevance": 0,
+    "text": "Q1Q3TypeOnData"
+}, {
+    "hex": 0xF78C,
+    "relevance": 0,
+    "text": "SketchNormal "
+}, {
+    "hex": 0xF78D,
+    "relevance": 0,
+    "text": "SketchThick "
+}, {
+    "hex": 0xF78E,
+    "relevance": 0,
+    "text": "SketchBroken "
+}, {
+    "hex": 0xF78F,
+    "relevance": 0,
+    "text": "SketchDot "
+}, {
+    "hex": 0xF790,
+    "relevance": 0,
+    "text": "anType",
+    "unicode": "aType"
+}, {
+    "hex": 0xF791,
+    "relevance": 0,
+    "text": "an+1Type",
+    "unicode": "a₊₁Type"
+}, {
+    "hex": 0xF792,
+    "relevance": 0,
+    "text": "an+2Type",
+    "unicode": "a₊₂Type"
+}, {
+    "hex": 0xF793,
+    "relevance": 5,
+    "text": "StoPict ",
+    "syntax": "StoPict <1-20>",
+    "description": "Stores what is displayed at the screen in the given picture."
+}, {
+    "hex": 0xF794,
+    "relevance": 5,
+    "text": "RclPict ",
+    "syntax": "RclPict <1-20>",
+    "description": "Displays the given picture."
+}, {
+    "hex": 0xF795,
+    "relevance": 0,
+    "text": "StoGMEM "
+}, {
+    "hex": 0xF796,
+    "relevance": 0,
+    "text": "RclGMEM "
+}, {
+    "hex": 0xF797,
+    "relevance": 0,
+    "text": "StoV-Win "
+}, {
+    "hex": 0xF798,
+    "relevance": 0,
+    "text": "RclV-Win "
+}, {
+    "hex": 0xF799,
+    "relevance": 0,
+    "text": "&%_disp;"
+}, {
+    "hex": 0xF79A,
+    "relevance": 0,
+    "text": "Data"
+}, {
+    "hex": 0xF79E,
+    "relevance": 5,
+    "text": "Menu ",
+    "syntax": "Menu <title>, <option1>, <lbl1> [, <option2>, <lbl2> [, ..., <option9>, <lbl9>]]",
+    "description": "Displays a graphical menu that can handle from 1 to 9 options (strings). Each option must be followed with a label number (see Lbl).\n\nThe title and options can be either hard-coded strings, or Strs, but no expression such as \"StrInv(Str 1)\".",
+    "example": "[code]Menu \"Title\", \"Option 1\", 1, \"Option 2\", 2, \"Option 3\", 3[/code] will display the following:\n[img]menu.png[/img]\n\nIf the user selects Option 1, the code will continue executing from Lbl 1.",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0xF79F,
+    "relevance": 5,
+    "text": "RclCapt ",
+    "syntax": "RclCapt <1-20>",
+    "description": "Displays the given capture."
+}, {
+    "hex": 0xF7A0,
+    "relevance": 0,
+    "text": "Tangent "
+}, {
+    "hex": 0xF7A1,
+    "relevance": 0,
+    "text": "Normal "
+}, {
+    "hex": 0xF7A2,
+    "relevance": 0,
+    "text": "Inverse "
+}, {
+    "hex": 0xF7A3,
+    "relevance": 0,
+    "text": "Vertical "
+}, {
+    "hex": 0xF7A4,
+    "relevance": 0,
+    "text": "Horizontal ",
+    "syntax": "Horizontal <y>",
+    "description": "Draws an horizontal line at the given Y coordinate (depends on ViewWindow)."
+}, {
+    "hex": 0xF7A5,
+    "relevance": 5,
+    "text": "Text "
+}, {
+    "hex": 0xF7A6,
+    "relevance": 0,
+    "text": "Circle ",
+    "syntax": "Circle <X>, <Y>, <radius>",
+    "description": "Draws a circle at the given coordinates (depends on ViewWindow) with the given radius.\n\nThis function is very slow, it is better to use pre-defined circles with Graph(X,Y).",
+    "example": "[code]Circle 100, 50, 5[/code]"
+}, {
+    "hex": 0xF7A7,
+    "relevance": 0,
+    "text": "F-Line ",
+    "syntax": "F-Line x1, y1, x2, y2",
+    "description": "Traces a line from (x1, y1) to (x2, y2) according to the ViewWindow.\n\nIt is advised not to use this function, as Graph(X,Y) is faster, even for single lines.",
+    "example": "[code]F-Line 10, 20, 100, 50[/code]"
+}, {
+    "hex": 0xF7A8,
+    "relevance": 0,
+    "text": "PlotOn ",
+    "syntax": "PlotOn <x>, <y>",
+    "description": "Sets the pixel at x,y to black according to the ViewWindow.",
+    "example": "[code]PlotOn 1,2[/code]"
+}, {
+    "hex": 0xF7A9,
+    "relevance": 0,
+    "text": "PlotOff ",
+    "syntax": "PlotOff <x>, <y>",
+    "description": "Sets the pixel at x,y to white according to the ViewWindow.",
+    "example": "[code]PlotOff 1,2[/code]"
+}, {
+    "hex": 0xF7AA,
+    "relevance": 0,
+    "text": "PlotChg ",
+    "syntax": "PlotChg <x>, <y>",
+    "description": "Changes the color of the pixel at x,y according to the ViewWindow.",
+    "example": "[code]PlotChg 1,2[/code]"
+}, {
+    "hex": 0xF7AB,
+    "relevance": 0,
+    "text": "PxlOn ",
+    "syntax": "PxlOn y,x",
+    "description": "Sets the pixel at x,y to black. This function is independant of the ViewWindow, and has the origin in the top left corner. Be careful: it is y,x and not x,y.",
+    "example": "[code]PxlOn 10,20[/code]"
+}, {
+    "hex": 0xF7AC,
+    "relevance": 0,
+    "text": "PxlOff ",
+    "syntax": "PxlOff y,x",
+    "description": "Sets the pixel at x,y to white. This function is independant of the ViewWindow, and has the origin in the top left corner. Be careful: it is y,x and not x,y.",
+    "example": "[code]PxlOff 10,20[/code]"
+}, {
+    "hex": 0xF7AD,
+    "relevance": 0,
+    "text": "PxlChg ",
+    "syntax": "PxlChg y,x",
+    "description": "Changes the color of the pixel at x,y (white <-> black). This function is independant of the ViewWindow, and has the origin in the top left corner. Be careful: it is y,x and not x,y.",
+    "example": "[code]PxlChg 10,20[/code]"
+}, {
+    "hex": 0xF7AF,
+    "relevance": 0,
+    "text": "PxlTest(",
+    "syntax": "PxlTest(y,x)",
+    "description": "Returns 1 if the pixel at y,x is black, 0 otherwise. This function is independant of the ViewWindow, and has the origin in the top left corner. Be careful: it is y,x and not x,y.\n\nTo use this function, you must initialize the graph memory by drawing something, else this function returns a memory error.",
+    "example": "[code]PxlTest(10,20)[/code]"
+}, {
+    "hex": 0xF7B0,
+    "relevance": 0,
+    "text": "SortA("
+}, {
+    "hex": 0xF7B1,
+    "relevance": 0,
+    "text": "SortD("
+}, {
+    "hex": 0xF7B2,
+    "relevance": 0,
+    "text": "VarList1"
+}, {
+    "hex": 0xF7B3,
+    "relevance": 0,
+    "text": "VarList2"
+}, {
+    "hex": 0xF7B4,
+    "relevance": 0,
+    "text": "VarList3"
+}, {
+    "hex": 0xF7B5,
+    "relevance": 0,
+    "text": "VarList4"
+}, {
+    "hex": 0xF7B6,
+    "relevance": 0,
+    "text": "VarList5"
+}, {
+    "hex": 0xF7B7,
+    "relevance": 0,
+    "text": "VarList6"
+}, {
+    "hex": 0xF7B8,
+    "relevance": 0,
+    "text": "File1",
+    "description": "See File."
+}, {
+    "hex": 0xF7B9,
+    "relevance": 0,
+    "text": "File2",
+    "description": "See File."
+}, {
+    "hex": 0xF7BA,
+    "relevance": 0,
+    "text": "File3",
+    "description": "See File."
+}, {
+    "hex": 0xF7BB,
+    "relevance": 0,
+    "text": "File4",
+    "description": "See File."
+}, {
+    "hex": 0xF7BC,
+    "relevance": 0,
+    "text": "File5",
+    "description": "See File."
+}, {
+    "hex": 0xF7BD,
+    "relevance": 0,
+    "text": "File6",
+    "description": "See File."
+}, {
+    "hex": 0xF7BE,
+    "relevance": 0,
+    "text": "Y=DrawSpeedNorm"
+}, {
+    "hex": 0xF7BF,
+    "relevance": 0,
+    "text": "Y=DrawSpeedHigh"
+}, {
+    "hex": 0xF7C0,
+    "relevance": 0,
+    "text": "FuncOn",
+    "description": "Writes the formula of the function at the top left of the screen.\n\nWith FuncOn:\n[img]funcon.png[/img]\nWith FuncOff:\n[img]graphoff.png[/img]"
+}, {
+    "hex": 0xF7C1,
+    "relevance": 0,
+    "text": "SimulOn"
+}, {
+    "hex": 0xF7C2,
+    "relevance": 0,
+    "text": "AxesOn",
+    "description": "Enables the drawing of axes on the graphical screen.\n\nWith AxesOn:\n[img]axeson.png[/img]\nWith AxesOff:\n[img]graphoff.png[/img]"
+}, {
+    "hex": 0xF7C3,
+    "relevance": 0,
+    "text": "CoordOn",
+    "description": "Enables the drawing of cursor coordinates on the graphical screen.\n\nWith CoordOn:\n[img]coordon.png[/img]\nWith CoordOff:\n[img]graphoff.png[/img]"
+}, {
+    "hex": 0xF7C4,
+    "relevance": 0,
+    "text": "LabelOn",
+    "description": "Enables the labeling of axes on the graphical screen (although, since the position of the X and Y are fixed, it is not really useful).\n\nWith LabelOn (and AxesOn):\n[img]labelon.png[/img]\nWith LabelOff:\n[img]axeson.png[/img]"
+}, {
+    "hex": 0xF7C5,
+    "relevance": 0,
+    "text": "DerivOn"
+}, {
+    "hex": 0xF7C6,
+    "relevance": 0,
+    "text": "LocusOn"
+}, {
+    "hex": 0xF7C7,
+    "relevance": 0,
+    "text": "SumDispOn",
+    "unicode": "ΣDispOn"
+}, {
+    "hex": 0xF7C8,
+    "relevance": 0,
+    "text": "G SelOn "
+}, {
+    "hex": 0xF7C9,
+    "relevance": 0,
+    "text": "T SelOn "
+}, {
+    "hex": 0xF7CA,
+    "relevance": 0,
+    "text": "D SelOn "
+}, {
+    "hex": 0xF7CB,
+    "relevance": 0,
+    "text": "R SelOn "
+}, {
+    "hex": 0xF7CC,
+    "relevance": 0,
+    "text": "DrawOn"
+}, {
+    "hex": 0xF7CD,
+    "relevance": 0,
+    "text": "ab/c",
+    "unicode": "abc"
+}, {
+    "hex": 0xF7CE,
+    "relevance": 0,
+    "text": "d/c",
+    "unicode": "dc"
+}, {
+    "hex": 0xF7D0,
+    "relevance": 0,
+    "text": "FuncOff"
+}, {
+    "hex": 0xF7D1,
+    "relevance": 0,
+    "text": "SimulOff"
+}, {
+    "hex": 0xF7D2,
+    "relevance": 0,
+    "text": "AxesOff",
+    "description": "Disable drawing of axes on the graphical screen. See AxesOn."
+}, {
+    "hex": 0xF7D3,
+    "relevance": 0,
+    "text": "CoordOff",
+    "description": "Disable drawing of the cursor coordinates on the graphical screen. See CoordOn."
+}, {
+    "hex": 0xF7D4,
+    "relevance": 0,
+    "text": "LabelOff",
+    "description": "Disable labels of axes on the graphical screen. See LabelOn."
+}, {
+    "hex": 0xF7D5,
+    "relevance": 0,
+    "text": "DerivOff"
+}, {
+    "hex": 0xF7D6,
+    "relevance": 0,
+    "text": "LocusOff"
+}, {
+    "hex": 0xF7D7,
+    "relevance": 0,
+    "text": "SumDispOff",
+    "unicode": "ΣDispOff"
+}, {
+    "hex": 0xF7D8,
+    "relevance": 0,
+    "text": "G SelOff "
+}, {
+    "hex": 0xF7D9,
+    "relevance": 0,
+    "text": "T SelOff "
+}, {
+    "hex": 0xF7DA,
+    "relevance": 0,
+    "text": "D SelOff "
+}, {
+    "hex": 0xF7DB,
+    "relevance": 0,
+    "text": "R SelOff "
+}, {
+    "hex": 0xF7DC,
+    "relevance": 0,
+    "text": "DrawOff"
+}, {
+    "hex": 0xF901,
+    "relevance": 0,
+    "text": "->Dec"
+}, {
+    "hex": 0xF902,
+    "relevance": 0,
+    "text": "->Hex"
+}, {
+    "hex": 0xF903,
+    "relevance": 0,
+    "text": "->Bin"
+}, {
+    "hex": 0xF904,
+    "relevance": 0,
+    "text": "->Oct"
+}, {
+    "hex": 0xF905,
+    "relevance": 0,
+    "text": "->DMS"
+}, {
+    "hex": 0xF906,
+    "relevance": 0,
+    "text": "->a+bi",
+    "unicode": "->a+b"
+}, {
+    "hex": 0xF907,
+    "relevance": 0,
+    "text": "->r&angle;&theta;",
+    "unicode": "->r∠θ"
+}, {
+    "hex": 0xF908,
+    "relevance": 0,
+    "text": "Real"
+}, {
+    "hex": 0xF909,
+    "relevance": 0,
+    "text": "a+bi",
+    "unicode": "a+b"
+}, {
+    "hex": 0xF90A,
+    "relevance": 0,
+    "text": "r&angle;&theta;",
+    "unicode": "r∠θ"
+}, {
+    "hex": 0xF90B,
+    "relevance": 0,
+    "text": "EngOn"
+}, {
+    "hex": 0xF90C,
+    "relevance": 0,
+    "text": "EngOff"
+}, {
+    "hex": 0xF910,
+    "relevance": 0,
+    "text": "Sel a0",
+    "unicode": "Sel a"
+}, {
+    "hex": 0xF911,
+    "relevance": 0,
+    "text": "Sel a1",
+    "unicode": "Sel a"
+}, {
+    "hex": 0xF912,
+    "relevance": 0,
+    "text": "c_n",
+    "unicode": "c"
+}, {
+    "hex": 0xF913,
+    "relevance": 0,
+    "text": "c_(n+1)",
+    "unicode": "c₊₁"
+}, {
+    "hex": 0xF914,
+    "relevance": 0,
+    "text": "c_(n+2)",
+    "unicode": "c₊₂"
+}, {
+    "hex": 0xF915,
+    "relevance": 5,
+    "text": "c0",
+    "unicode": "c"
+}, {
+    "hex": 0xF916,
+    "relevance": 5,
+    "text": "c1",
+    "unicode": "c"
+}, {
+    "hex": 0xF917,
+    "relevance": 5,
+    "text": "c2",
+    "unicode": "c"
+}, {
+    "hex": 0xF918,
+    "relevance": 5,
+    "text": "cnStart"
+}, {
+    "hex": 0xF919,
+    "relevance": 0,
+    "text": "IneqTypeAnd",
+    "unicode": "IneqTypeIntsect"
+}, {
+    "hex": 0xF91B,
+    "relevance": 0,
+    "text": "fn",
+    "unicode": "f"
+}, {
+    "hex": 0xF91C,
+    "relevance": 0,
+    "text": "File ",
+    "syntax": "File <1-6>",
+    "description": "Sets the ListFile to the given number. A ListFile is a set of lists, it is for example useful for saves: instead of saving to List 20, you set the ListFile to 2-6, you save to List 20, then you reset the ListFile to 1. As such, the probability that your save will get overwritten/deleted is smaller.\n\nThe opcodes File1 to File6 have the same function as File 1-6.",
+    "example": "[code]File 2[/code] sets the current ListFile to 2"
+}, {
+    "hex": 0xF91D,
+    "relevance": 0,
+    "text": "VarList "
+}, {
+    "hex": 0xF91E,
+    "relevance": 5,
+    "text": "ClrMat ",
+    "syntax": "ClrMat\nClrMat <matLetter>",
+    "description": "Deletes the given matrix, or all matrixes if no letter is given.",
+    "example": "[code]ClrMat A[/code] deletes Mat A"
+}, {
+    "hex": 0xF920,
+    "relevance": 0,
+    "text": "ZoomAuto"
+}, {
+    "hex": 0xF921,
+    "relevance": 0,
+    "text": "Xdot"
+}, {
+    "hex": 0xF922,
+    "relevance": 0,
+    "text": "RightXdot"
+}, {
+    "hex": 0xF924,
+    "relevance": 0,
+    "text": "DrawDistNorm "
+}, {
+    "hex": 0xF925,
+    "relevance": 0,
+    "text": "DrawDistT "
+}, {
+    "hex": 0xF926,
+    "relevance": 0,
+    "text": "DrawDistChi "
+}, {
+    "hex": 0xF927,
+    "relevance": 0,
+    "text": "DrawDistF "
+}, {
+    "hex": 0xF928,
+    "relevance": 0,
+    "text": "None"
+}, {
+    "hex": 0xF929,
+    "relevance": 0,
+    "text": "StickLength"
+}, {
+    "hex": 0xF92A,
+    "relevance": 0,
+    "text": "StickHoriz"
+}, {
+    "hex": 0xF92B,
+    "relevance": 0,
+    "text": "IneqTypeOr",
+    "unicode": "IneqTypeUnion"
+}, {
+    "hex": 0xF92C,
+    "relevance": 0,
+    "text": "Graph X>"
+}, {
+    "hex": 0xF92D,
+    "relevance": 0,
+    "text": "Graph X<"
+}, {
+    "hex": 0xF92E,
+    "relevance": 0,
+    "text": "Graph X>="
+}, {
+    "hex": 0xF92F,
+    "relevance": 0,
+    "text": "Graph X<="
+}, {
+    "hex": 0xF930,
+    "relevance": 5,
+    "text": "StrJoin("
+}, {
+    "hex": 0xF931,
+    "relevance": 5,
+    "text": "StrLen("
+}, {
+    "hex": 0xF932,
+    "relevance": 5,
+    "text": "StrCmp("
+}, {
+    "hex": 0xF933,
+    "relevance": 5,
+    "text": "StrSrc("
+}, {
+    "hex": 0xF934,
+    "relevance": 5,
+    "text": "StrLeft("
+}, {
+    "hex": 0xF935,
+    "relevance": 5,
+    "text": "StrRight("
+}, {
+    "hex": 0xF936,
+    "relevance": 5,
+    "text": "StrMid("
+}, {
+    "hex": 0xF937,
+    "relevance": 5,
+    "text": "Exp->Str("
+}, {
+    "hex": 0xF938,
+    "relevance": 0,
+    "text": "Exp(",
+    "syntax": "Exp(Str s)",
+    "description": "Calculates the given string as if it were a math expression (can be run in the Run-Mat app).\n\nDoes not work as expected with assignments: it performs the calculation, but does not actually assign it.",
+    "example": "[code]Exp(\"1+Dim [[0,0]]\")[/code] returns {2,3}\n[code]Exp(\"1+2->A\")[/code] returns 3 (but the value of A is not changed)",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0xF939,
+    "relevance": 5,
+    "text": "StrUpr("
+}, {
+    "hex": 0xF93A,
+    "relevance": 5,
+    "text": "StrLwr("
+}, {
+    "hex": 0xF93B,
+    "relevance": 5,
+    "text": "StrInv("
+}, {
+    "hex": 0xF93C,
+    "relevance": 5,
+    "text": "StrShift("
+}, {
+    "hex": 0xF93D,
+    "relevance": 5,
+    "text": "StrRotate("
+}, {
+    "hex": 0xF93E,
+    "relevance": 0,
+    "text": "ClrVct ",
+    "syntax": "ClrVct\nClrVct <vctLetter>",
+    "description": "Clears the given vector, or all vectors if no letter is specified.",
+    "example": "[code]ClrVct A[/code] deletes Vct A",
+    "compat": "OS 2.04"
+}, {
+    "hex": 0xF93F,
+    "relevance": 5,
+    "text": "Str "
+}, {
+    "hex": 0xF94A,
+    "relevance": 0,
+    "text": "CrossP(",
+    "syntax": "CrossP(Vct&slash;Mat vct1, Vct&slash;Mat vct2)",
+    "description": "Calculates the cross product ([i]produit vectoriel[/i] in french) of the given vectors.\n\nIf a matrix is used, it must have either 1 line or 1 column.\n\nNote that if the Z-coordinate is not provided, it will calculate as if it were 0.",
+    "example": "[code]CrossP([[1,2,5]], [[2,3,7]])[/code] returns [-1, 3, -1]",
+    "compat": "OS 2.04"
+}, {
+    "hex": 0xF94B,
+    "relevance": 0,
+    "text": "DotP(",
+    "syntax": "DotP(Vct&slash;Mat vct1, Vct&slash;Mat vct2)",
+    "description": "Calculates the dot product ([i]produit scalaire[/i] in french) of the given vectors.\n\nIf a matrix is used, it must have either 1 line or 1 column.\n\nNote that if the Z-coordinate is not provided, it will calculate as if it were 0.",
+    "example": "[code]DotP([[1,2]], [[2,3]])[/code] returns 8",
+    "compat": "OS 2.04"
+}, {
+    "hex": 0xF95B,
+    "relevance": 0,
+    "text": "Norm(",
+    "syntax": "Norm(Vct vct1)\nNorm(Mat mat1)",
+    "description": "Returns the norm (length) of the given vector/matrix.\n\nMore generally, returns the square root of the square of the absolute value of each case of the vector/matrix.",
+    "example": "[code]Norm([[1,2]])[/code] returns √5 which is √(1²+2²)\n[code]Norm([[2, 2+2i]])[/code] returns 2√3 which is √(2²+(2√2)²).",
+    "compat": "OS 2.04"
+}, {
+    "hex": 0xF95E,
+    "relevance": 0,
+    "text": "UnitV("
+}, {
+    "hex": 0xF96D,
+    "relevance": 0,
+    "text": "Angle(",
+    "syntax": "Angle(Vct&slash;Mat vct1, Vct&slash;Mat vct2)",
+    "description": "Returns the value of the angle between vct1 and vct2.\n\nIf a matrix is used, it must have either 1 line or 1 column.\n\nNote that if the Z-coordinate is not provided, it will calculate as if it were 0.",
+    "compat": "OS 2.04"
+}, {
+    "hex": 0xF973,
+    "relevance": 0,
+    "text": "ColorAuto "
+}, {
+    "hex": 0xF974,
+    "relevance": 0,
+    "text": "ColorLighter "
+}, {
+    "hex": 0xF975,
+    "relevance": 0,
+    "text": "ColorLinkX&amp;Y"
+}, {
+    "hex": 0xF976,
+    "relevance": 0,
+    "text": "ColorLinkOnlyX"
+}, {
+    "hex": 0xF977,
+    "relevance": 0,
+    "text": "ColorLinkOnlyY"
+}, {
+    "hex": 0xF978,
+    "relevance": 0,
+    "text": "ColorLinkOn"
+}, {
+    "hex": 0xF979,
+    "relevance": 0,
+    "text": "ColorLinkOff"
+}, {
+    "hex": 0xF97A,
+    "relevance": 0,
+    "text": "ColorNormal "
+}, {
+    "hex": 0xF97B,
+    "relevance": 0,
+    "text": "ERROR"
+}, {
+    "hex": 0xF97C,
+    "relevance": 0,
+    "text": "BLANK"
+}, {
+    "hex": 0xF97D,
+    "relevance": 0,
+    "text": "ColorClr "
+}, {
+    "hex": 0xF97E,
+    "relevance": 0,
+    "text": "ColorLinkX&amp;Freq"
+}, {
+    "hex": 0xF980,
+    "relevance": 0,
+    "text": "NormPD(",
+    "syntax": "NormPD(a, σ, μ)\nNormPD(<list>, σ, μ)",
+    "description": "Let X be a random variable that follows the normal distribution N(μ;σ²).\n\nCalculates the probability density of A (or, if a list is provided, calculates the probability density of each item in the list).",
+    "example": "[code]NormPD(1, 1, 0)[/code] returns approx. 0.242",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0xF981,
+    "relevance": 0,
+    "text": "NormCD(",
+    "syntax": "NormCD(a, b [, σ [, μ]])\nNormCD(listA, listB [, σ [, μ]])",
+    "description": "Let X be a random variable that follows the normal distribution N(μ;σ²).\n\nCalculates P(a < X < b). If σ or µ are not provided, they default to 1 and 0 respectively.\n\nTo calculate P(X > a) or P(X < a), replace a or b with -∞ ([code]-99[/code]) or +∞ ([code]99[/code]).\n\nIf lists are provided, returns the probability for each pair of values in the list (P(listA[1] < X < listB[1], P(listA[2] < X < listB[2]), etc).",
+    "example": "[code]NormCD(2,3)[/code] = [code]NormCD(2,3,1)[/code] = [code]NormCD(2,3,1,0) ≈ 0.0214[/code]",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0xF982,
+    "relevance": 0,
+    "text": "InvNormCD(",
+    "syntax": "InvNormCD(Nbr p, Nbr σ, Nbr µ)\nInvNormCD(int type, Nbr p, Nbr σ, Nbr µ)",
+    "description": "Let X be a random variable that follows the normal distribution N(µ;σ²).\n\n- If type is -1, or not specified, calculates A such that [code]P(X ∈ ]-∞; A]) = p[/code].\n- If type is 0, calculates A such that [code]P(X ∈ [-A; +A]) = p[/code].\n- If type is 1, calculates A such that [code]P(X ∈ [A; +∞]) = p[/code].",
+    "example": "Let X be a random variable that follows the normal distribution N(900; 7²).\n\n[code]InvNormCD(0.5, 7, 900)[/code] or [code]InvNormCD(-1, 0.5, 7, 900)[/code] calculates A such that P(X < A) = 0.5\n[code]7*InvNormCD(0, 0.99, 7, 900)[/code] calculates A such that P(900-A < X < 900+A) = 0.99 (see your math lesson for why)\n[code]InvNormCD(1, 0.7, 7, 900)[/code] calculates A such that P(X > A) = 0.7",
+    "compat": "OS 2.00"
+}, {
+    "hex": 0xF983,
+    "relevance": 0,
+    "text": "tPD("
+}, {
+    "hex": 0xF984,
+    "relevance": 0,
+    "text": "tCD("
+}, {
+    "hex": 0xF985,
+    "relevance": 0,
+    "text": "InvTCD("
+}, {
+    "hex": 0xF986,
+    "relevance": 0,
+    "text": "ChiPD("
+}, {
+    "hex": 0xF987,
+    "relevance": 0,
+    "text": "ChiCD("
+}, {
+    "hex": 0xF988,
+    "relevance": 0,
+    "text": "InvChiCD("
+}, {
+    "hex": 0xF989,
+    "relevance": 0,
+    "text": "&FPD(;"
+}, {
+    "hex": 0xF98A,
+    "relevance": 0,
+    "text": "&FCD(;"
+}, {
+    "hex": 0xF98B,
+    "relevance": 0,
+    "text": "InvFCD("
+}, {
+    "hex": 0xF98C,
+    "relevance": 0,
+    "text": "BinominalPD("
+}, {
+    "hex": 0xF98D,
+    "relevance": 0,
+    "text": "BinominalCD("
+}, {
+    "hex": 0xF98E,
+    "relevance": 0,
+    "text": "InvBinominalCD("
+}, {
+    "hex": 0xF98F,
+    "relevance": 0,
+    "text": "PoissonPD("
+}, {
+    "hex": 0xF990,
+    "relevance": 0,
+    "text": "PoissonCD("
+}, {
+    "hex": 0xF991,
+    "relevance": 0,
+    "text": "InvPoissonCD("
+}, {
+    "hex": 0xF992,
+    "relevance": 0,
+    "text": "GeoPD("
+}, {
+    "hex": 0xF993,
+    "relevance": 0,
+    "text": "GeoCD("
+}, {
+    "hex": 0xF994,
+    "relevance": 0,
+    "text": "InvGeoCD("
+}, {
+    "hex": 0xF995,
+    "relevance": 0,
+    "text": "HypergeoPD("
+}, {
+    "hex": 0xF996,
+    "relevance": 0,
+    "text": "HypergeoCD("
+}, {
+    "hex": 0xF997,
+    "relevance": 0,
+    "text": "InvHypergeoCD("
+}, {
+    "hex": 0xF998,
+    "relevance": 0,
+    "text": "SetG-Color "
+}, {
+    "hex": 0xF999,
+    "relevance": 0,
+    "text": "Plot/Line-Color "
+}, {
+    "hex": 0xF99A,
+    "relevance": 0,
+    "text": "AxesScale"
+}, {
+    "hex": 0xF99B,
+    "relevance": 0,
+    "text": "Black ",
+    "syntax": "Black <graphical function>",
+    "description": "Displays the given graphical function in black (the default color).",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0xF99D,
+    "relevance": 0,
+    "text": "Magenta ",
+    "syntax": "Magenta <graphical function>",
+    "description": "Displays the given graphical function in magenta.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0xF99E,
+    "relevance": 0,
+    "text": "Cyan ",
+    "syntax": "Cyan <graphical function>",
+    "description": "Displays the given graphical function in cyan.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0xF99F,
+    "relevance": 0,
+    "text": "Yellow ",
+    "syntax": "Yellow <graphical function>",
+    "description": "Displays the given graphical function in yellow.",
+    "compat": "Prizm/Graph 90+E"
+}, {
+    "hex": 0xF9A0,
+    "relevance": 0,
+    "text": "Smpl_SI("
+}, {
+    "hex": 0xF9A1,
+    "relevance": 0,
+    "text": "Smpl_SFV("
+}, {
+    "hex": 0xF9A2,
+    "relevance": 0,
+    "text": "Cmpd_n("
+}, {
+    "hex": 0xF9A3,
+    "relevance": 0,
+    "text": "Cmpd_I%("
+}, {
+    "hex": 0xF9A4,
+    "relevance": 0,
+    "text": "Cmpd_PV("
+}, {
+    "hex": 0xF9A5,
+    "relevance": 0,
+    "text": "Cmpd_PMT("
+}, {
+    "hex": 0xF9A6,
+    "relevance": 0,
+    "text": "Cmpd_FV("
+}, {
+    "hex": 0xF9A7,
+    "relevance": 0,
+    "text": "Cash_NPV("
+}, {
+    "hex": 0xF9A8,
+    "relevance": 0,
+    "text": "Cash_IRR("
+}, {
+    "hex": 0xF9A9,
+    "relevance": 0,
+    "text": "Cash_PBP("
+}, {
+    "hex": 0xF9AA,
+    "relevance": 0,
+    "text": "Cash_NFV("
+}, {
+    "hex": 0xF9AB,
+    "relevance": 0,
+    "text": "Amt_BAL("
+}, {
+    "hex": 0xF9AC,
+    "relevance": 0,
+    "text": "Amt_INT("
+}, {
+    "hex": 0xF9AD,
+    "relevance": 0,
+    "text": "Amt_PRN("
+}, {
+    "hex": 0xF9AE,
+    "relevance": 0,
+    "text": "AMT_ΣINT(",
+    "unicode": "Amt_SumINT("
+}, {
+    "hex": 0xF9AF,
+    "relevance": 0,
+    "text": "AMT_ΣPRN(",
+    "unicode": "Amt_SumPRN("
+}, {
+    "hex": 0xF9B0,
+    "relevance": 0,
+    "text": "Cnvt_EFF("
+}, {
+    "hex": 0xF9B1,
+    "relevance": 0,
+    "text": "Cnvt_APR("
+}, {
+    "hex": 0xF9B2,
+    "relevance": 0,
+    "text": "Cost("
+}, {
+    "hex": 0xF9B3,
+    "relevance": 0,
+    "text": "Sell("
+}, {
+    "hex": 0xF9B4,
+    "relevance": 0,
+    "text": "Margin("
+}, {
+    "hex": 0xF9B5,
+    "relevance": 0,
+    "text": "PmtEnd"
+}, {
+    "hex": 0xF9B6,
+    "relevance": 0,
+    "text": "PmtBgn"
+}, {
+    "hex": 0xF9B7,
+    "relevance": 0,
+    "text": "Bond_PRC("
+}, {
+    "hex": 0xF9B8,
+    "relevance": 0,
+    "text": "Bond_YLD("
+}, {
+    "hex": 0xF9B9,
+    "relevance": 0,
+    "text": "DateMode365"
+}, {
+    "hex": 0xF9BA,
+    "relevance": 0,
+    "text": "DateMode360"
+}, {
+    "hex": 0xF9BB,
+    "relevance": 0,
+    "text": "PeriodsAnnual"
+}, {
+    "hex": 0xF9BC,
+    "relevance": 0,
+    "text": "PeriodsSemi"
+}, {
+    "hex": 0xF9BD,
+    "relevance": 0,
+    "text": "Days_Prd("
+}, {
+    "hex": 0xF9E0,
+    "relevance": 0,
+    "text": "OneSampleZTest "
+}, {
+    "hex": 0xF9E1,
+    "relevance": 0,
+    "text": "TwoSampleZTest "
+}, {
+    "hex": 0xF9E2,
+    "relevance": 0,
+    "text": "OneProfZTest "
+}, {
+    "hex": 0xF9E3,
+    "relevance": 0,
+    "text": "TwoPropZTest "
+}, {
+    "hex": 0xF9E8,
+    "relevance": 0,
+    "text": "OneSampleTTest "
+}, {
+    "hex": 0xF9E9,
+    "relevance": 0,
+    "text": "TwoSampleTTest "
+}, {
+    "hex": 0xF9EA,
+    "relevance": 0,
+    "text": "LinRegTTest "
+}, {
+    "hex": 0xF9EB,
+    "relevance": 0,
+    "text": "ChiGOFTest "
+}, {
+    "hex": 0xF9EC,
+    "relevance": 0,
+    "text": "ChiTest "
+}, {
+    "hex": 0xF9ED,
+    "relevance": 0,
+    "text": "TwoSampleFTest "
+}, {
+    "hex": 0xF9EE,
+    "relevance": 0,
+    "text": "OneWayANOVA "
+}, {
+    "hex": 0xF9EF,
+    "relevance": 0,
+    "text": "TwoWayANOVA "
+}, {
+    "hex": 0xF9F0,
+    "relevance": 0,
+    "text": "x1InvN"
+}, {
+    "hex": 0xF9F1,
+    "relevance": 0,
+    "text": "x2InvN"
+}, {
+    "hex": 0xF9F2,
+    "relevance": 0,
+    "text": "xInv"
+}, {
+    "hex": 0xF9F3,
+    "relevance": 0,
+    "text": "SketchThin "
+}, {
+    "hex": 0xF9F4,
+    "relevance": 0,
+    "text": "S-L-Thin"
+}, {
+    "hex": 0xF9F5,
+    "relevance": 0,
+    "text": "ThinG "
+}, {
+    "hex": 0xF9FB,
+    "relevance": 0,
+    "text": "zLow"
+}, {
+    "hex": 0xF9FC,
+    "relevance": 0,
+    "text": "zUp"
+}, {
+    "hex": 0xF9FD,
+    "relevance": 0,
+    "text": "tLow"
+}, {
+    "hex": 0xF9FE,
+    "relevance": 0,
+    "text": "tUp"
+}]

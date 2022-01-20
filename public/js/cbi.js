@@ -778,6 +778,7 @@ function txtScrollVertical() {
     textScreenLines.push("".padStart(TEXT_SCREEN_WIDTH, " "));
     txtColorScreenLines.shift();
     txtColorScreenLines.push("".padStart(TEXT_SCREEN_WIDTH, "1"));
+    currentTextLineIdx--;
 }
 
 // Si c'est après le locate, ça rempli la ligne avec des blancs après le texte à imprimer.
@@ -1486,6 +1487,42 @@ function debugToggle() {
     return DEBUG;
 }
 
+/* This part is from 'js-floating-point', under MIT License, from Vitalii Maslianok
+see https://www.npmjs.com/package/js-floating-point
+and https://github.com/maslianok/js-floating-point
+*/
+function floatingPointFix(value, recurringSymbols = 10) {
+    if (!value || Number.isNaN(parseFloat(value))) {
+      // value is wrong or empty
+      return value;
+    }
+  
+    const [intPart, decimalPart] = `${value}`.split('.');
+  
+    if (!decimalPart) {
+      // no decimal part
+      return value;
+    }
+  
+    const regex = new RegExp(
+      `(9{${recurringSymbols},}|0{${recurringSymbols},})(\\d)*$`,
+      'gm'
+    );
+    const matched = decimalPart.match(regex);
+  
+    if (!matched) {
+      // no floating-point bug
+      return value;
+    }
+  
+    const [wrongPart] = matched;
+    const correctDecimalsLength = decimalPart.length - wrongPart.length;
+    return parseFloat(
+      parseFloat(`${intPart}.${decimalPart}`).toFixed(correctDecimalsLength)
+    );
+  }
+  /* end of js-floating-point */
+
 function letvar(vname, value) {
 
     debug("enter function letVar()");
@@ -1747,7 +1784,7 @@ function execute(node) {
                     break;
                 case OP_IF_SIMPLE:
                     if (execute(node.children[0])) {
-                        execute(node.children[1]);
+                        ret = execute(node.children[1]);
                     }
                     break;
                 case OP_IF:
@@ -1883,7 +1920,7 @@ function execute(node) {
                         colorIndex = getColorIndexFromColorName(node.children[3]);
                     }
                     if (typeof node.children[2].type != 'undefined') {
-                        str = "" + execute(node.children[2]); // 3rd arg is an expression to evaluate
+                        str = "" + floatingPointFix(execute(node.children[2])); // 3rd arg is an expression to evaluate
                     } else {
                         str = node.children[2]; // 3rd arg is a string
                     }
@@ -2106,10 +2143,10 @@ function execute(node) {
                     ret = Math.PI;
                     break;
                 case OP_ANS:
-                    ret = getLastAnswer();
+                    ret = this.Ans;
                     break;
                 case OP_LIST_ANS:
-                    ret = getLastListAnswer();
+                    ret = this.ListAns;
                     break;
                 case OP_SHOWAXES:
                     setShowAxes(node.children[0]);
@@ -3005,7 +3042,7 @@ var MatAns = [];
 var lastReturnedValue = undefined;
 
 function getLastAnswer() {
-    return this.Ans;
+    return floatingPointFix(this.Ans);
 }
 
 function getLastListAnswer() {
@@ -3065,7 +3102,7 @@ function formatForDisplay(value) {
         } else if (type == TYPE_LIST) {
             return formatListValue(value, "{", "}");
         } else {
-            return ""+value;
+            return ""+floatingPointFix(value);
         }
 }
 
@@ -3116,8 +3153,8 @@ function finish(errorCode, str, programs, where, lineNum) {
       finishCallBack(errorCode, str, programs, where, lineNum); // call the finish callback
     }
 }
-var CBI_VERSION = 'r663((1642367707 - 1406844000))';
-var CBI_BUILD_DATE = '2022-01-16';
+var CBI_VERSION = 'r963((1642652702 - 1406844000))';
+var CBI_BUILD_DATE = '2022-01-20';
 
 function cbiGetVersion(withBuildDate) {
     toReturn = "Casio Basic Web Interpreter "+ CBI_VERSION;
