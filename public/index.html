@@ -376,6 +376,9 @@ button {
         tabToModelMap = {};
         currentSelectedTab = null;
         var srcCode = programExamples[sourceName];
+        if (typeof srcCode === "string") {
+          srcCode = g1mToJson(srcCode);
+        }
         for (var part of srcCode) {
           if (part.type === "program") {
             part.content = "#Program name: "+part.name+"\n#Password: <no password>\n\n"+part.content;

@@ -656,7 +656,7 @@ var options = {
     }
 }
 
-function g1mtojson(content) {
+function g1mToJson(content) {
     content = atob(content);
     if (!checkG1mValidity(content)) {
         console.log("Invalid g1m: "+content.substring(0,8)+" " + "\xAA\xAC\xBD\xAF\x90\x88\x9A\x8D");
@@ -719,7 +719,7 @@ function g1mtojson(content) {
         }
     }
 
-    console.log(JSON.stringify(result, null, 4))
+    return result;
 
 }
 
@@ -788,5 +788,3 @@ function getG1mPartType(part) {
             return -1;
     }
 }
-
-g1mtojson(base64testprog);
