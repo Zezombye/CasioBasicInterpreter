@@ -1,5 +1,5 @@
 
-require.config({ paths: { 'vs': '../lib/monaco-editor/min/vs' }});
+require.config({ paths: { 'vs': 'lib/monaco-editor/min/vs' }});
 require(['vs/editor/editor.main'], function() {
 
 	monaco.languages.register({id: "basic-casio"});

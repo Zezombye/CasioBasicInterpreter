@@ -129,7 +129,7 @@ function selectResolution(res) {
 function setRes(res) {
   currentRes = res;
 
-  c1 = document.getElementById("canvas1");
+  c1 = document.getElementById("calc-screen-text");
   c2 = document.getElementById("canvas2");
   c3 = document.getElementById("canvas3");
 
@@ -1285,3 +1285,13 @@ function radiansToAngle(radians) {
     }
     return radians;
 }
+
+
+function cbiGetVersion(withBuildDate) {
+    toReturn = "Casio Basic Web Interpreter "+ CBI_VERSION;
+    if (withBuildDate) {
+      toReturn += ' (built: '+CBI_BUILD_DATE+')';
+    }
+    return toReturn;
+}
+

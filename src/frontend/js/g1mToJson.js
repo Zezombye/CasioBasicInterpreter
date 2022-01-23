@@ -689,6 +689,8 @@ function g1mToJson(content) {
             console.log("Found program \"" + progName + "\"" + (isBaseProgram ? " (base program)" : ""));
             
             var progContent = casioToAscii(getG1mPartContent(part).substring(10), true);
+            
+            progContent = "#Program name: "+progName+"\n#Password: <no password>\n\n"+progContent;
                         
             result.push({
                 type: TYPE_PROG,

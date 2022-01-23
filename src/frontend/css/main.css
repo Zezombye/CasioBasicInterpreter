@@ -1,0 +1,76 @@
+form {
+    margin-block-end: 0;
+}
+
+button {
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.buttonVert {
+    display: inline-block;
+    padding: 2px 4px;
+    margin: 3px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #85db85;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px #999;
+}
+
+.buttonVert:hover {background-color: #52c452}
+
+.buttonVert:active {
+    background-color: #52c452;
+    box-shadow: 0 0 #666;
+    transform: translateY(2px) translateX(2px);
+}
+
+.CodeMirror {
+background: transparent;
+}
+
+.CodeMirror-linenumber {
+color: blue;
+}
+
+#srcCode:not(.readOnly) {
+    background-color: white;
+}
+
+#srcCode.readOnly {
+    background-color: #eee;
+}
+
+.error {
+background-color: lightpink;
+}
+
+@font-face {
+    font-family: 'DejaVuAvecCasio';
+    src: url('../fonts/DejaVuAvecCasio.ttf');
+}
+
+body {
+    background-color: lightsteelblue;
+    text-align: center;
+}
+
+#calculator-keys {
+    display: block; 
+    padding-bottom: 4px;
+}
+
+#specialChars button {
+    font-family: "DejaVuAvecCasio";
+}
+
+#examplePrograms {
+    max-width: 600px;
+    display: inline-block;
+}
