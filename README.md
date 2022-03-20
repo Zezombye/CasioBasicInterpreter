@@ -12,9 +12,9 @@ The parser is generated from the grammar and then concatened with other javascri
 > bash build.sh
 ```
 
-Then, just open `public/index.html` in your browser to test it locally.
+Then, just open `index.html` in your browser to test it locally.
 
-If you just want to use the interpreter, go to https://zezombye.github.io/CasioBasicInterpreter/public/index.html
+If you just want to use the interpreter, go to https://zezombye.github.io/CasioBasicInterpreter/index.html
 
 ### Unit tests
 
